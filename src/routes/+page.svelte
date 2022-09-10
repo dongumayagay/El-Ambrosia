@@ -1,2 +1,2 @@
-<h1>Welcome to El Ambrosia</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<h1 class="text-center">Welcome to El Ambrosia</h1>
+<p class="text-center">Home of Authentic Middle Eastern Shawarma</p>

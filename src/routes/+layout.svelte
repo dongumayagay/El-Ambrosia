@@ -18,7 +18,7 @@
 	{#if !loading}
 		<main class="flex-1 flex flex-col" in:fade={{ delay: 200 }}>
 			<header class="text-center py-2">
-				<span class="text-orange-300 text-lg font-mestizo tracking-widest"> EL AMBROSIA </span>
+				<a href="/" class="text-orange-300 text-lg font-mestizo tracking-widest"> EL AMBROSIA </a>
 			</header>
 			<div class="flex-1 flex flex-col p-2">
 				<slot />
