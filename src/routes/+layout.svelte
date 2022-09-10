@@ -10,6 +10,8 @@
 	});
 </script>
 
+<svelte:head><title>El Ambrosia</title></svelte:head>
+
 <div class=" h-full bg-black text-white flex flex-col overflow-hidden">
 	{#if !loading}
 		<div in:fade={{ delay: 200 }} class="flex-1 flex flex-col">
