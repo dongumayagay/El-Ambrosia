@@ -5,6 +5,7 @@
 	import '../app.postcss';
 	import Loading from '$lib/components/Loading.svelte';
 	import Navbar from '$lib/components/Navbar.svelte';
+	import Logo from '$lib/components/Logo.svelte';
 
 	let loading = true;
 	onMount(() => {
@@ -14,11 +15,11 @@
 
 <svelte:head><title>El Ambrosia</title></svelte:head>
 
-<div class="h-full bg-black text-white flex flex-col">
+<div class="h-full bg-black text-orange-200 flex flex-col">
 	{#if !loading}
 		<main class="flex-1 flex flex-col" in:fade={{ delay: 200 }}>
-			<header class="text-center py-2">
-				<a href="/" class="text-orange-300 text-lg font-mestizo tracking-widest"> EL AMBROSIA </a>
+			<header class="flex justify-center py-2">
+				<Logo />
 			</header>
 			<div class="flex-1 flex flex-col p-2">
 				<slot />

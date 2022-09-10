@@ -1,17 +1,19 @@
+import { supabase } from '$lib/supabase/client';
 import { error } from '@sveltejs/kit';
  
 /** @type {import('./$types').PageLoad} */
-export function load({}) {
-  // @ts-ignore
-//   if (params.slug === 'hello-world') {
-//     return {
-//       title: 'Hello world!',
-//       content: 'Welcome to our blog. Lorem ipsum dolor sit amet...'
-//     };
-//   }
- return {
-    text:"hello"
- }
+export async function load({}) {
+    
+    const {data:products,error:err}=  await supabase.from('products').select(`
+    id,name,description,image,type,
+    product_variants(
+        id,name,price
+    )
+    `)
 
-//   throw error(404, 'Not found');
+    if (err) throw error(404, 'Not found');
+  
+    return{
+        products
+    }
 }
