@@ -3,7 +3,7 @@
 	$: pathname = $page.url.pathname;
 </script>
 
-<nav class="max-h-14 px-2 flex border-t border-orange-200/60  stroke-orange-200/60">
+<nav class="max-h-14 mt-auto px-2 flex border-t border-orange-200/60  stroke-orange-200/60">
 	<a
 		class={`flex-1 flex justify-center aspect-square h-full ${
 			pathname == '/' ? 'stroke-red-600' : ''
