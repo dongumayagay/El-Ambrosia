@@ -1,7 +1,7 @@
 <script>
-	export let data;
-	const products = data.products;
-	console.log(products);
+	// export let data;
+	// const products = data.products;
+	// console.log(products);
 </script>
 
 <h1 class="text-center">Welcome to El Ambrosia</h1>

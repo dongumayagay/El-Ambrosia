@@ -15,7 +15,7 @@
 
 <svelte:head><title>El Ambrosia</title></svelte:head>
 
-<div class="h-full bg-black text-orange-200 flex flex-col">
+<div class="h-full bg-black text-orange-100/75 flex flex-col">
 	{#if !loading}
 		<main class="flex-1 flex flex-col" in:fade={{ delay: 200 }}>
 			<header class="flex justify-center py-2">

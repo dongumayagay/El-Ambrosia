@@ -1,1 +1,1 @@
-cart
+<h1 class="text-center">Cart</h1>
