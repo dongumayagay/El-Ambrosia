@@ -20,7 +20,7 @@
 
 <main class="h-full min-h-full flex flex-col text-orange-100/75">
 	{#if !loading}
-		<main in:fade={{ delay: 200 }} class="flex-1 flex flex-col overflow-hidden">
+		<main in:fade={{ delay: 50 }} class="flex-1 flex flex-col overflow-hidden">
 			<header class="flex justify-center py-4">
 				<Logo />
 			</header>
