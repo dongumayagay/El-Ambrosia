@@ -10,9 +10,10 @@ export async function load({}) {
         id,name,price
     )
     `)
-
     if (err) throw error(404, 'Not found');
     return{
         products
     }
 }
+
+export const prerender = true;

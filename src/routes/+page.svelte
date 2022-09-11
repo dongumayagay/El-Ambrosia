@@ -4,24 +4,6 @@
 	console.log(products);
 </script>
 
-<!-- <main class="overflow-auto bg-neutral-400 text-center ">
-	<div class="container">
-		<h1 class=" font-anton">Home page</h1>
-		<section class="flex flex-col  items-center">
-			<div class=" aspect-square w-full max-w-xs bg-orange-400">test</div>
-			<h1>Test Product</h1>
-		</section>
-		<section class="flex flex-col  items-center">
-			<div class=" aspect-square w-full max-w-xs bg-orange-400">test</div>
-			<h1>Test Product</h1>
-		</section>
-		<section class="flex flex-col  items-center">
-			<div class=" aspect-square w-full max-w-xs bg-orange-400">test</div>
-			<h1>Test Product</h1>
-		</section>
-	</div>
-</main> -->
-
 <main class="overflow-auto text-center px-4">
 	<header class="">
 		<h1 class="text-center text-red-600 text-2xl font-anton tracking-wider">
