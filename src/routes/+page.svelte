@@ -1,5 +1,6 @@
 <script>
-	import { products } from '$lib/stores';
+	export let data;
+	const products = data.products;
 </script>
 
 <main class="overflow-auto text-center px-4">
@@ -13,7 +14,7 @@
 	</header>
 
 	<main class="flex flex-col gap-6 py-8">
-		{#each $products as product}
+		{#each products as product}
 			<button class=" flex  gap-4 items-stretch">
 				<section class="flex-1">
 					<img width="150" height="150" src={product.image} alt="" />

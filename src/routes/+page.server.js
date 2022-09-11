@@ -1,6 +1,9 @@
 import { supabase } from '$lib/supabase/client';
 import { error } from '@sveltejs/kit';
  
+export const prerender = true;
+
+/** @type {import('./$types').PageServerLoad} */
 export async function load({}) {
     const {data:products,error:err} = await supabase
         .from('products')
@@ -15,5 +18,3 @@ export async function load({}) {
         products
     }
 }
-
-export const prerender = true;
