@@ -6,6 +6,7 @@
 <nav class="max-h-14 mt-auto px-2 flex border-t border-orange-200/60  stroke-orange-200/60">
 	<a
 		sveltekit:prefetch
+		title="Home"
 		class={`flex-1 flex justify-center aspect-square h-full ${
 			pathname == '/' ? 'stroke-red-600' : ''
 		} transition-colors`}
@@ -29,6 +30,7 @@
 	</a>
 	<a
 		sveltekit:prefetch
+		title="Cart"
 		class={`flex-1 flex justify-center aspect-square h-full ${
 			pathname == '/cart' ? 'stroke-red-600' : ''
 		} transition-colors`}
@@ -53,6 +55,7 @@
 	</a>
 	<a
 		sveltekit:prefetch
+		title="Orders"
 		class={`flex-1 flex justify-center aspect-square h-full ${
 			pathname == '/orders' ? 'stroke-red-600' : ''
 		} transition-colors`}
@@ -79,6 +82,7 @@
 	</a>
 	<a
 		sveltekit:prefetch
+		title="Account"
 		class={`flex-1 flex justify-center aspect-square h-full ${
 			pathname == '/account' ? 'stroke-red-600' : ''
 		} transition-colors`}
