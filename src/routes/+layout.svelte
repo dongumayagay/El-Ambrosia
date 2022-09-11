@@ -21,7 +21,7 @@
 			<header class="flex justify-center py-2">
 				<Logo />
 			</header>
-			<div class="flex-1 flex flex-col p-2">
+			<div class="flex-1 flex flex-col p-4">
 				<slot />
 			</div>
 			<Navbar />
