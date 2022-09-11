@@ -16,7 +16,7 @@
 		{#each $products as product}
 			<button class=" flex  gap-4 items-stretch">
 				<section class="flex-1">
-					<img width="300" height="300" src={product.image} alt="" />
+					<img width="150" height="150" src={product.image} alt="" />
 				</section>
 				<section class="flex-1 flex flex-col justify-between ">
 					<h1 class="text-2xl text-red-600 uppercase font-anton text-start ">{product.name}</h1>

@@ -1,1 +1,3 @@
-<h1 class="text-center">Account</h1>
+<script>
+	//
+</script>
