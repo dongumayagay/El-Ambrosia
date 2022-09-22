@@ -1,0 +1,12 @@
+<script>
+	import RatingCard from '$lib/components/ratings/RatingCard.svelte';
+</script>
+
+<div id="Ratings" class=" mx-auto max-w-7xl py-12 px-4 gap-6 grid bg-base-300">
+	<h1 class="text-center text-xl uppercase">Ratings</h1>
+	<section class="grid gap-8 md:grid-cols-2">
+		{#each [...Array(3).keys()] as _}
+			<RatingCard />
+		{/each}
+	</section>
+</div>
