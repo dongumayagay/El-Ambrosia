@@ -5,30 +5,22 @@
 	const carouselItems: CarouselItemInterface[] = [
 		{
 			name: '0',
-			image: 'https://via.placeholder.com/500.webp/?text=El%20Ambrosia%200',
+			image: 'https://via.placeholder.com/300.webp/?text=El%20Ambrosia%200',
 			link: '/'
 		},
 		{
 			name: '1',
-			image: 'https://via.placeholder.com/500.webp/?text=El%20Ambrosia%201',
+			image: 'https://via.placeholder.com/300.webp/?text=El%20Ambrosia%201',
 			link: '/'
 		},
 		{
 			name: '2',
-			image: 'https://via.placeholder.com/500.webp/?text=El%20Ambrosia%202',
-			link: '/'
-		},
-		{
-			name: '3',
-			image: 'https://via.placeholder.com/500.webp/?text=El%20Ambrosia%203',
-			link: '/'
-		},
-		{
-			name: '4',
-			image: 'https://via.placeholder.com/500.webp/?text=El%20Ambrosia%204',
+			image: 'https://via.placeholder.com/300.webp/?text=El%20Ambrosia%202',
 			link: '/'
 		}
 	];
 </script>
 
-<Carousel {carouselItems} />
+<div class=" h-96">
+	<Carousel {carouselItems} />
+</div>
