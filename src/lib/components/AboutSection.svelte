@@ -2,9 +2,10 @@
 	<img
 		src="https://via.placeholder.com/400.webp/?text=About%20El%20Ambrosia"
 		alt="about el ambrosia"
+		class="rounded"
 	/>
 	<article class="flex flex-col gap-2">
-		<h1 class="text-center text-xl uppercase">About El Ambrosia</h1>
+		<h1 class="text-center font-bold text-xl uppercase">About El Ambrosia</h1>
 		<p class="text-center">
 			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo laborum possimus facere
 			pariatur, explicabo ad blanditiis autem, molestiae velit, nostrum numquam suscipit ab
