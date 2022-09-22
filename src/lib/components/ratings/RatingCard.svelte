@@ -1,7 +1,8 @@
-<article class="grid md:grid-cols-2 rounded-lg bg-base-100 overflow-hidden">
+<article class="grid sm:grid-cols-2 rounded-lg bg-base-100 overflow-hidden">
 	<img
 		src="https://via.placeholder.com/400.webp/?text=Rating%20El%20Ambrosia"
 		alt="about el ambrosia"
+		class="w-full max-h-96 md:h-full object-cover"
 	/>
 	<div class="flex flex-col p-6">
 		<div class="rating gap-2 mx-auto">

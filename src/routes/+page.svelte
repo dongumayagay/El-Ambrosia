@@ -1,6 +1,8 @@
 <script lang="ts">
 	import AboutSection from '$lib/components/AboutSection.svelte';
 	import Carousel from '$lib/components/carousel/Carousel.svelte';
+	import FooterSection from '$lib/components/FooterSection.svelte';
+	import RatingsSection from '$lib/components/ratings/RatingsSection.svelte';
 	import type { CarouselItemInterface } from '$lib/types';
 
 	const carouselItems: CarouselItemInterface[] = [
@@ -28,3 +30,9 @@
 	<Carousel {carouselItems} />
 </div>
 <AboutSection />
+<div class="bg-base-300">
+	<RatingsSection />
+</div>
+<footer class="bg-base-200">
+	<FooterSection />
+</footer>
