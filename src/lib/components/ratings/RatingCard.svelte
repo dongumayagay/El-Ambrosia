@@ -1,6 +1,6 @@
 <article class="card lg:card-side bg-base-100 shadow-xl grid sm:grid-cols-2">
 	<img
-		src="https://via.placeholder.com/400.webp/?text=Rating%20El%20Ambrosia"
+		src="https://scontent.fmnl25-5.fna.fbcdn.net/v/t39.30808-6/264268991_133568989062737_7382297756764015564_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=0debeb&_nc_ohc=yUkZdd7npUYAX-K3ugu&tn=HgE7mpWVjK-Uz88Y&_nc_ht=scontent.fmnl25-5.fna&oh=00_AT_tXmWfnvsPJ9Dmljz7sGzjyg75eIy8j11vETlg-43NzA&oe=6333D83F"
 		alt="about el ambrosia"
 		class="w-full max-h-96 md:h-full object-cover"
 	/>

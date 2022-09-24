@@ -10,8 +10,6 @@
 	const carouselItems: CarouselItemInterface[] = data.products;
 </script>
 
-<svelte:head><title>Home | El Ambrosia</title></svelte:head>
-
 <div id="Products" class="h-[75%]">
 	<Carousel {carouselItems} />
 </div>
