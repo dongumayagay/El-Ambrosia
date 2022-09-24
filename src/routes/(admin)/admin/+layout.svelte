@@ -9,7 +9,7 @@
 
 <div class="drawer h-full">
 	<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
-	<div class="drawer-content flex flex-col ">
+	<div class="drawer-content flex flex-col pt-16">
 		<AdminNavbar />
 		<slot />
 	</div>
