@@ -1,7 +1,7 @@
 <script lang="ts">
-	import AboutSection from '$lib/components/AboutSection.svelte';
 	import Carousel from '$lib/components/carousel/Carousel.svelte';
-	import FooterSection from '$lib/components/FooterSection.svelte';
+	import AboutSection from '$lib/components/home/AboutSection.svelte';
+	import FooterSection from '$lib/components/home/FooterSection.svelte';
 	import RatingsSection from '$lib/components/ratings/RatingsSection.svelte';
 	import type { CarouselItemInterface } from '$lib/types';
 
@@ -30,9 +30,9 @@
 	<Carousel {carouselItems} />
 </div>
 <AboutSection />
-<div class="bg-base-300">
+<div class="bg-base-200">
 	<RatingsSection />
 </div>
-<footer class="bg-base-200">
+<footer class="bg-base-100">
 	<FooterSection />
 </footer>
