@@ -9,7 +9,7 @@
 			<h1 class="font-bold text-xl uppercase">ADMIN</h1>
 		</div>
 		<div class=" tabs-boxed hidden sm:tabs">
-			<a href="/admin" class="tab transition" class:tab-active={pathname === '/admin'}>
+			<a href="/admin" class="tab transition-opacity" class:tab-active={pathname === '/admin'}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -28,7 +28,7 @@
 			</a>
 			<a
 				href="/admin/supply"
-				class="tab transition"
+				class="tab transition-opacity"
 				class:tab-active={pathname === '/admin/supply'}
 			>
 				<svg
@@ -49,7 +49,7 @@
 			</a>
 			<a
 				href="/admin/orders"
-				class="tab transition"
+				class="tab transition-opacity"
 				class:tab-active={pathname === '/admin/orders'}
 			>
 				<svg
@@ -70,7 +70,7 @@
 			</a>
 			<a
 				href="/admin/support"
-				class="tab transition"
+				class="tab transition-opacity"
 				class:tab-active={pathname === '/admin/support'}
 			>
 				<svg
@@ -89,7 +89,11 @@
 				</svg>
 				<span>Support</span>
 			</a>
-			<a href="/admin/users" class="tab transition" class:tab-active={pathname === '/admin/users'}>
+			<a
+				href="/admin/users"
+				class="tab transition-opacity"
+				class:tab-active={pathname === '/admin/users'}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
