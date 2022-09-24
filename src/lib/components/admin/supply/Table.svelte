@@ -3,13 +3,14 @@
 </script>
 
 <main class="overflow-auto">
-	<table class="table table-zebra w-full">
+	<table class="table table-compact table-zebra w-full">
 		<thead class=" sticky top-0 z-20">
 			<tr>
 				<th>Name</th>
 				<!-- <th>Description</th> -->
 				<th>Value</th>
 				<th>Unit</th>
+				<th>Last Updated</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -23,6 +24,7 @@
 					> -->
 					<td>1</td>
 					<td>pc/s</td>
+					<td>1 day ago</td>
 					<td>
 						<!-- <button class="btn btn-primary btn-xs">update</button> -->
 						<UpdateSupply />

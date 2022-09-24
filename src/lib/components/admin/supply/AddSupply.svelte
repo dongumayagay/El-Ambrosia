@@ -5,7 +5,7 @@
 	};
 </script>
 
-<label for="add-supply-modal" class="btn btn-wide modal-button">
+<label for="add-supply-modal" class="btn  modal-button">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		fill="none"
@@ -16,8 +16,8 @@
 	>
 		<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
 	</svg>
-	Add supply</label
->
+	<span class="hidden sm:inline"> Add supply </span>
+</label>
 
 <input type="checkbox" bind:checked id="add-supply-modal" class="modal-toggle" />
 

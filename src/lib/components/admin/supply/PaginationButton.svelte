@@ -1,4 +1,4 @@
-<div class="btn-group grid grid-cols-2 p-4 mt-auto">
-	<button class="btn">Previous page</button>
-	<button class="btn">Next</button>
+<div class="btn-group grid grid-cols-2 p-2 mt-auto">
+	<button class="btn btn-sm">Previous page</button>
+	<button class="btn btn-sm">Next</button>
 </div>
