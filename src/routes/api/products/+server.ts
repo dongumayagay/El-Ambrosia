@@ -1,5 +1,32 @@
-import { supabase } from '$lib/supabase/client';
-import { error } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
+import type { CarouselItemInterface } from '$lib/types';
+
+export const GET: RequestHandler = async () => {
+
+    const carouselItems: CarouselItemInterface[] = [
+        {
+            name: '0',
+            image: 'https://via.placeholder.com/1000.webp/?text=El%20Ambrosia%200',
+            link: '/'
+        },
+        {
+            name: '1',
+            image: 'https://via.placeholder.com/1000.webp/?text=El%20Ambrosia%201',
+            link: '/'
+        },
+        {
+            name: '2',
+            image: 'https://via.placeholder.com/1000.webp/?text=El%20Ambrosia%202',
+            link: '/'
+        }
+    ];
+
+
+    return new Response(JSON.stringify(carouselItems));
+};
+
+// import { supabase } from '$lib/supabase/client';
+// import { error } from '@sveltejs/kit';
 
 // export async function load({}) {
 //     const {data:products,error:err} = await supabase
@@ -16,6 +43,3 @@ import { error } from '@sveltejs/kit';
 //     }
 // }
 
-export function GET() {
-    return new Response('hello world');
-}
