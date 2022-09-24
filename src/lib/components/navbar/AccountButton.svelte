@@ -1,3 +1,7 @@
+<script lang="ts">
+	import { userStore } from '$lib/stores';
+</script>
+
 <div class="dropdown dropdown-end">
 	<button tabindex="0" class="btn btn-ghost btn-circle">
 		<div class="indicator">
@@ -21,14 +25,19 @@
 		tabindex="0"
 		class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
 	>
-		<li>
-			<a href="/" class="justify-between">
-				Profile
-				<!-- <span class="badge">New</span> -->
-			</a>
-		</li>
-		<li><a href="/admin">Admin</a></li>
-		<li><a href="/">Settings</a></li>
-		<li><a href="/">Logout</a></li>
+		{#if $userStore}
+			<li>
+				<a href="/" class="justify-between">
+					Profile
+					<!-- <span class="badge">New</span> -->
+				</a>
+			</li>
+			<li><a href="/">Settings</a></li>
+			<li><a href="/">Logout</a></li>
+		{:else}
+			<li><a href="/">Login</a></li>
+			<li><a href="/">Register</a></li>
+			<li><a href="/admin">Admin</a></li>
+		{/if}
 	</ul>
 </div>
