@@ -23,7 +23,7 @@
 			>
 		</li>
 		<li>
-			<a href="/admin" class="btn">
+			<a href="/admin/supply" class="btn">
 				<svg
 					width="24"
 					height="24"
