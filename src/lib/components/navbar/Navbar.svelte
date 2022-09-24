@@ -5,7 +5,7 @@
 	import NotificationButton from './NotificationButton.svelte';
 </script>
 
-<nav class="fixed z-10 w-full bg-base-100/50 top-0">
+<nav class="fixed z-10 w-full bg-base-100/70 top-0">
 	<div class="navbar mx-auto max-w-7xl ">
 		<HomeLogoButton />
 		<div class="flex-none">

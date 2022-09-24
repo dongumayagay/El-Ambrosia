@@ -10,7 +10,7 @@
 	const carouselItems: CarouselItemInterface[] = data.products;
 </script>
 
-<div id="Products" class="h-[75%]">
+<div id="Products" class=" h-5/6">
 	<Carousel {carouselItems} />
 </div>
 <AboutSection />
