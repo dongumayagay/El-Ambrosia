@@ -5,26 +5,15 @@
 	};
 </script>
 
-<label for="add-supply-modal" class="btn btn-wide modal-button">
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		fill="none"
-		viewBox="0 0 24 24"
-		stroke-width="1.5"
-		stroke="currentColor"
-		class="w-6 h-6"
-	>
-		<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-	</svg>
-	Add supply</label
+<label for="update-supply-modal" class="btn btn-secondary text-primary btn-sm modal-button">
+	UPDATE</label
 >
 
-<input type="checkbox" bind:checked id="add-supply-modal" class="modal-toggle" />
-
-<label for="add-supply-modal" class="modal cursor-pointer">
+<input type="checkbox" bind:checked id="update-supply-modal" class="modal-toggle" />
+<label for="update-supply-modal" class="modal cursor-pointer">
 	<label class="modal-box relative" for="">
 		<label
-			for="add-supply-modal"
+			for="update-supply-modal"
 			class="btn btn-sm btn-error btn-outline btn-circle absolute right-2 top-2">✕</label
 		>
 		<form on:submit|preventDefault={submit}>
@@ -57,19 +46,10 @@
 				/>
 			</div>
 			<div class="modal-action">
-				<button type="submit" for="add-supply-modal" class="btn btn-block">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke-width="1.5"
-						stroke="currentColor"
-						class="w-6 h-6"
-					>
-						<path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m6-6H6" />
-					</svg>Add Supply</button
+				<button type="submit" for="update-supply-modal" class="btn btn-block">
+					Update Supply</button
 				>
 			</div>
 		</form>
-	</label></label
->
+	</label>
+</label>

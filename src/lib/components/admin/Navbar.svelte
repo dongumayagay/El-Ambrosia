@@ -9,7 +9,7 @@
 			<h1 class="font-bold text-xl uppercase">ADMIN</h1>
 		</div>
 		<div class=" tabs-boxed hidden sm:tabs">
-			<a href="/admin" class="tab" class:tab-active={pathname === '/admin'}>
+			<a href="/admin" class="tab transition" class:tab-active={pathname === '/admin'}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -26,7 +26,11 @@
 				</svg>
 				<span>Dashboard</span>
 			</a>
-			<a href="/admin/supply" class="tab" class:tab-active={pathname === '/admin/supply'}>
+			<a
+				href="/admin/supply"
+				class="tab transition"
+				class:tab-active={pathname === '/admin/supply'}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -43,7 +47,11 @@
 				</svg>
 				<span>Supply</span>
 			</a>
-			<a href="/admin/orders" class="tab" class:tab-active={pathname === '/admin/orders'}>
+			<a
+				href="/admin/orders"
+				class="tab transition"
+				class:tab-active={pathname === '/admin/orders'}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -60,7 +68,11 @@
 				</svg>
 				<span>Orders</span>
 			</a>
-			<a href="/admin/support" class="tab" class:tab-active={pathname === '/admin/support'}>
+			<a
+				href="/admin/support"
+				class="tab transition"
+				class:tab-active={pathname === '/admin/support'}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -77,7 +89,7 @@
 				</svg>
 				<span>Support</span>
 			</a>
-			<a href="/admin/users" class="tab" class:tab-active={pathname === '/admin/users'}>
+			<a href="/admin/users" class="tab transition" class:tab-active={pathname === '/admin/users'}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"

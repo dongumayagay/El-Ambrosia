@@ -1,3 +1,7 @@
+<script>
+	import UpdateSupply from './UpdateSupply.svelte';
+</script>
+
 <main class="overflow-auto">
 	<table class="table table-zebra w-full">
 		<thead class=" sticky top-0 z-20">
@@ -20,7 +24,8 @@
 					<td>1</td>
 					<td>pc/s</td>
 					<td>
-						<button class="btn btn-primary btn-xs">update</button>
+						<!-- <button class="btn btn-primary btn-xs">update</button> -->
+						<UpdateSupply />
 					</td>
 				</tr>
 			{/each}
