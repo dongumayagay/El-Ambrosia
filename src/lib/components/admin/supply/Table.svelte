@@ -3,7 +3,7 @@
 		<thead class=" sticky top-0 z-20">
 			<tr>
 				<th>Name</th>
-				<th>Description</th>
+				<!-- <th>Description</th> -->
 				<th>Value</th>
 				<th>Unit</th>
 				<th>Action</th>
@@ -13,10 +13,10 @@
 			{#each { length: 20 } as _, i}
 				<tr>
 					<th>Wrapper</th>
-					<td class="hide-scrollbar max-w-[192px] overflow-x-scroll"
+					<!-- <td class="hide-scrollbar max-w-[192px] overflow-x-scroll"
 						>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maxime cum ipsam
 						incidunt sequi voluptas minus nam distinctio odio a?</td
-					>
+					> -->
 					<td>1</td>
 					<td>pc/s</td>
 					<td>
@@ -28,7 +28,7 @@
 	</table>
 </main>
 
-<style>
+<!-- <style>
 	.hide-scrollbar::-webkit-scrollbar {
 		display: none;
 	}
@@ -38,4 +38,4 @@
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
 	}
-</style>
+</style> -->

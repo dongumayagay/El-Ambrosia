@@ -1,4 +1,4 @@
-<form on:submit|preventDefault class="form-control mx-auto py-4">
+<form on:submit|preventDefault class="form-control">
 	<div class="input-group">
 		<input type="text" placeholder="Search…" class="input input-bordered" />
 		<button class="btn btn-square">
