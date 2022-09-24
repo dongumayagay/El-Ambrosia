@@ -1,7 +1,10 @@
 <nav class="fixed z-10 w-full bg-base-100 top-0">
 	<div class="navbar mx-auto max-w-7xl ">
 		<div class="flex-1">
-			<a href="/" class="btn btn-ghost normal-case text-xl">El Ambrosia</a>
+			<a href="/" class="btn btn-ghost normal-case text-xl flex gap-1">
+				<span> El </span>
+				<span class=" text-primary"> Ambrosia </span>
+			</a>
 		</div>
 		<div class="flex-none">
 			<div class="dropdown dropdown-end">
