@@ -3,5 +3,7 @@
 	import '../app.postcss';
 </script>
 
-<Navbar />
-<slot />
+<main class="h-full min-h-full pt-[50px]">
+	<Navbar />
+	<slot />
+</main>
