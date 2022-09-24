@@ -1,7 +1,6 @@
 <script>
 	import BottomNavigation from '$lib/components/admin/BottomNavigation.svelte';
 	import Navbar from '$lib/components/admin/Navbar.svelte';
-	import SideDrawer from '$lib/components/admin/SideDrawer.svelte';
 </script>
 
 <svelte:head>
