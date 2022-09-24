@@ -1,5 +1,5 @@
 <script>
-	import AdminNavlinks from './AdminNavlinks.svelte';
+	import Links from './Links.svelte';
 </script>
 
 <div class="bg-base-200 z-20 fixed top-0 inset-x-0">
@@ -23,7 +23,7 @@
 		<div class="flex-1 px-2 mx-2 font-bold">ADMIN</div>
 		<div class="flex-none hidden lg:block">
 			<ul class="menu menu-horizontal gap-3 px-2">
-				<AdminNavlinks />
+				<Links />
 			</ul>
 		</div>
 	</nav>

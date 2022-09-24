@@ -1,6 +1,6 @@
 <script>
-	import AdminNavbar from '$lib/components/admin/AdminNavbar.svelte';
-	import AdminSideDrawer from '$lib/components/admin/AdminSideDrawer.svelte';
+	import Navbar from '$lib/components/admin/Navbar.svelte';
+	import SideDrawer from '$lib/components/admin/SideDrawer.svelte';
 </script>
 
 <svelte:head>
@@ -10,8 +10,8 @@
 <div class="drawer h-full">
 	<input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
 	<div class="drawer-content flex flex-col pt-16">
-		<AdminNavbar />
+		<Navbar />
 		<slot />
 	</div>
-	<AdminSideDrawer />
+	<SideDrawer />
 </div>

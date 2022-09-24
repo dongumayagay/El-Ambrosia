@@ -1,10 +1,10 @@
 <script>
-	import AdminNavlinks from './Links.svelte';
+	import Links from './Links.svelte';
 </script>
 
 <div class="drawer-side">
 	<label for="my-drawer-3" class="drawer-overlay" />
 	<ul class="menu p-4 overflow-y-auto w-80 bg-base-100 gap-3">
-		<AdminNavlinks />
+		<Links />
 	</ul>
 </div>
