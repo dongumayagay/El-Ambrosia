@@ -1,5 +1,5 @@
 <li>
-	<a href="/admin" class="link link-hover font-medium">
+	<a href="/admin" class="btn btn-link font-medium">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
@@ -18,7 +18,7 @@
 	>
 </li>
 <li>
-	<a href="/admin/supply" class="link link-hover font-medium">
+	<a href="/admin/supply" class="btn btn-link font-medium">
 		<svg
 			width="24"
 			height="24"
@@ -35,7 +35,7 @@
 	>
 </li>
 <li>
-	<a href="/admin" class="link link-hover font-medium">
+	<a href="/admin" class="btn btn-link font-medium">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
@@ -54,7 +54,7 @@
 	</a>
 </li>
 <li>
-	<a href="/admin" class="link link-hover font-medium">
+	<a href="/admin" class="btn btn-link font-medium">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
@@ -74,7 +74,7 @@
 	</a>
 </li>
 <li>
-	<a href="/admin" class="link link-hover font-medium">
+	<a href="/admin" class="btn btn-link font-medium">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
@@ -93,7 +93,7 @@
 	</a>
 </li>
 <li class="mt-auto">
-	<a href="/" class="link link-hover font-medium gap-2">
+	<a href="/" class="btn btn-link font-medium gap-2">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
 			fill="none"
