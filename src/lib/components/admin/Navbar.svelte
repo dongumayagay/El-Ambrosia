@@ -111,7 +111,7 @@
 				<span>Users</span>
 			</a>
 		</div>
-		<a href="/" class="btn btn-sm btn-error btn-outline">
+		<a href="/" class="btn btn-sm btn-primary btn-outline">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				viewBox="0 0 20 20"

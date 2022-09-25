@@ -13,7 +13,9 @@
 <div id="Products" class=" h-5/6">
 	<Carousel {carouselItems} />
 </div>
-<AboutSection />
+<div id="About" class="bg-base-100 py-12">
+	<AboutSection />
+</div>
 <div class="bg-base-200">
 	<RatingsSection />
 </div>

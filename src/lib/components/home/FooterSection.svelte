@@ -1,6 +1,7 @@
 <main class="footer max-w-7xl mx-auto p-10 text-base-content">
 	<div>
 		<span class="footer-title">Company</span>
+		<a href="#Products" class="link link-hover">Products</a>
 		<a href="#About" class="link link-hover">About us</a>
 		<a href="/" class="link link-hover">Contact</a>
 	</div>
