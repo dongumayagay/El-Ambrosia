@@ -3,14 +3,14 @@
 	import Table from '$lib/components/admin/supply/Table.svelte';
 	import PaginationButton from '$lib/components/admin/supply/PaginationButton.svelte';
 	import AddSupply from '$lib/components/admin/supply/AddSupply.svelte';
-	import SortButton from '$lib/components/admin/supply/SortButton.svelte';
+	import SortBar from '$lib/components/admin/supply/Sortbar.svelte';
 </script>
 
 <div
 	class="flex  w-full max-w-7xl mx-auto justify-center items-center p-2 gap-2 sm:flex-row sm:justify-end "
 >
-	<SortButton />
 	<AddSupply />
+	<SortBar />
 	<SearchBar />
 </div>
 <Table />
