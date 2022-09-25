@@ -1,11 +1,11 @@
 <script lang="ts">
+	export let item: string;
+	const modalId = 'add' + item + 'modal';
 	let checked = false;
-	const submit = () => {
-		checked = false;
-	};
+	const submit = () => (checked = false);
 </script>
 
-<label for="add-supply-modal" class="btn  modal-button btn-square sm:btn-wide">
+<label for={modalId} class="btn  modal-button btn-square sm:btn-wide">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		fill="none"
@@ -19,13 +19,12 @@
 	<span class="hidden sm:inline"> Add supply </span>
 </label>
 
-<input type="checkbox" bind:checked id="add-supply-modal" class="modal-toggle" />
+<input type="checkbox" bind:checked id={modalId} class="modal-toggle" />
 
-<label for="add-supply-modal" class="modal cursor-pointer">
+<label for={modalId} class="modal cursor-pointer">
 	<label class="modal-box relative" for="">
-		<label
-			for="add-supply-modal"
-			class="btn btn-sm btn-error btn-outline btn-circle absolute right-2 top-2">✕</label
+		<label for={modalId} class="btn btn-sm btn-error btn-outline btn-circle absolute right-2 top-2"
+			>✕</label
 		>
 		<form on:submit|preventDefault={submit}>
 			<div class="form-control w-full">
@@ -57,7 +56,7 @@
 				/>
 			</div>
 			<div class="modal-action">
-				<button type="submit" for="add-supply-modal" class="btn btn-block">
+				<button type="submit" for={modalId} class="btn btn-block">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"

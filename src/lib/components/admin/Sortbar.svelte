@@ -1,15 +1,15 @@
+<script lang="ts">
+	export let options: string[];
+</script>
+
 <form class="form-control w-full">
 	<label class="input-group">
 		<select class="select flex-1 sm:max-w-xs rounded-none rounded-l-lg">
-			<!-- <option disabled selected></option> -->
-			<option>Name</option>
-			<option>Email</option>
-			<option>Contact number</option>
-			<option>Address</option>
-			<option>Date registered</option>
+			{#each options as option}
+				<option>{option}</option>
+			{/each}
 		</select>
 		<label class="swap swap-rotate btn btn-square">
-			<!-- this hidden checkbox controls the state -->
 			<input type="checkbox" class="invisible" />
 
 			<svg

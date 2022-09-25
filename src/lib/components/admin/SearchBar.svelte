@@ -1,6 +1,14 @@
+<script lang="ts">
+	export let searchItem: string;
+</script>
+
 <form on:submit|preventDefault class="form-control">
 	<div class="input-group">
-		<input type="text" placeholder="Search user…" class="input input-bordered w-full sm:max-w-xs" />
+		<input
+			type="text"
+			placeholder={`Search ${searchItem}…`}
+			class="input input-bordered w-full sm:max-w-xs"
+		/>
 		<button class="btn btn-square">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"

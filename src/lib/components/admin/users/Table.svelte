@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { relativeTimeFormatter } from '$lib/utils';
-	import Update from './Update.svelte';
 </script>
 
 <main class="overflow-auto">
@@ -28,8 +27,12 @@
 						{relativeTimeFormatter(-1, 'day')}
 					</td>
 					<td>
-						<!-- <button class="btn btn-primary btn-xs">update</button> -->
-						<Update />
+						<button
+							for="update-user-modal"
+							class="btn btn-secondary text-primary btn-sm modal-button"
+						>
+							TO DO</button
+						>
 					</td>
 				</tr>
 			{/each}
