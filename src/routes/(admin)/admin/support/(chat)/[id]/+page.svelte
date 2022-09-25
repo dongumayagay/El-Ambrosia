@@ -21,12 +21,18 @@
 		}
 	];
 
+	let message: string = '';
+	$: disabled = onlySpaces(message);
+
 	const submit = (event: any) => {
 		const form = event.target;
-		const message = new FormData(form).get('message')?.toString() || '';
-		chatList = [{ id: chatList.length, you: true, message: message }, ...chatList];
+		const chatMessage = new FormData(form).get('message')?.toString() || '';
+		chatList = [{ id: chatList.length, you: true, message: chatMessage }, ...chatList];
 		if (form) form.reset();
+		message = '';
 	};
+
+	const onlySpaces = (str: string) => str.trim().length === 0;
 </script>
 
 <main class="h-full">
@@ -43,8 +49,10 @@
 					class="w-10 rounded-full"
 				/>
 
-				<div class="bg-base-100 p-2 rounded-xl max-w-xl">
-					{chat.message}
+				<div class="bg-base-100 py-2 px-3 rounded-2xl max-w-xl">
+					<p class=" min-h-6">
+						{chat.message}
+					</p>
 				</div>
 			</div>
 		{/each}
@@ -57,8 +65,10 @@
 					type="text"
 					placeholder="Message…"
 					class="input input-bordered w-full"
+					bind:value={message}
+					required
 				/>
-				<button type="submit" class="btn btn-square">
+				<button {disabled} type="submit" class="btn btn-square">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
