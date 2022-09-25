@@ -37,7 +37,7 @@
 <main class="h-full">
 	<div class="h-full overflow-y-auto w-full bg-base-300 ">
 		<ul class="w-full flex flex-col gap-4 px-2 pb-4">
-			{#each { length: 2 } as _}
+			{#each { length: 20 } as _}
 				<div class="flex items-start gap-2">
 					<img
 						src="https://avatars.dicebear.com/api/avataaars/Juan.svg"

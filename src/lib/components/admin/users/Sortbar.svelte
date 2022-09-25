@@ -1,6 +1,6 @@
 <form class="form-control w-full">
 	<label class="input-group">
-		<select class="select flex-1 max-w-xs rounded-none rounded-l-lg">
+		<select class="select flex-1 sm:max-w-xs rounded-none rounded-l-lg">
 			<!-- <option disabled selected></option> -->
 			<option>Name</option>
 			<option>Email</option>

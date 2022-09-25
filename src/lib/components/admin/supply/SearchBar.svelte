@@ -1,6 +1,10 @@
 <form on:submit|preventDefault class="form-control">
 	<div class="input-group">
-		<input type="text" placeholder="Search supply…" class="input input-bordered w-full max-w-xs" />
+		<input
+			type="text"
+			placeholder="Search supply…"
+			class="input input-bordered w-full sm:max-w-xs"
+		/>
 		<button class="btn btn-square">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
