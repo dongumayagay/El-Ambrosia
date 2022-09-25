@@ -4,18 +4,8 @@
 	export let item: CarouselItemInterface;
 	export let index: number;
 	export let itemName: string;
-	// export let itemLength: number;
-
-	const id = itemName + index;
-	const src = item.image;
-	// const prev = index !== 0 ? itemName + (index - 1) : id;
-	// const next = index !== itemLength ? itemName + (index + 1) : id;
 </script>
 
-<div {id} class="carousel-item w-full relative">
-	<img {src} alt={item.name} class="w-full object-cover" />
-	<!-- <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-		<a href={`#${prev}`} class="text-3xl">❮</a>
-		<a href={`#${next}`} class="text-3xl">❯</a>
-	</div> -->
+<div id={itemName + index} class="carousel-item w-full relative">
+	<img src={item.image} alt={item.name} class="w-full object-cover" />
 </div>

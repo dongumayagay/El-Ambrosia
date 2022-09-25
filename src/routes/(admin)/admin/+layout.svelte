@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import BottomNavigation from '$lib/components/admin/BottomNavigation.svelte';
 	import Navbar from '$lib/components/admin/Navbar.svelte';
 </script>

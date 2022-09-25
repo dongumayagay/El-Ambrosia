@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+	import { relativeTimeFormatter } from '$lib/utils';
 	import UpdateSupply from './UpdateSupply.svelte';
 </script>
 
@@ -24,7 +25,9 @@
 					> -->
 					<td>1</td>
 					<td>pc/s</td>
-					<td>1 day ago</td>
+					<td>
+						{relativeTimeFormatter(-1, 'day')}
+					</td>
 					<td>
 						<!-- <button class="btn btn-primary btn-xs">update</button> -->
 						<UpdateSupply />

@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
 	import CarouselItem from '$lib/components/carousel/CarouselItem.svelte';
-
 	import type { CarouselItemInterface } from '$lib/types';
 
 	export let carouselItems: CarouselItemInterface[];
@@ -9,14 +8,14 @@
 	const itemLength = carouselItems.length;
 	let currentIndex = 0;
 
-	function prev() {
+	const prev = () => {
 		currentIndex = currentIndex !== 0 ? currentIndex - 1 : currentIndex;
 		goto(`/#${itemName + currentIndex}`);
-	}
-	function next() {
+	};
+	const next = () => {
 		currentIndex = currentIndex !== itemLength - 1 ? currentIndex + 1 : currentIndex;
 		goto(`/#${itemName + currentIndex}`);
-	}
+	};
 </script>
 
 <div class="h-full relative">
