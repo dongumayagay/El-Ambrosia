@@ -5,7 +5,7 @@
 	};
 </script>
 
-<label for="add-supply-modal" class="btn  modal-button">
+<label for="add-supply-modal" class="btn  modal-button btn-square sm:btn-wide">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		fill="none"

@@ -6,11 +6,11 @@
 	import SortBar from '$lib/components/admin/supply/Sortbar.svelte';
 </script>
 
-<div
-	class="flex  w-full max-w-7xl mx-auto justify-center items-center p-2 gap-2 sm:flex-row sm:justify-end "
->
-	<AddSupply />
-	<SortBar />
+<div class="w-full max-w-7xl mx-auto p-2 gap-2 flex flex-col sm:flex-row justify-end">
+	<div class="flex gap-2 sm:flex-row-reverse">
+		<SortBar />
+		<AddSupply />
+	</div>
 	<SearchBar />
 </div>
 <Table />
