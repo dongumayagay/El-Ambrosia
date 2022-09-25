@@ -4,7 +4,7 @@
 	$: adminPage = pathname.split('/').at(-1);
 </script>
 
-<nav class="fixed z-10 w-full bg-base-100/70 top-0">
+<nav class="fixed z-10 w-full bg-base-100 top-0">
 	<div class="navbar mx-auto max-w-7xl ">
 		<div class="flex-1">
 			<h1 class="font-bold text-xl uppercase">{adminPage === 'admin' ? 'Dashboard' : adminPage}</h1>

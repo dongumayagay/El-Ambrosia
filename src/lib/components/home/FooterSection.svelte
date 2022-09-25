@@ -7,6 +7,7 @@
 	</div>
 	<div>
 		<span class="footer-title">Services</span>
+		<a href="/" class="link link-hover">Customer Support</a>
 		<a href="/" class="link link-hover">Branding</a>
 		<a href="/" class="link link-hover">Design</a>
 		<a href="/" class="link link-hover">Marketing</a>

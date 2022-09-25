@@ -12,7 +12,7 @@
 
 <Navbar />
 <!-- {#key pathname} -->
-<div class=" h-full flex flex-col pb-16 sm:pb-0 pt-16 absolute inset-0 ">
+<div class=" h-full  pb-16 sm:pb-0 pt-16 absolute inset-0 ">
 	<slot />
 </div>
 <!-- {/key} -->
