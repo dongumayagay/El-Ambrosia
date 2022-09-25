@@ -17,7 +17,7 @@
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				class="w-6 h-6 swap-on"
+				class="w-6 h-6 swap-off"
 			>
 				<path
 					stroke-linecap="round"
@@ -32,7 +32,7 @@
 				viewBox="0 0 24 24"
 				stroke-width="1.5"
 				stroke="currentColor"
-				class="w-6 h-6 swap-off"
+				class="w-6 h-6 swap-on"
 			>
 				<path
 					stroke-linecap="round"

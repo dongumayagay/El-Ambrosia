@@ -6,12 +6,12 @@
 	import SortBar from '$lib/components/admin/supply/Sortbar.svelte';
 </script>
 
-<div class="w-full max-w-7xl mx-auto p-2 gap-2 flex flex-col sm:flex-row justify-end">
+<div class="w-full max-w-7xl mx-auto p-2 gap-2 flex flex-col sm:flex-row-reverse justify-start">
+	<SearchBar />
 	<div class="flex gap-2 sm:flex-row-reverse">
 		<SortBar />
 		<Add />
 	</div>
-	<SearchBar />
 </div>
 <Table />
 <PaginationButton />

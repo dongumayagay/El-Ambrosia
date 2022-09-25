@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	$: pathname = $page.url.pathname;
+	$: adminPage = pathname.split('/').at(-1);
 </script>
 
 <nav class="fixed z-10 w-full bg-base-100/70 top-0">
 	<div class="navbar mx-auto max-w-7xl ">
 		<div class="flex-1">
-			<h1 class="font-bold text-xl uppercase">ADMIN</h1>
+			<h1 class="font-bold text-xl uppercase">{adminPage === 'admin' ? 'Dashboard' : adminPage}</h1>
 		</div>
 		<div class=" tabs-boxed hidden sm:tabs">
 			<a href="/admin" class="tab transition-opacity" class:tab-active={pathname === '/admin'}>
