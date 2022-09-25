@@ -9,22 +9,23 @@
 			<tr>
 				<th>Name</th>
 				<!-- <th>Description</th> -->
-				<th>Value</th>
-				<th>Unit</th>
-				<th>Last Updated</th>
+				<th>Email</th>
+				<th>Contact number</th>
+				<th>Address</th>
+				<th>Registered</th>
 				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
 			{#each { length: 20 } as _, i}
 				<tr>
-					<th>Wrapper</th>
-					<!-- <td class="hide-scrollbar max-w-[192px] overflow-x-scroll"
-						>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maxime cum ipsam
-						incidunt sequi voluptas minus nam distinctio odio a?</td
-					> -->
-					<td>1</td>
-					<td>pc/s</td>
+					<th>Juan Dela Cruz</th>
+
+					<td>juan@dela.cruz</td>
+					<td>09876543210</td>
+					<td class="hide-scrollbar max-w-[192px] overflow-x-scroll">
+						blk 69 lot 420, kahit san street, bgry nawawala, san pedro , laguna
+					</td>
 					<td>
 						{relativeTimeFormatter(-1, 'day')}
 					</td>
@@ -38,7 +39,7 @@
 	</table>
 </main>
 
-<!-- <style>
+<style>
 	.hide-scrollbar::-webkit-scrollbar {
 		display: none;
 	}
@@ -48,4 +49,4 @@
 		-ms-overflow-style: none; /* IE and Edge */
 		scrollbar-width: none; /* Firefox */
 	}
-</style> -->
+</style>
