@@ -7,7 +7,7 @@
 	/>
 	<article class="flex flex-col gap-2">
 		<h1 class="text-center font-bold text-xl uppercase hidden md:block">About El Ambrosia</h1>
-		<p class="text-center">
+		<p class="text-center text-primary-focus">
 			Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo laborum possimus facere
 			pariatur, explicabo ad blanditiis autem, molestiae velit, nostrum numquam suscipit ab
 			molestias sunt vero ipsum maxime nobis ipsa atque. Harum, nihil distinctio aspernatur rerum

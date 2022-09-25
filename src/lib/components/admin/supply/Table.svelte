@@ -8,28 +8,22 @@
 		<thead class=" sticky top-0 z-20">
 			<tr>
 				<th>Name</th>
-				<!-- <th>Description</th> -->
 				<th>Value</th>
 				<th>Unit</th>
 				<th>Last Updated</th>
 				<th>Action</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="text-primary-focus">
 			{#each { length: 20 } as _, i}
 				<tr>
 					<th>Wrapper</th>
-					<!-- <td class="hide-scrollbar max-w-[192px] overflow-x-scroll"
-						>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maxime cum ipsam
-						incidunt sequi voluptas minus nam distinctio odio a?</td
-					> -->
 					<td>1</td>
 					<td>pc/s</td>
 					<td>
 						{relativeTimeFormatter(-1, 'day')}
 					</td>
 					<td>
-						<!-- <button class="btn btn-primary btn-xs">update</button> -->
 						<Update />
 					</td>
 				</tr>
@@ -37,15 +31,3 @@
 		</tbody>
 	</table>
 </main>
-
-<!-- <style>
-	.hide-scrollbar::-webkit-scrollbar {
-		display: none;
-	}
-
-	/* Hide scrollbar for IE, Edge and Firefox */
-	.hide-scrollbar {
-		-ms-overflow-style: none; /* IE and Edge */
-		scrollbar-width: none; /* Firefox */
-	}
-</style> -->

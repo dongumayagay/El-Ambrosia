@@ -5,10 +5,9 @@
 
 <main class="overflow-auto">
 	<table class="table table-compact table-zebra w-full">
-		<thead class=" sticky top-0 z-20">
+		<thead class="sticky top-0 z-20">
 			<tr>
 				<th>Name</th>
-				<!-- <th>Description</th> -->
 				<th>Email</th>
 				<th>Contact number</th>
 				<th>Address</th>
@@ -16,11 +15,10 @@
 				<th>Action</th>
 			</tr>
 		</thead>
-		<tbody>
+		<tbody class="text-primary-focus">
 			{#each { length: 20 } as _, i}
 				<tr>
 					<th>Juan Dela Cruz</th>
-
 					<td>juan@dela.cruz</td>
 					<td>09876543210</td>
 					<td class="hide-scrollbar max-w-[192px] overflow-x-scroll">
