@@ -1,41 +1,64 @@
 <script lang="ts">
 	import { flip } from 'svelte/animate';
 	import { fade } from 'svelte/transition';
-	let chatList = [...Array(1).keys()];
+
+	interface chatMessage {
+		id: number;
+		you: boolean;
+		message: string;
+	}
+	let chatList: chatMessage[] = [
+		{
+			id: 1,
+			you: true,
+			message: 'pinagsasabi mo?'
+		},
+		{
+			id: 0,
+			you: false,
+			message:
+				'    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur est soluta nemo molestias perspiciatis ipsum. Doloremque, soluta ab dicta tempore atque reprehenderit velit, vel ad consectetur dolorum recusandae, porro modi?'
+		}
+	];
+
+	const submit = (event: any) => {
+		const form = event.target;
+		const message = new FormData(form).get('message')?.toString() || '';
+		chatList = [{ id: chatList.length, you: true, message: message }, ...chatList];
+		if (form) form.reset();
+	};
 </script>
 
 <main class="h-full">
 	<div class="h-full overflow-y-auto w-full bg-base-300 flex flex-col-reverse gap-4 px-2 py-4">
-		{#each chatList as i (i)}
+		{#each chatList as chat (chat.id)}
 			<div
 				animate:flip={{ duration: 200 }}
-				transition:fade={{ delay: 200 }}
-				class="flex items-start gap-2"
+				transition:fade|local={{ delay: 200 }}
+				class={`flex items-start gap-2 ${chat.you ? 'flex-row-reverse' : 'flex-row'}`}
 			>
 				<img
-					src="https://avatars.dicebear.com/api/avataaars/Juan.svg"
+					src={`https://avatars.dicebear.com/api/avataaars/${chat.you ? 'Don' : 'Juan'}.svg`}
 					alt=""
-					class=" w-10 rounded-full"
+					class="w-10 rounded-full"
 				/>
-				<div class="bg-base-100 p-2 rounded-xl">
-					<!-- {chatList.at((i + 1) * -1)} -->
-					{i}
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi corrupti totam aperiam doloribus
-					cumque dolor dignissimos! Nam consectetur mollitia repellendus.
+
+				<div class="bg-base-100 p-2 rounded-xl max-w-xl">
+					{chat.message}
 				</div>
 			</div>
 		{/each}
 	</div>
 	<div class="btm-nav btm-nav-lg p-3 pb-6">
-		<form
-			on:submit|preventDefault={() => {
-				chatList = [chatList.length, ...chatList];
-			}}
-			class="form-control"
-		>
+		<form on:submit|preventDefault={submit} class="form-control" autocomplete="off">
 			<div class="input-group">
-				<input type="text" placeholder="Message…" class="input input-bordered w-full" />
-				<button class="btn btn-square">
+				<input
+					name="message"
+					type="text"
+					placeholder="Message…"
+					class="input input-bordered w-full"
+				/>
+				<button type="submit" class="btn btn-square">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
