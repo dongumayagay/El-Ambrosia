@@ -9,6 +9,12 @@
 	}
 	let chatList: chatMessage[] = [
 		{
+			id: 2,
+			you: true,
+			message:
+				'ChargoggagoggmanchauggagoggchaubunagungamauggChargoggagoggmanchauggagoggchaubunagungamaugg'
+		},
+		{
 			id: 1,
 			you: true,
 			message: 'pinagsasabi mo?'
@@ -17,7 +23,7 @@
 			id: 0,
 			you: false,
 			message:
-				'    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur est soluta nemo molestias perspiciatis ipsum. Doloremque, soluta ab dicta tempore atque reprehenderit velit, vel ad consectetur dolorum recusandae, porro modi?'
+				'ChargoggagoggmanchauggagoggchaubunagungamauggChargoggagoggmanchauggagoggchaubunagungamauggLorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur est soluta nemo molestias perspiciatis ipsum. Doloremque, soluta ab dicta tempore atque reprehenderit velit, vel ad consectetur dolorum recusandae, porro modi?'
 		}
 	];
 
@@ -41,18 +47,17 @@
 			<div
 				animate:flip={{ duration: 200 }}
 				transition:fade|local={{ delay: 200 }}
-				class={`flex items-start gap-2 ${chat.you ? 'flex-row-reverse' : 'flex-row'}`}
+				class={` flex gap-2 ${chat.you ? 'flex-row-reverse' : 'flex-row'}`}
 			>
 				<img
 					src={`https://avatars.dicebear.com/api/avataaars/${chat.you ? 'Don' : 'Juan'}.svg`}
 					alt=""
-					class="w-10 rounded-full"
+					class=" h-8 rounded-full"
 				/>
-
-				<div class="bg-base-100 py-2 px-3 rounded-2xl max-w-xl">
-					<p class=" min-h-6">
+				<div class="flex">
+					<div class="bg-base-100 min-h-8 min-w-fit break-all text-primary-focus p-2 rounded-xl">
 						{chat.message}
-					</p>
+					</div>
 				</div>
 			</div>
 		{/each}
@@ -60,15 +65,23 @@
 	<div class="btm-nav btm-nav-lg p-3 pb-6">
 		<form on:submit|preventDefault={submit} class="form-control" autocomplete="off">
 			<div class="input-group">
-				<input
+				<textarea
 					name="message"
 					type="text"
 					placeholder="Message…"
-					class="input input-bordered w-full"
+					class="input input-bordered w-full text-primary-focus"
 					bind:value={message}
 					required
 				/>
-				<button {disabled} type="submit" class="btn btn-square">
+				<button
+					on:mousedown={(event) => {
+						event.preventDefault();
+						return false;
+					}}
+					{disabled}
+					type="submit"
+					class="btn btn-square h-full"
+				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"
