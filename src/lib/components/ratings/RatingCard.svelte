@@ -1,5 +1,9 @@
 <article class="card lg:card-side bg-base-100 shadow-xl grid sm:grid-cols-2">
-	<img src="/images/review.jpg" class="w-full max-h-96 md:h-full object-cover aspect-square" />
+	<img
+		src="/images/review.jpg"
+		alt="review"
+		class="w-full max-h-96 md:h-full object-cover aspect-square"
+	/>
 	<div class="card-body">
 		<div class="rating gap-2 mx-auto">
 			<input disabled type="radio" name="rating-3" class="mask mask-heart bg-red-400" />
