@@ -27,13 +27,12 @@
 		}
 	];
 
-	const submit = (event: any) => {
-		const form = event.target;
+	const submit = (event: SubmitEvent) => {
+		const form = event.target as HTMLFormElement;
 		const chatMessage = new FormData(form).get('message')?.toString() || '';
 		console.log(chatMessage);
 		chatList = [{ id: chatList.length, you: true, message: chatMessage }, ...chatList];
-		if (form) form.reset();
-		console.log(chatList);
+		form.reset();
 	};
 </script>
 
