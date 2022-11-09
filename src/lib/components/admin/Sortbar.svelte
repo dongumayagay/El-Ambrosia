@@ -2,9 +2,9 @@
 	export let options: string[];
 </script>
 
-<form class="form-control w-full">
+<form class="w-full form-control">
 	<label class="input-group">
-		<select class="select flex-1 sm:max-w-xs rounded-none rounded-l-lg">
+		<select class="flex-1 rounded-none rounded-l-lg select sm:max-w-xs">
 			{#each options as option}
 				<option>{option}</option>
 			{/each}

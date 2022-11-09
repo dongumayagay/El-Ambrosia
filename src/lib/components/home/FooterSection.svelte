@@ -1,4 +1,4 @@
-<main class="footer max-w-7xl mx-auto p-10 text-base-content">
+<main class="p-10 mx-auto footer max-w-7xl text-base-content">
 	<div>
 		<span class="footer-title">Company</span>
 		<a href="#Products" class="link link-hover">Products</a>
@@ -21,11 +21,11 @@
 		<a href="/" class="link link-hover">Cookie policy</a>
 	</div>
 </main>
-<main class="footer max-w-7xl mx-auto px-10 py-4 border-t text-base-content border-base-300">
+<main class="px-10 py-4 mx-auto border-t footer max-w-7xl text-base-content border-base-300">
 	<div class="items-center grid-flow-col">
 		<img src="/favicon.png" alt="shawarma" width="50" />
 		<article class="">
-			<h1 class="font-bold text-xl">El Ambrosia</h1>
+			<h1 class="text-xl font-bold">El Ambrosia</h1>
 			<p>Authentic Shawarma since 2019</p>
 		</article>
 	</div>

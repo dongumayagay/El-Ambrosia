@@ -1,11 +1,11 @@
-<div class=" h-full pb-20 pt-16 absolute inset-0 ">
-	<nav class="fixed z-10 w-full bg-base-100 top-0">
-		<div class="navbar mx-auto max-w-7xl ">
+<div class="absolute inset-0 h-full pt-16 pb-20 ">
+	<nav class="fixed top-0 z-10 w-full bg-base-100">
+		<div class="mx-auto navbar max-w-7xl ">
 			<div class="flex-1">
 				<img
 					src="https://avatars.dicebear.com/api/avataaars/Juan.svg"
 					alt=""
-					class=" w-8 rounded-full"
+					class="w-8 rounded-full "
 				/>
 				<span class="pl-4 font-medium">Juan Dela Cruz</span>
 			</div>

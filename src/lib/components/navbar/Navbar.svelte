@@ -14,7 +14,7 @@
 	} fixed top-0 z-10 w-full transition-colors duration-700 hover:bg-base-100
 	`}
 >
-	<div class="navbar mx-auto max-w-7xl ">
+	<div class="mx-auto navbar max-w-7xl ">
 		<HomeLogoButton />
 		<div class="flex-none">
 			<CartButton />

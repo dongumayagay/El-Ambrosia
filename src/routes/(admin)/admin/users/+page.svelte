@@ -6,8 +6,8 @@
 	const options = ['name', 'email', 'contact number', 'registered	'];
 </script>
 
-<main class="h-full flex flex-col">
-	<div class="w-full max-w-7xl mx-auto p-2 gap-2 flex flex-col sm:flex-row-reverse justify-start">
+<main class="flex flex-col h-full">
+	<div class="flex flex-col justify-start w-full gap-2 p-2 mx-auto max-w-7xl sm:flex-row-reverse">
 		<SearchBar searchItem={'user'} />
 		<div class="flex gap-2 sm:flex-row-reverse">
 			<SortBar {options} />

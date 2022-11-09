@@ -4,13 +4,13 @@
 	$: adminPage = pathname.split('/').at(-1);
 </script>
 
-<nav class="fixed z-10 w-full bg-base-100 top-0">
-	<div class="navbar mx-auto max-w-7xl ">
+<nav class="fixed top-0 z-10 w-full bg-base-100">
+	<div class="mx-auto navbar max-w-7xl ">
 		<div class="flex-1">
-			<h1 class="font-bold text-xl uppercase">{adminPage === 'admin' ? 'Dashboard' : adminPage}</h1>
+			<h1 class="text-xl font-bold uppercase">{adminPage === 'admin' ? 'Dashboard' : adminPage}</h1>
 		</div>
-		<div class=" tabs-boxed hidden sm:tabs">
-			<a href="/admin" class="tab transition-opacity" class:tab-active={pathname === '/admin'}>
+		<div class="hidden  tabs-boxed sm:tabs">
+			<a href="/admin" class="transition-opacity tab" class:tab-active={pathname === '/admin'}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -29,7 +29,7 @@
 			</a>
 			<a
 				href="/admin/supply"
-				class="tab transition-opacity"
+				class="transition-opacity tab"
 				class:tab-active={pathname === '/admin/supply'}
 			>
 				<svg
@@ -50,7 +50,7 @@
 			</a>
 			<a
 				href="/admin/orders"
-				class="tab transition-opacity"
+				class="transition-opacity tab"
 				class:tab-active={pathname === '/admin/orders'}
 			>
 				<svg
@@ -71,7 +71,7 @@
 			</a>
 			<a
 				href="/admin/users"
-				class="tab transition-opacity"
+				class="transition-opacity tab"
 				class:tab-active={pathname === '/admin/users'}
 			>
 				<svg
@@ -92,7 +92,7 @@
 			</a>
 			<a
 				href="/admin/support"
-				class="tab transition-opacity"
+				class="transition-opacity tab"
 				class:tab-active={pathname === '/admin/support'}
 			>
 				<svg

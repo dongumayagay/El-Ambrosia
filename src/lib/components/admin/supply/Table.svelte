@@ -4,8 +4,8 @@
 </script>
 
 <main class="overflow-auto">
-	<table class="table table-compact table-zebra w-full">
-		<thead class=" sticky top-0 z-20">
+	<table class="table w-full table-compact table-zebra">
+		<thead class="sticky top-0 z-20 ">
 			<tr>
 				<th>Name</th>
 				<th>Value</th>

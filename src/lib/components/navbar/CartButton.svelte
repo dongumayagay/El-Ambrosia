@@ -3,7 +3,7 @@
 		<div class="indicator">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
-				class="h-5 w-5"
+				class="w-5 h-5"
 				fill="none"
 				viewBox="0 0 24 24"
 				stroke="currentColor"
@@ -17,9 +17,10 @@
 			<span class="indicator-item badge badge-primary badge-xs">69</span>
 		</div>
 	</button>
-	<div tabindex="0" class="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
+	<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+	<div tabindex="0" class="mt-3 shadow card card-compact dropdown-content w-52 bg-base-100">
 		<div class="card-body">
-			<span class="font-bold text-lg">69 Items</span>
+			<span class="text-lg font-bold">69 Items</span>
 			<span class="text-info">Total: ₱420</span>
 			<div class="card-actions">
 				<button class="btn btn-primary btn-block">View cart</button>

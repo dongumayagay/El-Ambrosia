@@ -12,7 +12,7 @@
 
 <Navbar />
 <!-- {#key pathname} -->
-<div class="absolute inset-0 h-full pt-16 pb-16  sm:pb-0">
+<div class="absolute inset-0 h-full pt-16 pb-16 sm:pb-0">
 	<slot />
 </div>
 <!-- {/key} -->

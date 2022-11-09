@@ -37,7 +37,7 @@
 </script>
 
 <main class="h-full">
-	<div class="h-full overflow-y-auto w-full bg-base-300 flex flex-col-reverse gap-4 px-2 py-8">
+	<div class="flex flex-col-reverse w-full h-full gap-4 px-2 py-8 overflow-y-auto bg-base-300">
 		{#each chatList as chat (chat.id)}
 			<div
 				animate:flip={{ duration: 200 }}
@@ -47,11 +47,11 @@
 				<img
 					src={`https://avatars.dicebear.com/api/avataaars/${chat.you ? 'Don' : 'Juan'}.svg`}
 					alt=""
-					class=" h-8 rounded-full"
+					class="h-8 rounded-full "
 				/>
 				<div class="flex">
 					<div
-						class="bg-base-100 min-h-8 min-w-fit break-all whitespace-pre-wrap text-primary-focus p-2 rounded-xl"
+						class="p-2 break-all whitespace-pre-wrap bg-base-100 min-h-8 min-w-fit text-primary-focus rounded-xl"
 					>
 						{chat.message}
 					</div>
@@ -59,17 +59,17 @@
 			</div>
 		{/each}
 	</div>
-	<div class="btm-nav btm-nav-lg p-3 pb-6 h-auto">
+	<div class="h-auto p-3 pb-6 btm-nav btm-nav-lg">
 		<form on:submit|preventDefault={submit} class="form-control" autocomplete="off">
 			<div class="input-group">
 				<textarea
 					name="message"
 					type="text"
 					placeholder="Message…"
-					class="input input-bordered w-full text-primary-focus whitespace-pre-wrap h-16"
+					class="w-full h-16 whitespace-pre-wrap input input-bordered text-primary-focus"
 					required
 				/>
-				<button type="submit" class="btn btn-square h-full">
+				<button type="submit" class="h-full btn btn-square">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						fill="none"

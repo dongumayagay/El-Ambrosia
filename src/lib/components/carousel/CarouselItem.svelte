@@ -6,6 +6,6 @@
 	export let itemName: string;
 </script>
 
-<div id={itemName + index} class="carousel-item w-full relative">
-	<img src={item.image} alt={item.name} class="w-full object-cover" />
+<div id={itemName + index} class="relative w-full carousel-item">
+	<img src={item.image} alt={item.name} class="object-cover w-full" />
 </div>

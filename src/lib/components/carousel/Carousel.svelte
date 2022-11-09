@@ -18,8 +18,8 @@
 	};
 </script>
 
-<div class="h-full relative">
-	<div class="carousel w-full h-full absolute">
+<div class="relative h-full">
+	<div class="absolute w-full h-full carousel">
 		{#each carouselItems as item, index}
 			<CarouselItem {item} {itemName} {index} />
 		{/each}
@@ -34,7 +34,7 @@
 			<a
 				href={`#${itemName + index}`}
 				on:click={() => (currentIndex = index)}
-				class="hover:text-white text-4xl transition-colors"
+				class="text-4xl transition-colors hover:text-white"
 				class:text-white={currentIndex === index}
 			>
 				●
