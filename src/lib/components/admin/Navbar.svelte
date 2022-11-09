@@ -10,7 +10,11 @@
 			<h1 class="text-xl font-bold uppercase">{adminPage === 'admin' ? 'Dashboard' : adminPage}</h1>
 		</div>
 		<div class="hidden  tabs-boxed sm:tabs">
-			<a href="/admin" class="transition-opacity tab" class:tab-active={pathname === '/admin'}>
+			<a
+				href="/admin"
+				class="transition-opacity tab gap-2"
+				class:tab-active={pathname === '/admin'}
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -29,7 +33,7 @@
 			</a>
 			<a
 				href="/admin/supply"
-				class="transition-opacity tab"
+				class="transition-opacity tab gap-2"
 				class:tab-active={pathname === '/admin/supply'}
 			>
 				<svg
@@ -50,7 +54,7 @@
 			</a>
 			<a
 				href="/admin/orders"
-				class="transition-opacity tab"
+				class="transition-opacity tab gap-2"
 				class:tab-active={pathname === '/admin/orders'}
 			>
 				<svg
@@ -71,7 +75,7 @@
 			</a>
 			<a
 				href="/admin/users"
-				class="transition-opacity tab"
+				class="transition-opacity tab gap-2"
 				class:tab-active={pathname === '/admin/users'}
 			>
 				<svg
@@ -92,7 +96,7 @@
 			</a>
 			<a
 				href="/admin/support"
-				class="transition-opacity tab"
+				class="transition-opacity tab gap-2"
 				class:tab-active={pathname === '/admin/support'}
 			>
 				<svg
