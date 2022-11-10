@@ -12,8 +12,8 @@
 		"format": "prettier --write ."
 	},
 	"devDependencies": {
+		"@firebase/app-types": "^0.8.1",
 		"@sveltejs/adapter-auto": "next",
-		"@sveltejs/adapter-vercel": "next",
 		"@sveltejs/kit": "next",
 		"@tailwindcss/forms": "^0.5.3",
 		"autoprefixer": "^10.4.13",
@@ -31,7 +31,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@firebase/app-types": "^0.8.1",
 		"daisyui": "^2.38.1",
 		"firebase": "^9.13.0",
 		"firebase-admin": "^11.2.0"

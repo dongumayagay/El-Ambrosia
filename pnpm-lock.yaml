@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@firebase/app-types': ^0.8.1
   '@sveltejs/adapter-auto': next
-  '@sveltejs/adapter-vercel': next
   '@sveltejs/kit': next
   '@tailwindcss/forms': ^0.5.3
   autoprefixer: ^10.4.13
@@ -23,14 +22,13 @@ specifiers:
   vite: ^3.2.3
 
 dependencies:
-  '@firebase/app-types': 0.8.1
   daisyui: 2.38.1_lycaqaeny3mp632atgvyvqdgwe
   firebase: 9.13.0
   firebase-admin: 11.2.0_@firebase+app-types@0.8.1
 
 devDependencies:
+  '@firebase/app-types': 0.8.1
   '@sveltejs/adapter-auto': 1.0.0-next.87
-  '@sveltejs/adapter-vercel': 1.0.0-next.81
   '@sveltejs/kit': 1.0.0-next.539_svelte@3.52.0+vite@3.2.3
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.2
   autoprefixer: 10.4.13_postcss@8.4.18
@@ -188,7 +186,6 @@ packages:
 
   /@firebase/app-types/0.8.1:
     resolution: {integrity: sha512-p75Ow3QhB82kpMzmOntv866wH9eZ3b4+QbUY+8/DA5Zzdf1c8Nsk8B7kbFpzJt4wwHMdy5LTF5YUnoTc1JiWkw==}
-    dev: false
 
   /@firebase/app/0.8.3:
     resolution: {integrity: sha512-+YT+DX4m1VAZY6JE5gMt+Xz7O34Y01pqUqoaVO6nbzuohgdcQ57YBL3T26tYqg5JapuwU7CNkFTZOvRc3pYi6g==}
