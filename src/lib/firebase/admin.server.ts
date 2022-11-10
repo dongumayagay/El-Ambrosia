@@ -1,4 +1,5 @@
 import { initializeApp, cert, type ServiceAccount, getApp, getApps } from 'firebase-admin/app';
+import { getAuth } from "firebase-admin/auth"
 import { env } from "$env/dynamic/private"
 
 const serviceAccount: ServiceAccount = {
@@ -12,3 +13,4 @@ function getFirebaseAdmin() {
     return initializeApp({ credential: cert(serviceAccount) }, 'ADMIN');
 }
 export const admin = getFirebaseAdmin()
+export const adminAuth = getAuth(admin)
