@@ -36,8 +36,8 @@
 			<li><a href="/">Settings</a></li>
 			<li><a href="/">Logout</a></li>
 		{:else}
-			<li><a href="/">Login</a></li>
-			<li><a href="/">Register</a></li>
+			<li><a href="/auth/login">Login</a></li>
+			<li><a href="/auth/register">Register</a></li>
 			<li><a href="/admin">Admin</a></li>
 		{/if}
 	</ul>

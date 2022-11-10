@@ -1,5 +1,5 @@
 <main class="min-h-full p-4">
-	<div class="shadow stats stats-vertical lg:stats-horizontal">
+	<div class="shadow stats stats-vertical sm:stats-horizontal">
 		<div class="stat">
 			<div class="stat-figure text-primary">
 				<svg
