@@ -1,38 +1,46 @@
-# create-svelte
+# Local Development
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Prerequisites
 
-## Creating a project
+1. [NodeJS](https://nodejs.org/en/download/)
+1. [Git](https://git-scm.com/downloads)
+1. [VS Code](https://code.visualstudio.com/download)
+1. [Svelte for VS Code](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) VS Code Extenstion
+1. [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) VS Code Extenstion
+1. [pnpm](https://pnpm.io/installation) - NodeJS must be installed first
+1. [Github](https://github.com/) Account
+1. [Google](http://google.com/) Account
 
-If you're seeing this, you've probably already done this step. Congrats!
+## Instructions ( Setup and Running )
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+1. Open terminal to where you want to clone(put) the project folder(which contains project files)
+1. run the following command to your terminal
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+    ```bash
+    git clone https://github.com/dongumayagay/El-Ambrosia
+    ```
 
-## Developing
+1. cd to the cloned project
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+    ```bash
+    cd El-Ambrosia
+    ```
 
-```bash
-npm run dev
+1. Open VS Code to that project
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+    ```bash
+    code .
+    ```
 
-## Building
+1. Open VS Code Integrated Terminal **Ctrl+`**
+1. Install project dependencies run the following in VSCode terminal
 
-To create a production version of your app:
+    ```bash
+    pnpm install
+    ```
 
-```bash
-npm run build
-```
+1. run the local development server
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+    ```bash
+    npm run dev
+    ```
