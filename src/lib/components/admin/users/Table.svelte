@@ -31,8 +31,8 @@
 							for="update-user-modal"
 							class="btn btn-secondary text-primary btn-sm modal-button"
 						>
-							TO DO</button
-						>
+							TO DO
+						</button>
 					</td>
 				</tr>
 			{/each}
