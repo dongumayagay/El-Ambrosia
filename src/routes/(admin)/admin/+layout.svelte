@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Navbar from './Navbar.svelte';
 	import SideNav from './SideNav.svelte';
+
 	let showSideNav: boolean;
-	$: console.log(showSideNav);
 </script>
 
 <svelte:head>
