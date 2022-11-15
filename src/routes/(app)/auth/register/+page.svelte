@@ -31,7 +31,7 @@
 			<h6 class="font-medium text-center text-primary/50">OR</h6>
 			<div class="form-control">
 				<h6 class="label">
-					<span class="label-text">Email Adress</span>
+					<span class="label-text">Email Address</span>
 				</h6>
 				<input type="text" placeholder="Email Address" class=" input input-bordered" />
 			</div>

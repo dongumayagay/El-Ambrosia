@@ -1,19 +1,19 @@
 <script lang="ts">
-	import BottomNavigation from '$lib/components/admin/BottomNavigation.svelte';
-	import Navbar from '$lib/components/admin/Navbar.svelte';
-	// import { page } from '$app/stores';
-	// import { fade } from 'svelte/transition';
-	// $: pathname = $page.url.pathname;
+	import Navbar from './Navbar.svelte';
+	import SideNav from './SideNav.svelte';
+	let showSideNav: boolean;
+	$: console.log(showSideNav);
 </script>
 
 <svelte:head>
 	<title>Admin | El Ambrosia</title>
 </svelte:head>
 
-<Navbar />
-<!-- {#key pathname} -->
-<div class="absolute inset-0 h-full pt-16 pb-16 sm:pb-0">
-	<slot />
+<div class="drawer drawer-mobile">
+	<input id="sidenav" type="checkbox" class="drawer-toggle" bind:checked={showSideNav} />
+	<div class="flex flex-col drawer-content bg-base-300 ">
+		<Navbar />
+		<slot />
+	</div>
+	<SideNav on:click={() => (showSideNav = false)} />
 </div>
-<!-- {/key} -->
-<BottomNavigation />

@@ -11,14 +11,12 @@
 	console.log(data);
 </script>
 
-<main class="flex flex-col h-full">
-	<div class="flex flex-col justify-start w-full gap-2 p-2 mx-auto max-w-7xl sm:flex-row-reverse">
-		<RefreshButton dependency={data.dependency} />
-		<SearchBar searchItem={'user'} />
-		<div class="flex gap-2 sm:flex-row-reverse">
-			<SortBar {options} />
-		</div>
+<div class="flex flex-col justify-start w-full gap-2 p-2 mx-auto max-w-7xl sm:flex-row-reverse">
+	<RefreshButton dependency={data.dependency} />
+	<SearchBar searchItem={'user'} />
+	<div class="flex gap-2 sm:flex-row-reverse">
+		<SortBar {options} />
 	</div>
-	<Table />
-	<PaginationButton />
-</main>
+</div>
+<Table />
+<PaginationButton />
