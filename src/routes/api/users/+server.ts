@@ -6,7 +6,6 @@ export const GET: RequestHandler = async ({ }) => {
     const result = await adminAuth.listUsers()
 
     if (result) {
-        console.log(result)
         const users = result.users.map(user => user.toJSON())
         return json(users)
     }
