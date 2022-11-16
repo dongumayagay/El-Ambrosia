@@ -35,8 +35,8 @@
 	};
 </script>
 
-<main class="h-full">
-	<div class="flex flex-col-reverse w-full h-full gap-4 px-2 py-8 overflow-y-auto bg-base-300">
+<main class="flex flex-col flex-1">
+	<div class="flex flex-col-reverse flex-1 w-full gap-4 px-2 py-8 overflow-y-auto bg-base-300">
 		{#each chatList as chat (chat.id)}
 			<div
 				animate:flip={{ duration: 200 }}
@@ -58,14 +58,14 @@
 			</div>
 		{/each}
 	</div>
-	<div class="h-auto p-3 pb-6 btm-nav btm-nav-lg">
+	<div class="p-4 mt-auto h-fit bg-base-100">
 		<form on:submit|preventDefault={submit} class="form-control" autocomplete="off">
-			<div class="input-group">
+			<div class="flex items-end gap-2">
 				<textarea
 					name="message"
 					type="text"
 					placeholder="Message…"
-					class="w-full h-16 whitespace-pre-wrap input input-bordered text-primary-focus"
+					class="w-full whitespace-pre-wrap h-fit input input-bordered text-primary-focus max-h-96"
 					required
 				/>
 				<button type="submit" class="h-full btn btn-square">
