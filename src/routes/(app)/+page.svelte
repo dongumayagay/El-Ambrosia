@@ -1,8 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import Carousel from '$lib/components/carousel/Carousel.svelte';
-	import AboutSection from '$lib/components/home/AboutSection.svelte';
-	import FooterSection from '$lib/components/home/FooterSection.svelte';
+	import AboutSection from './AboutSection.svelte';
 	import RatingsSection from '$lib/components/ratings/RatingsSection.svelte';
 	import type { CarouselItemInterface } from '$lib/types';
 
@@ -14,8 +13,6 @@
 	<Carousel {carouselItems} />
 </section>
 <section class="">
-	<!--  -->
-
 	<div id="Menu" class="grid gap-6 px-4 py-12 mx-auto max-w-7xl">
 		<h1 class="text-xl text-center uppercase tracking-widest font-anton">Menu</h1>
 		<section class="grid grid-cols-1 lg:grid-cols-3 place-items-center gap-y-6">
@@ -67,12 +64,7 @@
 		</section>
 	</div>
 </section>
-<section id="About" class="py-12 bg-base-100">
-	<AboutSection />
-</section>
+<AboutSection />
 <section class="bg-base-200">
 	<RatingsSection />
 </section>
-<footer class="bg-base-100">
-	<FooterSection />
-</footer>
