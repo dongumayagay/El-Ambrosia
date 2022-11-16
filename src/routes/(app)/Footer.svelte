@@ -5,6 +5,7 @@
 			<a href="#Products" class="link link-hover">Products</a>
 			<a href="#About" class="link link-hover">About us</a>
 			<a href="/" class="link link-hover">Contact</a>
+			<a href="/admin">Administration</a>
 		</div>
 		<div>
 			<span class="footer-title">Services</span>

@@ -1,11 +1,4 @@
-<script lang="ts">
-	import { invalidate } from '$app/navigation';
-
-	export let dependency: string;
-	const refresh = async () => await invalidate(dependency);
-</script>
-
-<button on:click={refresh} class="btn gap-2">
+<button class="gap-2 btn">
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
 		<path
 			fill-rule="evenodd"
