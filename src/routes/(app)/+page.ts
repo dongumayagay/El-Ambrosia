@@ -7,24 +7,24 @@ export const prerender = true;
 export const load: PageLoad = async () => {
 
     try {
-        const products: CarouselItemInterface[] = [
+        const carouselItems: CarouselItemInterface[] = [
             {
                 name: '0',
                 image: '/images/1.jpg',
-                link: '/'
+
             },
             {
                 name: '1',
                 image: '/images/2.jpg',
-                link: '/'
+
             },
             {
                 name: '2',
                 image: '/images/3.jpg',
-                link: '/'
+
             }
         ];
-        return { products };
+        return { carouselItems };
     } catch (err) {
         throw error(404)
     }
