@@ -1,4 +1,4 @@
-<article class="grid shadow-xl card lg:card-side bg-base-100 sm:grid-cols-2">
+<article class="grid shadow-xl card lg:card-side bg-base-100 sm:grid-cols-2 overflow-hidden">
 	<img
 		src="/images/review.jpg"
 		alt="review"
