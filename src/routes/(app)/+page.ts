@@ -1,6 +1,7 @@
 import type { PageLoad } from '../../../.svelte-kit/types/src/routes/(app)/$types';
 import { error } from '@sveltejs/kit';
 import type { CarouselItemInterface } from '$lib/types';
+
 export const prerender = true;
 
 export const load: PageLoad = async () => {
