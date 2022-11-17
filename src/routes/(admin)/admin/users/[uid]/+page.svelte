@@ -22,7 +22,7 @@
 	<h1>LAST SIGNIN: {user.metadata.lastSignInTime}</h1>
 	<img
 		class="w-16 h-16 avatar mask mask-circle"
-		src={user.photoURL ?? 'https://i.pravatar.cc/64'}
+		src={user.photoURL ?? `https://ui-avatars.com/api/?name=${user.displayName}`}
 		alt="Avatar Tailwind CSS Component"
 	/>
 	<h1>{user.customClaims}</h1>
