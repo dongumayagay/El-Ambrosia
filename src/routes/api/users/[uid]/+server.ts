@@ -6,7 +6,6 @@ export const GET: RequestHandler = async ({ params }) => {
     const { uid } = params
 
     try {
-
         const result = await adminAuth.getUser(uid)
         if (!result) throw error(404, 'No user found')
         console.log(result)

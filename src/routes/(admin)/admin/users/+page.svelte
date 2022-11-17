@@ -8,6 +8,9 @@
 	});
 </script>
 
+<header>
+	<a href="/admin/users/create" class="btn btn-secondary">Create User</a>
+</header>
 <div class="w-full overflow-x-auto">
 	<table class="table w-full">
 		<thead>
@@ -19,7 +22,6 @@
 				<th>Action</th>
 			</tr>
 		</thead>
-
 		<tbody>
 			{#each users as user}
 				<tr class="">
