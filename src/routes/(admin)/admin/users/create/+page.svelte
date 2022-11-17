@@ -2,6 +2,7 @@
 	import { goto } from '$app/navigation';
 	import { enhance, applyAction, type SubmitFunction } from '$app/forms';
 	import type { ActionResult } from '@sveltejs/kit';
+	import toast from 'svelte-french-toast';
 
 	let loading = false;
 
@@ -15,7 +16,7 @@
 				return;
 			} else if (result.type === 'error') {
 				console.log(result.error);
-				alert(result.error?.message ?? 'Error');
+				toast.error(result.error?.message ?? 'Error');
 			}
 			loading = false;
 		};

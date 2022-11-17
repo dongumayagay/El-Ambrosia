@@ -15,6 +15,7 @@ specifiers:
   prettier-plugin-svelte: ^2.8.0
   svelte: ^3.53.1
   svelte-check: ^2.9.2
+  svelte-french-toast: ^1.0.3
   svelte-preprocess: ^4.10.7
   tailwindcss: ^3.2.4
   tslib: ^2.4.1
@@ -25,11 +26,12 @@ dependencies:
   daisyui: 2.40.1_2lwn2upnx27dqeg6hqdu7sq75m
   firebase: 9.14.0
   firebase-admin: 11.2.1_@firebase+app-types@0.8.1
+  svelte-french-toast: 1.0.3_svelte@3.53.1
 
 devDependencies:
   '@firebase/app-types': 0.8.1
   '@sveltejs/adapter-auto': 1.0.0-next.88
-  '@sveltejs/kit': 1.0.0-next.548_svelte@3.53.1+vite@3.2.4
+  '@sveltejs/kit': 1.0.0-next.551_svelte@3.53.1+vite@3.2.4
   '@tailwindcss/forms': 0.5.3_tailwindcss@3.2.4
   autoprefixer: 10.4.13_postcss@8.4.19
   postcss: 8.4.19
@@ -756,8 +758,8 @@ packages:
       import-meta-resolve: 2.1.0
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.548_svelte@3.53.1+vite@3.2.4:
-    resolution: {integrity: sha512-MiKZ+7uWiRLm7lcBXa3V1RPDhxUQ03ARCSaujn/ysoh7zbSN4zvcLwwt+lwF5X0FfJnmHj9w3xbpZN6WPKZ0Ww==}
+  /@sveltejs/kit/1.0.0-next.551_svelte@3.53.1+vite@3.2.4:
+    resolution: {integrity: sha512-pZXPoKHFcEXCEN64bw87Xv3cZO7sGztPKYXyLuzceie4qNzAQOMejxewm1xSYcaublleYXLdBWcrWwGlaSWnyw==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -2920,6 +2922,14 @@ packages:
       - sugarss
     dev: true
 
+  /svelte-french-toast/1.0.3_svelte@3.53.1:
+    resolution: {integrity: sha512-HBdutlqUx5FroucvcmMJstmTJDedXayiOSXubBYW6iL5x1PdHp+bOflGx5NxsOa6+EQckJnnVv1vJYgGsg7ngQ==}
+    dependencies:
+      svelte-writable-derived: 2.1.5_svelte@3.53.1
+    transitivePeerDependencies:
+      - svelte
+    dev: false
+
   /svelte-hmr/0.15.1_svelte@3.53.1:
     resolution: {integrity: sha512-BiKB4RZ8YSwRKCNVdNxK/GfY+r4Kjgp9jCLEy0DuqAKfmQtpL38cQK3afdpjw4sqSs4PLi3jIPJIFp259NkZtA==}
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
@@ -2982,10 +2992,17 @@ packages:
       typescript: 4.9.3
     dev: true
 
+  /svelte-writable-derived/2.1.5_svelte@3.53.1:
+    resolution: {integrity: sha512-g26/W1iWj7FlLwaggNwXxHwMSf70/bHAYcpBT/EijijjakCSU9/PXmn31fL/kw2P1SzVEU6ayyCFuNYqTY3RUw==}
+    peerDependencies:
+      svelte: ^3.2.1
+    dependencies:
+      svelte: 3.53.1
+    dev: false
+
   /svelte/3.53.1:
     resolution: {integrity: sha512-Q4/hHkktZogGhN5iqxqSi9sjEVoe/NbIxX4hXEHoasTxj+TxEQVAq66LnDMdAZxjmsodkoI5F3slqsS68U7FNw==}
     engines: {node: '>= 8'}
-    dev: true
 
   /taffydb/2.6.2:
     resolution: {integrity: sha512-y3JaeRSplks6NYQuCOj3ZFMO3j60rTwbuKCvZxsAraGYH2epusatvZ0baZYA01WsGqJBq/Dl6vOrMUJqyMj8kA==}

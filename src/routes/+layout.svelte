@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Toaster } from 'svelte-french-toast';
 	import { app } from '$lib/firebase/client';
 	import { getAnalytics } from 'firebase/analytics';
 	import { onMount } from 'svelte';
@@ -10,3 +11,4 @@
 <svelte:head><title>El Ambrosia</title></svelte:head>
 
 <slot />
+<Toaster />
