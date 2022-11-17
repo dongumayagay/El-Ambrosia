@@ -14,12 +14,9 @@ export const actions: Actions = {
                 email: data.get('email')?.toString() ?? '',
                 password: data.get('password')?.toString() ?? '',
             };
-            console.log(user)
             const userRecord = await adminAuth.createUser(user)
             uid = userRecord.uid
-            console.log(userRecord)
         } catch (err) {
-            console.log(err)
             throw error(404, err as string)
         }
         throw redirect(303, `/admin/users/${uid}`)

@@ -1,17 +1,13 @@
 <script lang="ts">
 	import { goto } from '$app/navigation';
-	import { enhance, applyAction } from '$app/forms';
+	import { enhance, applyAction, type SubmitFunction } from '$app/forms';
+	import type { ActionResult } from '@sveltejs/kit';
 
 	let loading = false;
-</script>
 
-<form
-	class="w-full max-w-xl pt-8 mx-auto form-control"
-	autocomplete="off"
-	method="POST"
-	use:enhance={() => {
+	const submitHandler: SubmitFunction = () => {
 		loading = true;
-		return async ({ result }) => {
+		return async ({ result }: { result: ActionResult }) => {
 			if (result.type === 'redirect') {
 				console.log('redirect');
 				await applyAction(result);
@@ -23,7 +19,14 @@
 			}
 			loading = false;
 		};
-	}}
+	};
+</script>
+
+<form
+	class="w-full max-w-xl pt-8 mx-auto form-control"
+	autocomplete="off"
+	method="POST"
+	use:enhance={submitHandler}
 >
 	<!-- on:submit|preventDefault={submitHandler} -->
 	<h1 class="text-xl font-bold text-center">Create new User</h1>

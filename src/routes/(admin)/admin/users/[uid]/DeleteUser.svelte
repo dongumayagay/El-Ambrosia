@@ -1,24 +1,30 @@
 <script lang="ts">
-	import { goto } from '$app/navigation';
 	import type { UserRecord } from 'firebase-admin/auth';
+	import { goto } from '$app/navigation';
+	import { enhance, applyAction, type SubmitFunction } from '$app/forms';
+	import type { ActionResult } from '@sveltejs/kit';
 
 	export let user: UserRecord;
 	let modal: boolean;
 
-	const deleteUser = async () => {
-		try {
-			const response = await fetch(`/api/users/${user.uid}`, { method: 'DELETE' });
-			console.log(response.status);
-			await goto('/admin/users', { replaceState: true });
-			modal = false;
-		} catch (error) {
-			console.log(error);
-			alert(error);
-		}
+	let loading = false;
+
+	const submitHandler: SubmitFunction = () => {
+		loading = true;
+		return async ({ result }: { result: ActionResult }) => {
+			if (result.type === 'redirect') {
+				await applyAction(result);
+				await goto(result.location, { replaceState: true });
+				return;
+			} else if (result.type === 'error') {
+				console.log(result.error);
+				alert(result.error?.message ?? 'Error');
+			}
+			loading = false;
+		};
 	};
 </script>
 
-<!-- The button to open modal -->
 <label for="delete-user-modal" class="gap-2 btn btn-error"
 	><svg
 		xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +43,6 @@
 	delete user
 </label>
 
-<!-- Put this part before </body> tag -->
 <input type="checkbox" id="delete-user-modal" class="modal-toggle" bind:checked={modal} />
 <div class="fixed z-50 modal modal-bottom sm:modal-middle">
 	<div class="modal-box">
@@ -45,7 +50,34 @@
 		<p class="py-4">Are you sure about this? This user will be permanently deleted?</p>
 		<div class="modal-action">
 			<label for="delete-user-modal" class="btn btn-primary">I change my mind</label>
-			<button on:click={deleteUser} class="btn btn-error">Yes, I'm sure</button>
+			<form action="?/delete" method="post" use:enhance={submitHandler}>
+				<input type="hidden" name="uid" value={user.uid} />
+				<button type="submit" class="btn btn-error" disabled={loading}>
+					{#if loading}
+						<svg
+							class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+						>
+							<circle
+								class="opacity-25"
+								cx="12"
+								cy="12"
+								r="10"
+								stroke="currentColor"
+								stroke-width="4"
+							/>
+							<path
+								class="opacity-75"
+								fill="currentColor"
+								d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+							/>
+						</svg>
+					{/if}
+					Yes, I'm sure</button
+				>
+			</form>
 		</div>
 	</div>
 </div>
