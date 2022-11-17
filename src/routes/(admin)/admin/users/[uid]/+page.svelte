@@ -2,6 +2,7 @@
 	import type { UserRecord } from 'firebase-admin/auth';
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
+	import DeleteUser from './DeleteUser.svelte';
 
 	export let data: PageData;
 
@@ -25,6 +26,7 @@
 		alt="Avatar Tailwind CSS Component"
 	/>
 	<h1>{user.customClaims}</h1>
+	<DeleteUser {user} />
 {:else}
 	loading
 {/if}

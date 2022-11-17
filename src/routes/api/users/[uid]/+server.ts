@@ -3,9 +3,8 @@ import { adminAuth } from "$lib/firebase/admin.server"
 import { error, json } from '@sveltejs/kit';
 
 export const GET: RequestHandler = async ({ params }) => {
-    const { uid } = params
-
     try {
+        const { uid } = params
         const result = await adminAuth.getUser(uid)
         if (!result) throw error(404, 'No user found')
         console.log(result)
@@ -15,3 +14,13 @@ export const GET: RequestHandler = async ({ params }) => {
     }
 
 };
+
+export const DELETE: RequestHandler = async ({ params }) => {
+    try {
+        const { uid } = params
+        await adminAuth.deleteUser(uid)
+        return new Response(`user deleted`)
+    } catch (err) {
+        throw error(404, err as string)
+    }
+}

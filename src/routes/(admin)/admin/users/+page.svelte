@@ -28,7 +28,7 @@
 					<th>
 						<img
 							class="w-16 h-16 avatar mask mask-circle"
-							src={user.photoURL ?? 'https://i.pravatar.cc/64'}
+							src={user.photoURL ?? `https://ui-avatars.com/api/?name=${user.displayName}`}
 							alt="Avatar Tailwind CSS Component"
 						/>
 					</th>
@@ -42,7 +42,7 @@
 						{user.phoneNumber ?? 'N/A'}
 					</td>
 					<th>
-						<a href={`/admin/users/${user.uid}`} class="btn btn-secondary">open</a>
+						<a href={`/admin/users/${user.uid}`} class="btn btn-secondary">VIEW</a>
 					</th>
 				</tr>
 			{/each}
