@@ -2,14 +2,13 @@
 	import { onMount } from 'svelte';
 	import type { UserRecord } from 'firebase-admin/auth';
 	let users: UserRecord[] = [];
-	onMount(async () => {
-		const response = await fetch('/api/users');
-		users = await response.json();
-	});
+	onMount(async () => loadUsers());
+	const loadUsers = async () => (users = await (await fetch('/api/users')).json());
 </script>
 
 <header>
 	<a href="/admin/users/create" class="btn btn-secondary">Create User</a>
+	<button class="btn btn-primary" on:click={loadUsers}>refresh</button>
 </header>
 <div class="w-full overflow-x-auto">
 	<table class="table w-full">
