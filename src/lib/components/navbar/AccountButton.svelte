@@ -1,5 +1,9 @@
 <script lang="ts">
 	import { userStore } from '$lib/stores';
+	import { auth } from '$lib/firebase/client';
+	import { signOut } from 'firebase/auth';
+
+	const logout = async () => signOut(auth);
 </script>
 
 <div class="dropdown dropdown-end">
@@ -33,8 +37,7 @@
 					<!-- <span class="badge">New</span> -->
 				</a>
 			</li>
-			<li><a href="/">Settings</a></li>
-			<li><a href="/">Logout</a></li>
+			<li><button on:click={logout} href="/">Logout</button></li>
 		{:else}
 			<li><a href="/auth/login">Login</a></li>
 			<li><a href="/auth/register">Register</a></li>
