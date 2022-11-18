@@ -10,7 +10,6 @@
 		loading = true;
 		return async ({ result }: { result: ActionResult }) => {
 			if (result.type === 'redirect') {
-				console.log('redirect');
 				await applyAction(result);
 				await goto(result.location, { replaceState: true });
 				return;
