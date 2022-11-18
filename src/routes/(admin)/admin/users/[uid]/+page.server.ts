@@ -33,6 +33,18 @@ export const actions: Actions = {
         } catch (err) {
             throw error(404, err as string)
         }
+    },
+    unmakeAnAdmin: async ({ request }) => {
+        console.log('making an admin')
+        try {
+            const data = await request.formData()
+            const uid = data.get('uid')?.toString()
+            if (!uid) throw `no uid`
+            await adminAuth.setCustomUserClaims(uid, { admin: false })
+            return { success: true }
+        } catch (err) {
+            throw error(404, err as string)
+        }
     }
 
 };

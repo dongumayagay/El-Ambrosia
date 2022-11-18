@@ -4,12 +4,14 @@
 	import type { PageData } from './$types';
 	import DeleteUser from './DeleteUser.svelte';
 	import MakeAnAdmin from './MakeAnAdmin.svelte';
+	import UnmakeAnAdmin from './UnmakeAnAdmin.svelte';
 
 	export let data: PageData;
 
 	let user: UserRecord;
 	onMount(async () => loadUser());
 	const loadUser = async () => (user = await (await fetch(`/api/users/${data.uid}`)).json());
+	$: isAdmin = user?.customClaims?.admin;
 </script>
 
 {#if user}
@@ -25,9 +27,13 @@
 			src={user.photoURL ?? `https://ui-avatars.com/api/?name=${user.displayName}`}
 			alt="Avatar Tailwind CSS Component"
 		/>
-		<h1>{user.customClaims?.admin ? 'admin' : 'not an admin'}</h1>
+		<h1>{isAdmin ? 'admin' : 'not an admin'}</h1>
 		<DeleteUser {user} />
-		<MakeAnAdmin {user} on:refresh={loadUser} />
+		{#if isAdmin}
+			<UnmakeAnAdmin {user} on:refresh={loadUser} />
+		{:else}
+			<MakeAnAdmin {user} on:refresh={loadUser} />
+		{/if}
 	</main>
 {:else}
 	loading
