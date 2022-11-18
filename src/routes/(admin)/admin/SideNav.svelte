@@ -1,3 +1,10 @@
+<script lang="ts">
+	import { auth } from '$lib/firebase/client';
+	import { signOut } from 'firebase/auth';
+
+	const logout = async () => signOut(auth);
+</script>
+
 <div class="drawer-side">
 	<label for="sidenav" class="drawer-overlay" />
 	<div class=" menu w-80 bg-base-100 text-base-content">
@@ -90,7 +97,7 @@
 				</svg>
 				Support
 			</a>
-			<a href="/" class="gap-2 mt-auto btn btn-outline btn-primary"
+			<button on:click={logout} class="gap-2 mt-auto btn btn-outline btn-primary"
 				><svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -106,7 +113,7 @@
 					/>
 				</svg>
 				LOGOUT
-			</a>
+			</button>
 		</nav>
 	</div>
 </div>
