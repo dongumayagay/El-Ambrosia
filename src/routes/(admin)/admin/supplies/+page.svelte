@@ -15,8 +15,7 @@
 				id: doc.id,
 				name: data.name,
 				unit: data.unit,
-				amount: data.amount,
-				updatedAt: data.updatedAt.toDate()
+				amount: data.amount
 			};
 			return supply;
 		});
@@ -33,7 +32,6 @@
 			<tr>
 				<th>Name</th>
 				<th>Value</th>
-				<th>Last updated</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -75,9 +73,7 @@
 							{supply.amount}
 							{supply.unit}
 						</td>
-						<td>
-							{supply.updatedAt}
-						</td>
+
 						<th>
 							<button class="gap-2 btn btn-secondary">
 								<svg

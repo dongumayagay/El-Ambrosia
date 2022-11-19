@@ -20,5 +20,4 @@ export type Supply = {
   name: string;
   unit: string;
   amount: number;
-  updatedAt: Date;
 };

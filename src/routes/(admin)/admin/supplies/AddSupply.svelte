@@ -4,8 +4,8 @@
 	import { addDoc, collection } from 'firebase/firestore';
 	import toast from 'svelte-french-toast';
 
-	const MODAL_ID = 'add-supply';
-	const BUTTON_TEXT = 'Add supply';
+	const BUTTON_TEXT = 'add supply';
+	const MODAL_ID = BUTTON_TEXT + '-modal'.replaceAll(' ', '-');
 	let checked: boolean;
 	let loading = false;
 
@@ -18,23 +18,22 @@
 			const supply: Supply = {
 				name: formData.get('name')?.toString() ?? '',
 				unit: formData.get('unit')?.toString() ?? '',
-				amount: Number(formData.get('amount')?.toString()),
-				updatedAt: new Date()
+				amount: Number(formData.get('amount')?.toString())
 			};
 
-			const suppliesRef = collection(db, 'supplies');
-			const docRef = await addDoc(suppliesRef, supply);
-
+			const colRef = collection(db, 'supplies');
+			await addDoc(colRef, supply);
 			checked = false;
 			loading = false;
-			toast.success('supply added');
+			form.reset();
+			toast.success(supply.name + ' added successfully');
 		} catch (error) {
 			toast.error(error as string);
 		}
 	};
 </script>
 
-<label for={'MODAL_ID'} class="btn btn-info modal-button btn-square sm:btn-wide">
+<label for={MODAL_ID} class="btn btn-info modal-button btn-square sm:btn-wide">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		fill="none"
@@ -48,13 +47,12 @@
 	<span class="hidden sm:inline"> {BUTTON_TEXT} </span>
 </label>
 
-<input type="checkbox" bind:checked id={'MODAL_ID'} class="modal-toggle" />
+<input type="checkbox" bind:checked id={MODAL_ID} class="modal-toggle" />
 
-<label for={'MODAL_ID'} class="cursor-pointer modal">
+<label for={MODAL_ID} class="cursor-pointer modal">
 	<label class="relative modal-box" for="">
-		<label
-			for={'MODAL_ID'}
-			class="absolute btn btn-sm btn-error btn-outline btn-circle right-2 top-2">✕</label
+		<label for={MODAL_ID} class="absolute btn btn-sm btn-error btn-outline btn-circle right-2 top-2"
+			>✕</label
 		>
 		<form on:submit|preventDefault={submit} class="w-full form-control">
 			<h1 class="label">
