@@ -35,14 +35,14 @@
 				<th>Photo</th>
 				<th>Name</th>
 				<th>Email Address</th>
-				<th>Phone Number</th>
+				<!-- <th>Phone Number</th> -->
 				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
 			{#if users === undefined}
-				<tr class="">
-					<td colspan="5">
+				<tr>
+					<td colspan="4">
 						<h1 class="flex items-center justify-center">
 							<svg
 								class="w-5 h-5 mr-3 -ml-1 text-white animate-spin"
@@ -72,7 +72,7 @@
 					<tr class="">
 						<th>
 							<img
-								class="w-16 h-16 avatar mask mask-circle"
+								class="w-16 h-16 avatar mask mask-circle object-cover"
 								src={user.photoURL ?? `https://ui-avatars.com/api/?name=${user.displayName}`}
 								alt="Avatar Tailwind CSS Component"
 							/>
@@ -83,9 +83,9 @@
 						<td>
 							{user.email ?? 'N/A'}
 						</td>
-						<td>
+						<!-- <td>
 							{user.phoneNumber ?? 'N/A'}
-						</td>
+						</td> -->
 						<th>
 							<a href={`/admin/users/${user.uid}`} class="gap-2 btn btn-secondary"
 								><svg

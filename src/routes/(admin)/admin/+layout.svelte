@@ -13,7 +13,6 @@
 	$: browser && checkIfAdmin($userStore);
 	const checkIfAdmin = async (user: User | null | undefined) => {
 		try {
-			console.log(user);
 			if (user === undefined) return;
 			if (user === null) throw 'not logged in';
 			const { claims } = await user.getIdTokenResult();
@@ -37,7 +36,7 @@
 {:else}
 	<div class="drawer drawer-mobile">
 		<input id="sidenav" type="checkbox" class="drawer-toggle" bind:checked={showSideNav} />
-		<div class="flex flex-col drawer-content bg-base-300 ">
+		<div class="flex flex-col drawer-content bg-base-200 ">
 			<Navbar />
 			<slot />
 		</div>
