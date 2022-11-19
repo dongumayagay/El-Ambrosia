@@ -1,13 +1,16 @@
 <script lang="ts">
 	import { auth } from '$lib/firebase/client';
-	import { signInWithEmailAndPassword } from 'firebase/auth';
+	import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 	import toast from 'svelte-french-toast';
 	// import type { PageData } from './$types';
 
 	// export let data: PageData;
 
 	let loading = false;
-
+	const googleSignin = async () => {
+		const provider = new GoogleAuthProvider();
+		await signInWithPopup(auth, provider);
+	};
 	const submitHandler = async (event: SubmitEvent) => {
 		loading = true;
 		try {
@@ -27,7 +30,7 @@
 </script>
 
 <h1 class="text-2xl tracking-widest text-center font-anton">LOGIN</h1>
-<button class="gap-2 btn btn-block btn-primary">
+<button on:click={googleSignin} class="gap-2 btn btn-block btn-primary">
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-6"
 		><path
 			fill="#FFC107"

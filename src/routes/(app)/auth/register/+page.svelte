@@ -1,5 +1,42 @@
-<h1 class="text-2xl tracking-widest text-center font-anton">REGISTER</h1>
-<button class="gap-2 btn btn-block btn-primary">
+<script lang="ts">
+	import { auth } from '$lib/firebase/client';
+	import {
+		createUserWithEmailAndPassword,
+		signInWithPopup,
+		GoogleAuthProvider
+	} from 'firebase/auth';
+	import toast from 'svelte-french-toast';
+	// import type { PageData } from './$types';
+
+	// export let data: PageData;
+
+	let loading = false;
+
+	const googleSignin = async () => {
+		const provider = new GoogleAuthProvider();
+		await signInWithPopup(auth, provider);
+	};
+
+	const submitHandler = async (event: SubmitEvent) => {
+		loading = true;
+		try {
+			const form = event.target as HTMLFormElement;
+			const data = new FormData(form);
+			const email = data.get('email')?.toString();
+			const password = data.get('password')?.toString();
+			if (!email || !password) throw 'invalid email or password';
+			await createUserWithEmailAndPassword(auth, email, password);
+
+			form.reset();
+		} catch (error) {
+			toast.error(error as string);
+		}
+		loading = false;
+	};
+</script>
+
+<h1 class="text-2xl tracking-widest text-center font-anton">Register</h1>
+<button on:click={googleSignin} class="gap-2 btn btn-block btn-primary">
 	<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="w-6"
 		><path
 			fill="#FFC107"
@@ -17,23 +54,52 @@
 	>
 	signup with google
 </button>
-<form class="flex flex-col w-full ">
+<form class="flex flex-col w-full " on:submit|preventDefault={submitHandler}>
 	<div class="divider">OR</div>
 	<div class="form-control">
 		<h6 class="label">
-			<span class="label-text">Email Address</span>
+			<span class="label-text">Email Adress</span>
 		</h6>
-		<input type="text" placeholder="Email Address" class=" input input-bordered" />
+		<input
+			required
+			name="email"
+			type="email"
+			placeholder="Email Address"
+			class=" input input-bordered"
+		/>
 	</div>
 	<div class="form-control">
 		<h6 class="label">
 			<span class="label-text">Password</span>
 		</h6>
-		<input type="text" placeholder="Password" class=" input input-bordered" />
+		<input
+			required
+			name="password"
+			type="password"
+			placeholder="Password"
+			class=" input input-bordered"
+		/>
 	</div>
-	<button class="mt-4 btn">Create Account</button>
+	<button class="mt-4 btn gap-2" disabled={loading}>
+		{#if loading}
+			<svg
+				class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+				xmlns="http://www.w3.org/2000/svg"
+				fill="none"
+				viewBox="0 0 24 24"
+			>
+				<circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+				<path
+					class="opacity-75"
+					fill="currentColor"
+					d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+				/>
+			</svg>
+		{/if}
+		Register</button
+	>
 </form>
 <h6>
-	Already have an Account?
+	Already have an account?
 	<a class="font-bold" href="/auth/login"> Login </a>
 </h6>
