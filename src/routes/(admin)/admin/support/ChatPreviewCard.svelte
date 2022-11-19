@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { relativeTimeFormatter } from '$lib/utils';
+	// import { relativeTimeFormatter } from '$lib/utils';
 </script>
 
 <a
@@ -22,7 +22,8 @@
 		</p>
 	</div>
 	<div>
-		<h1>{relativeTimeFormatter(-2, 'day')}</h1>
+		<h1>3 days ago</h1>
+		<!-- <h1>{relativeTimeFormatter(-2, 'day')}</h1> -->
 		<div />
 	</div>
 </a>
