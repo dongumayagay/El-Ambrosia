@@ -1,7 +1,6 @@
 import type { RequestHandler } from './$types';
 import { adminAuth } from "$lib/firebase/admin.server"
 import { error, json } from '@sveltejs/kit';
-import type { CreateRequest } from 'firebase-admin/auth';
 
 export const GET: RequestHandler = async ({ }) => {
     const result = await adminAuth.listUsers()

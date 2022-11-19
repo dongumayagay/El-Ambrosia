@@ -11,5 +11,4 @@ export const GET: RequestHandler = async ({ params }) => {
     } catch (errorMessage) {
         throw error(500, errorMessage as string)
     }
-
 };
