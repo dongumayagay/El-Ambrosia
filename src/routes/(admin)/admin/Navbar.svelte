@@ -4,7 +4,7 @@
 	$: paths = $page.url.pathname.split('/');
 </script>
 
-<div class="h-auto transition navbar bg-base-100">
+<div class="transition navbar bg-base-100">
 	<div class="navbar-start">
 		<label for="sidenav" class="btn btn-ghost btn-circle drawer-button lg:hidden">
 			<svg
@@ -23,7 +23,7 @@
 		</label>
 	</div>
 	<div class="navbar-center">
-		<!-- <h1 class="text-xl normal-case btn btn-ghost">daisyUI</h1> -->
+		<h1 class="text-xl normal-case ">ADMIN</h1>
 	</div>
 	<div class="navbar-end">
 		<button

@@ -8,8 +8,19 @@
 <div class="drawer-side">
 	<label for="sidenav" class="drawer-overlay" />
 	<div class=" menu w-80 bg-base-100 text-base-content">
-		<header class="flex flex-col justify-center h-16 ">
-			<h1 class="font-medium text-center">ADMIN PANEL</h1>
+		<header class="h-16 p-4 pb-0">
+			<button on:click class=" btn btn-circle btn-sm sm:hidden">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					fill="none"
+					viewBox="0 0 24 24"
+					stroke-width="1.5"
+					stroke="currentColor"
+					class="w-6 h-6"
+				>
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+				</svg>
+			</button>
 		</header>
 		<nav class="flex flex-col flex-1 gap-4 p-4 pt-0">
 			<a on:click class="gap-2 btn" href="/admin/"
