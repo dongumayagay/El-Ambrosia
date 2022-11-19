@@ -51,7 +51,7 @@
 <div class="fixed z-50 modal modal-bottom sm:modal-middle">
 	<div class="modal-box">
 		<h3 class="text-lg font-bold">Unmake {user.displayName} an Admin?</h3>
-		<p class="py-4">Are you really sure about this??</p>
+		<p class="py-4">Are you really sure about this?</p>
 		<div class="modal-action">
 			<label for="unmake-user-admin-modal" class="btn btn-primary">I change my mind</label>
 			<form action="?/unmakeAnAdmin" method="post" use:enhance={submitHandler}>
@@ -59,7 +59,7 @@
 				<button type="submit" class="btn btn-error" disabled={loading}>
 					{#if loading}
 						<svg
-							class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+							class="w-5 h-5 mr-3 -ml-1 text-white animate-spin"
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
 							viewBox="0 0 24 24"

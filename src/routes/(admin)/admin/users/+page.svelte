@@ -72,7 +72,7 @@
 					<tr class="">
 						<th>
 							<img
-								class="w-16 h-16 avatar mask mask-circle object-cover"
+								class="object-cover w-16 h-16 avatar mask mask-circle"
 								src={user.photoURL ?? `https://ui-avatars.com/api/?name=${user.displayName}`}
 								alt="Avatar Tailwind CSS Component"
 							/>
@@ -102,9 +102,8 @@
 										d="M12.75 15l3-3m0 0l-3-3m3 3h-7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
 									/>
 								</svg>
-
-								VIEW</a
-							>
+								<span class="hidden sm:inline-block"> VIEW </span>
+							</a>
 						</th>
 					</tr>
 				{:else}

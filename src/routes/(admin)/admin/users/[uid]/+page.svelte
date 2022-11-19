@@ -38,7 +38,7 @@
 	</main>
 {:else}
 	<main class="grid h-full place-items-center">
-		<h1 class="flex items-center text-lg font-medium">
+		<h1 class="flex items-center p-4 text-lg font-medium">
 			<svg
 				class="w-5 h-5 mr-3 -ml-1 text-white animate-spin"
 				xmlns="http://www.w3.org/2000/svg"

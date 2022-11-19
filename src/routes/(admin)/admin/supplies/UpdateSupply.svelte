@@ -1,13 +1,13 @@
 <script lang="ts">
 	import { db } from '$lib/firebase/client';
 	import type { Supply } from '$lib/types';
-	import { addDoc, collection, doc, updateDoc } from 'firebase/firestore';
+	import { doc, updateDoc } from 'firebase/firestore';
 	import toast from 'svelte-french-toast';
 
 	export let supply: Supply;
 
 	const BUTTON_TEXT = 'update supply';
-	const MODAL_ID = BUTTON_TEXT + '-modal'.replaceAll(' ', '-');
+	const MODAL_ID = `${BUTTON_TEXT}-modal-${supply.id}`.replaceAll(' ', '-');
 	let checked: boolean;
 	let loading = false;
 
@@ -35,7 +35,7 @@
 	};
 </script>
 
-<label for={MODAL_ID} class="gap-2 btn btn-info modal-button btn-square sm:btn-wide">
+<label for={MODAL_ID} class="gap-2 btn btn-info modal-button ">
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		fill="none"
@@ -50,12 +50,12 @@
 			d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
 		/>
 	</svg>
-	<span class="hidden sm:inline"> {BUTTON_TEXT} </span>
+	<span class="hidden sm:inline"> {BUTTON_TEXT}</span>
 </label>
 
 <input type="checkbox" bind:checked id={MODAL_ID} class="modal-toggle" />
 
-<label for={MODAL_ID} class="cursor-pointer modal">
+<label for={MODAL_ID} class="cursor-pointer modal modal-bottom sm:modal-middle">
 	<label class="relative modal-box" for="">
 		<label for={MODAL_ID} class="absolute btn btn-sm btn-error btn-outline btn-circle right-2 top-2"
 			>✕</label

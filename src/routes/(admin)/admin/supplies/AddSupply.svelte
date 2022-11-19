@@ -49,7 +49,7 @@
 
 <input type="checkbox" bind:checked id={MODAL_ID} class="modal-toggle" />
 
-<label for={MODAL_ID} class="cursor-pointer modal">
+<label for={MODAL_ID} class="cursor-pointer modal modal-bottom sm:modal-middle">
 	<label class="relative modal-box" for="">
 		<label for={MODAL_ID} class="absolute btn btn-sm btn-error btn-outline btn-circle right-2 top-2"
 			>✕</label

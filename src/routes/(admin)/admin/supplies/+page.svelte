@@ -4,6 +4,7 @@
 	import { collection, onSnapshot, orderBy, query } from 'firebase/firestore';
 	import { onDestroy } from 'svelte';
 	import AddSupply from './AddSupply.svelte';
+	import DeleteSupply from './DeleteSupply.svelte';
 	import UpdateSupply from './UpdateSupply.svelte';
 
 	let supplies: Supply[];
@@ -75,8 +76,9 @@
 							{supply.unit}
 						</td>
 
-						<th>
+						<th class="flex gap-2">
 							<UpdateSupply {supply} />
+							<DeleteSupply {supply} />
 						</th>
 					</tr>
 				{:else}
