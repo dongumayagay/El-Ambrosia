@@ -28,7 +28,6 @@
 	method="POST"
 	use:enhance={submitHandler}
 >
-	<!-- on:submit|preventDefault={submitHandler} -->
 	<h1 class="text-xl font-bold text-center">Create new User</h1>
 
 	<label class="label" for="displayName">
@@ -54,18 +53,6 @@
 		autocomplete="email"
 		title="enter the email of the user"
 	/>
-	<!-- <label class="label" for="email">
-		<span class="label-text">Enter new user phone number </span>
-	</label>
-	<input
-		class="input"
-		placeholder="Phone"
-		type="text"
-		name="phoneNumber"
-		pattern={String.raw`^(09|\+639)\d{9}$`}
-		title="Enter a valid phone number"
-		autocomplete="tel"
-	/> -->
 	<label class="label" for="password">
 		<span class="label-text">*Enter new user password </span>
 	</label>
@@ -80,10 +67,10 @@
 	<label for="submit" class="label">
 		<span class=" label-text" />
 	</label>
-	<button type="submit" class="btn " disabled={loading}>
+	<button type="submit" class="btn btn-secondary" disabled={loading}>
 		{#if loading}
 			<svg
-				class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+				class="w-5 h-5 mr-3 -ml-1 text-white animate-spin"
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"
 				viewBox="0 0 24 24"
@@ -96,6 +83,6 @@
 				/>
 			</svg>
 		{/if}
-		Create User</button
-	>
+		Create User
+	</button>
 </form>

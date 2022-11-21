@@ -9,7 +9,7 @@
 	<label for="sidenav" class="drawer-overlay" />
 	<div class=" menu w-80 bg-base-100 text-base-content">
 		<header class="h-16 p-4 pb-0">
-			<button on:click class=" btn btn-circle btn-sm sm:hidden">
+			<button on:click class=" btn btn-circle sm:hidden">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"

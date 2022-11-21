@@ -19,7 +19,7 @@
 		{user.email ?? 'N/A'}
 	</td>
 	<th>
-		<a href={`/admin/users/${user.uid}`} class="gap-2 btn btn-secondary"
+		<a href={`/admin/users/${user.uid}`} class="gap-2 btn btn-info"
 			><svg
 				xmlns="http://www.w3.org/2000/svg"
 				fill="none"

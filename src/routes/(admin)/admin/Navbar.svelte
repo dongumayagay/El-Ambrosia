@@ -23,7 +23,7 @@
 		</label>
 	</div>
 	<div class="navbar-center">
-		<h1 class="text-xl normal-case ">ADMIN</h1>
+		<h1 class="text-xl font-medium normal-case">ADMIN</h1>
 	</div>
 	<div class="navbar-end">
 		<button
