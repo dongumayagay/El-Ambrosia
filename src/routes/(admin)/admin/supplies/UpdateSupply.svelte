@@ -25,10 +25,10 @@
 			const docRef = doc(db, 'supplies', supply.id ?? '');
 			await updateDoc(docRef, updatedSupply);
 
-			checked = false;
 			loading = false;
-			form.reset();
+			checked = false;
 			toast.success(supply.name + ' updated successfully');
+			form.reset();
 		} catch (error) {
 			toast.error(error as string);
 		}

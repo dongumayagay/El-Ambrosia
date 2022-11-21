@@ -23,10 +23,10 @@
 
 			const colRef = collection(db, 'supplies');
 			await addDoc(colRef, supply);
-			checked = false;
 			loading = false;
-			form.reset();
+			checked = false;
 			toast.success(supply.name + ' added successfully');
+			form.reset();
 		} catch (error) {
 			toast.error(error as string);
 		}
