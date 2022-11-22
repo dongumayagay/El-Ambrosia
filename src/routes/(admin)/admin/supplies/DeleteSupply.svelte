@@ -13,8 +13,8 @@
 	const submit = async (event: SubmitEvent) => {
 		try {
 			loading = true;
-			const form = event.target as HTMLFormElement;
-			const formData = new FormData(form);
+			// const form = event.target as HTMLFormElement;
+			// const formData = new FormData(form);
 
 			const docRef = doc(db, 'supplies', supply.id ?? '');
 			await deleteDoc(docRef);
@@ -22,7 +22,7 @@
 			loading = false;
 			checked = false;
 			toast.success(supply.name + ' updated successfully');
-			form.reset();
+			// form.reset();
 		} catch (error) {
 			toast.error(error as string);
 		}

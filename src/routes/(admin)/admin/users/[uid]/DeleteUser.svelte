@@ -15,6 +15,7 @@
 			if (result.type === 'redirect') {
 				await applyAction(result);
 				await goto(result.location, { replaceState: true });
+				toast.success('user deleted successfully');
 				return;
 			} else if (result.type === 'error') {
 				console.log(result.error);
