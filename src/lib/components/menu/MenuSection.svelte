@@ -17,7 +17,7 @@
 							{item.description}
 						</p>
 						<div class="justify-end card-actions">
-							<button class="btn btn-secondary">Buy now</button>
+							<a href={`/products/${item.name}`} class="btn btn-secondary">Select</a>
 						</div>
 					</div>
 				</div>
