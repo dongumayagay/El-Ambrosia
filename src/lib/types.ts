@@ -21,3 +21,14 @@ export type Supply = {
   unit: string;
   amount: number;
 };
+
+export type Variant = {
+  name: string,
+  price: number
+}
+export type Product = {
+  name: string,
+  description: string,
+  image: string,
+  variants: Variant[]
+}
