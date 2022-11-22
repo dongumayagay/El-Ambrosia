@@ -3,21 +3,19 @@
 	import { goto } from '$app/navigation';
 	import Splash from '$lib/components/Splash.svelte';
 	import { userStore } from '$lib/stores';
+	import { isAdmin } from '$lib/utils';
 	import type { User } from 'firebase/auth';
 	import toast from 'svelte-french-toast';
-	import Navbar from './Navbar.svelte';
-	import SideNav from './SideNav.svelte';
+	import Navbar from './admin/Navbar.svelte';
+	import SideNav from './admin/SideNav.svelte';
 
 	let loading = true;
 
 	$: browser && checkIfAdmin($userStore);
 	const checkIfAdmin = async (user: User | null | undefined) => {
 		try {
-			if (user === undefined) return;
-			if (user === null) throw 'not logged in';
-			const { claims } = await user.getIdTokenResult();
-			if (!claims.admin) throw 'not allowed';
-			if (claims.admin) loading = false;
+			if (!isAdmin(user)) throw 'not allowed';
+			loading = false;
 		} catch (error) {
 			await goto('/');
 			toast.error(error as string);

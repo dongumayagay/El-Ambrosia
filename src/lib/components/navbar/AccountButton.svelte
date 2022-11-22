@@ -2,7 +2,7 @@
 	import { userStore } from '$lib/stores';
 	import { auth } from '$lib/firebase/client';
 	import { signOut } from 'firebase/auth';
-
+	import { isAdmin } from '$lib/utils';
 	const logout = async () => signOut(auth);
 </script>
 
@@ -32,11 +32,11 @@
 	>
 		{#if $userStore}
 			<li>
-				<a href="/" class="justify-between">
-					Profile
-					<!-- <span class="badge">New</span> -->
-				</a>
+				<a href="/" class="justify-between"> Profile </a>
 			</li>
+			{#if isAdmin($userStore)}
+				<li><a href="/admin">Admin</a></li>
+			{/if}
 			<li><button on:click={logout} href="/">Logout</button></li>
 		{:else}
 			<li><a href="/auth/login">Login</a></li>
