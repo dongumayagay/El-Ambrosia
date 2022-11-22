@@ -8,7 +8,7 @@
 		<section class="grid grid-cols-1 lg:grid-cols-3 place-items-center gap-y-6">
 			{#each SHAWARMAS as item}
 				<div class="max-w-sm shadow-xl card bg-base-200">
-					<figure class="bg-pink-500 aspect-square">
+					<figure class=" bg-base-content aspect-square">
 						<img class="object-cover w-full h-full " src={item.image} alt={item.name} />
 					</figure>
 					<div class="card-body">

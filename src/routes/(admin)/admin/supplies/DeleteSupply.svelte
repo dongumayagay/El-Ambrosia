@@ -10,7 +10,6 @@
 	const MODAL_ID = `${BUTTON_TEXT}-modal-${supply.id}`.replaceAll(' ', '-');
 	let checked: boolean;
 	let loading = false;
-	$: console.log(supply);
 	const submit = async (event: SubmitEvent) => {
 		try {
 			loading = true;

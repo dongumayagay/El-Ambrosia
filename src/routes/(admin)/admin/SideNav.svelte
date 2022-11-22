@@ -108,7 +108,7 @@
 				</svg>
 				Support
 			</a>
-			<a href="/" class="gap-2 mt-auto btn btn-outline btn-info">
+			<a href="/" class="gap-2 mt-auto btn btn-outline btn-primary">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
