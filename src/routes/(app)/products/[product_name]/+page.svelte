@@ -48,7 +48,7 @@
 </script>
 
 <div>
-	<main class="flex flex-col w-full max-w-6xl gap-4 pt-20 mx-auto sm:px-4 ">
+	<main class="flex flex-col w-full max-w-6xl gap-4 py-8 mx-auto sm:px-4 ">
 		<h1 class="text-5xl tracking-widest text-center uppercase sm:text-6xl font-anton sm:text-left">
 			{product?.name}
 		</h1>
@@ -67,7 +67,7 @@
 				<InputGarlicSauce bind:extra_garlic_sauce />
 				<InputFries bind:fries />
 
-				<h1 class="font-medium">Subtotal: ₱ {subtotal}</h1>
+				<h1 class="text-xl font-bold">Subtotal: ₱ {subtotal}</h1>
 				<button type="submit" class=" btn btn-secondary gap-2">Add to Cart</button>
 			</form>
 		</section>
