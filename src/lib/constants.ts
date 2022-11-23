@@ -1,4 +1,4 @@
-import type { Product, Variant } from "$lib/types"
+import type { KeyStringValNum, Product, Variant } from "$lib/types"
 
 export const SHAWARMAS: Product[] = [
     {
@@ -29,10 +29,19 @@ export const SHAWARMAS: Product[] = [
         ]
     },
 ]
-export let EXTRAS: Variant[] = [
-    { name: 'chicken', price: 25 },
-    { name: 'steak', price: 35 },
-    { name: 'classic fries medium', price: 29 },
-    { name: 'classic fries xtra large', price: 55 },
-    { name: 'garclic sauce', price: 20 }
+
+
+export const EXTRA_MEAT: KeyStringValNum = {
+    "chicken": 25,
+    'steak': 35
+}
+
+export const EXTRAS: KeyStringValNum = {
+    'garlic sauce': 20
+}
+
+export const FRIES: Variant[] = [
+    { name: 'medium', price: 29 },
+    { name: 'xtra large', price: 55 }
+
 ]

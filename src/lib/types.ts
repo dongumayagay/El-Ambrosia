@@ -32,3 +32,4 @@ export type Product = {
   image: string,
   variants: Variant[]
 }
+export type KeyStringValNum = { [key: string]: number }
