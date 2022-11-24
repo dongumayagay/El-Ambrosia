@@ -1,4 +1,5 @@
 <script>
+	import AccountButton from '$lib/components/navbar/AccountButton.svelte';
 	import SideCartToggle from './SideCartToggle.svelte';
 </script>
 
@@ -15,5 +16,6 @@
 	<div class="navbar-end">
 		<!--  -->
 		<SideCartToggle />
+		<AccountButton />
 	</div>
 </div>

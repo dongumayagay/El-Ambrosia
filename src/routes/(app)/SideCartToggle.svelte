@@ -1,13 +1,12 @@
 <script lang="ts">
-	import { showSideCart } from '$lib/stores';
-
-	$showSideCart;
+	import { cartStore } from '$lib/stores';
+	const { isSideCartOpen } = cartStore;
 </script>
 
 <label
 	for="sideDrawerCart"
 	class="drawer-button swap btn btn-ghost btn-circle"
-	class:swap-active={$showSideCart}
+	class:swap-active={$isSideCartOpen}
 >
 	<svg
 		xmlns="http://www.w3.org/2000/svg"

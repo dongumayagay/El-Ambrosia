@@ -20,11 +20,18 @@
 		try {
 			if (!meat) throw 'Please select meat option';
 			console.log({
+				product,
 				meat,
 				extra_meat,
 				extra_garlic_sauce,
 				fries
 			});
+
+			// cartItems.addCartItem({
+			// 	name: product?.name + ' - ' + meat.name,
+			// 	price: meat.price,
+			// 	quantity: 1
+			// });
 		} catch (error) {
 			toast.error(error as string);
 		}
