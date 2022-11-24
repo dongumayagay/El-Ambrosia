@@ -48,31 +48,29 @@
 	>
 	signin with google
 </button>
-<form class="flex flex-col w-full " on:submit|preventDefault={submitHandler}>
+<form class="flex flex-col w-full" on:submit|preventDefault={submitHandler}>
 	<div class="divider">OR</div>
 	<div class="form-control">
 		<h6 class="label">
 			<span class="label-text">Email Adress</span>
 		</h6>
-		<input
-			required
-			name="email"
-			type="email"
-			placeholder="Email Address"
-			class=" input input-bordered"
-		/>
+		<input type="email" name="email" class="peer input input-bordered" />
+		<p class="hidden requied peer-invalid:block text-error">
+			Please provide a valid email address.
+		</p>
 	</div>
 	<div class="form-control">
 		<h6 class="label">
 			<span class="label-text">Password</span>
 		</h6>
 		<input
-			required
 			name="password"
 			type="password"
 			placeholder="Password"
-			class=" input input-bordered"
+			class="peer input input-bordered"
+			minlength="8"
 		/>
+		<p class="hidden peer-invalid:block text-error">Please use strong password.</p>
 	</div>
 	<button class="mt-4 btn gap-2" disabled={loading}>
 		{#if loading}

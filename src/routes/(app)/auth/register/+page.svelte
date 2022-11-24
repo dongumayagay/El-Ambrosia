@@ -65,8 +65,11 @@
 			name="email"
 			type="email"
 			placeholder="Email Address"
-			class=" input input-bordered"
+			class="peer input input-bordered"
 		/>
+		<p class="hidden requied peer-invalid:block text-error">
+			Please provide a valid email address.
+		</p>
 	</div>
 	<div class="form-control">
 		<h6 class="label">
@@ -77,8 +80,10 @@
 			name="password"
 			type="password"
 			placeholder="Password"
-			class=" input input-bordered"
+			class="peer input input-bordered"
+			minlength="8"
 		/>
+		<p class="hidden peer-invalid:block text-error">Please use strong password.</p>
 	</div>
 	<button class="mt-4 btn gap-2" disabled={loading}>
 		{#if loading}

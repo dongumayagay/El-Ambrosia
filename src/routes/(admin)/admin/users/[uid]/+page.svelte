@@ -35,6 +35,7 @@
 		{:else}
 			<MakeAnAdmin {user} on:refresh={loadUser} />
 		{/if}
+		<!-- <button>View {user.displayName}' Order history</button> -->
 	</main>
 {:else}
 	<main class="grid h-full place-items-center">
