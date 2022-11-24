@@ -33,3 +33,10 @@ export type Product = {
   variants: Variant[]
 }
 export type KeyStringValNum = { [key: string]: number }
+
+export type CartItem = {
+  name: string
+  quantity: number
+  price: number
+  variant?: string
+}
