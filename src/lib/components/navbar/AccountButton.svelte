@@ -3,7 +3,11 @@
 	import { auth } from '$lib/firebase/client';
 	import { signOut } from 'firebase/auth';
 	import { isAdmin } from '$lib/utils';
-	const logout = async () => signOut(auth);
+	import toast from 'svelte-french-toast';
+	const logout = async () => {
+		signOut(auth);
+		toast.success('logout successfully');
+	};
 </script>
 
 <div class="dropdown dropdown-end">
