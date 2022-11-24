@@ -6,14 +6,16 @@
 	import { isAdmin } from '$lib/utils';
 	import type { User } from 'firebase/auth';
 	import toast from 'svelte-french-toast';
-	import Navbar from './admin/Navbar.svelte';
-	import SideNav from './admin/SideNav.svelte';
+	import Navbar from './Navbar.svelte';
+	import SideNav from './SideNav.svelte';
 
 	let loading = true;
 
 	$: browser && checkIfAdmin($userStore);
 	const checkIfAdmin = async (user: User | null | undefined) => {
 		try {
+			if (user === undefined) return;
+			if (user === null) throw 'not logged in';
 			if (!isAdmin(user)) throw 'not allowed';
 			loading = false;
 		} catch (error) {
@@ -33,7 +35,7 @@
 	<Splash />
 {:else}
 	<div class="drawer drawer-mobile">
-		<input id="sidenav" type="checkbox" class="drawer-toggle" bind:checked={showSideNav} />
+		<input id="adminsidenav" type="checkbox" class="drawer-toggle" bind:checked={showSideNav} />
 		<div class="flex flex-col drawer-content bg-base-200 ">
 			<Navbar />
 			<slot />

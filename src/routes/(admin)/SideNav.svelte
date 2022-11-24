@@ -6,7 +6,7 @@
 </script>
 
 <div class="drawer-side">
-	<label for="sidenav" class="drawer-overlay" />
+	<label for="adminsidenav" class="drawer-overlay" />
 	<div class=" menu w-80 bg-base-100 text-base-content">
 		<header class="h-16 p-4 pb-0">
 			<button on:click class=" btn btn-circle sm:hidden">

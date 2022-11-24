@@ -3,7 +3,11 @@
 	import { auth } from '$lib/firebase/client';
 	import { signOut } from 'firebase/auth';
 	import { isAdmin } from '$lib/utils';
-	const logout = async () => signOut(auth);
+	import toast from 'svelte-french-toast';
+	const logout = async () => {
+		signOut(auth);
+		toast.success('logout successfully');
+	};
 </script>
 
 <div class="dropdown dropdown-end">
@@ -28,7 +32,7 @@
 	<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 	<ul
 		tabindex="0"
-		class="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+		class="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-200 rounded-box w-52"
 	>
 		{#if $userStore}
 			<li>

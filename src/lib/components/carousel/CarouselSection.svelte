@@ -18,6 +18,6 @@
 	];
 </script>
 
-<section id="Products" class=" h-5/6">
+<section id="Products" class=" h-[80vh]">
 	<Carousel {carouselItems} />
 </section>

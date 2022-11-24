@@ -6,7 +6,7 @@
 
 <div class="transition navbar bg-base-100">
 	<div class="navbar-start">
-		<label for="sidenav" class="btn btn-ghost btn-circle drawer-button lg:hidden">
+		<label for="adminsidenav" class="btn btn-ghost btn-circle drawer-button lg:hidden">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="w-5 h-5"
