@@ -1,7 +1,12 @@
 <script lang="ts">
+	import { cartStore } from '$lib/stores';
 	import type { CartItem } from '$lib/types';
 
 	export let cartItem: CartItem;
+
+	const checkQty = () => {
+		if (cartItem.quantity < 1) cartItem.quantity = 1;
+	};
 </script>
 
 <div class="flex gap-2 flex-row">
@@ -22,12 +27,17 @@
 				<span>Qty</span>
 				<input
 					type="number"
-					value={cartItem.quantity}
+					bind:value={cartItem.quantity}
 					min="1"
 					class=" input input-bordered w-full max-w-fit text-center invalid:border-red-500 invalid:text-red-500"
+					on:blur={checkQty}
 				/>
 			</label>
-			<button type="button" class="btn text-error hover:bg-error/30 btn-circle btn-ghost">
+			<button
+				on:click={() => cartStore.removeCartItem(cartItem)}
+				type="button"
+				class="btn btn-error btn-square btn-outline"
+			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
