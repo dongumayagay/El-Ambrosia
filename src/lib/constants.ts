@@ -31,10 +31,19 @@ export const SHAWARMAS: Product[] = [
 ]
 
 
-export const EXTRA_MEAT: KeyStringValNum = {
-    "chicken": 25,
-    'steak': 35
-}
+export const EXTRA_MEAT: Variant[] =
+    [
+        {
+
+            name: "chicken",
+            price: 25,
+        },
+        {
+            name: 'steak',
+            price: 35
+        }
+    ]
+
 
 export const EXTRAS: KeyStringValNum = {
     'garlic sauce': 20

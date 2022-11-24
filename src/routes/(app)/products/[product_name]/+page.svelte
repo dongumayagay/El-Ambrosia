@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { EXTRAS, EXTRA_MEAT } from '$lib/constants';
+	import { cartStore } from '$lib/stores';
 	import type { Variant } from '$lib/types';
 	import toast from 'svelte-french-toast';
 	import type { PageData } from './$types';
@@ -12,26 +13,28 @@
 	const { product } = data;
 
 	let meat: Variant;
-	let extra_meat: boolean;
-	let extra_garlic_sauce: boolean;
+	let add_extra_meat: boolean;
+	let add_extra_garlic_sauce: boolean;
 	let fries: Variant | undefined;
-
+	$: extra_meat = meat && EXTRA_MEAT.find((MEATS: Variant) => MEATS.name === meat.name);
 	const submitHandler = () => {
 		try {
 			if (!meat) throw 'Please select meat option';
-			console.log({
-				product,
-				meat,
-				extra_meat,
-				extra_garlic_sauce,
-				fries
-			});
-
-			// cartItems.addCartItem({
-			// 	name: product?.name + ' - ' + meat.name,
-			// 	price: meat.price,
-			// 	quantity: 1
+			// console.log({
+			// 	product,
+			// 	meat,
+			// 	extra_meat,
+			// 	extra_garlic_sauce,
+			// 	fries
 			// });
+
+			cartStore.addCartItem({
+				name: product?.name + ' - ' + meat.name,
+				price: meat.price,
+				quantity: 1,
+				// variant: EXTRA_MEAT[meat.name],
+				image: product?.image ?? ''
+			});
 		} catch (error) {
 			toast.error(error as string);
 		}
@@ -39,19 +42,20 @@
 
 	const calculate_subtotal = (
 		meat: Variant,
-		extra_meat: boolean,
+		add_extra_meat: boolean,
+		extra_meat: Variant | undefined,
 		extra_garlic_sauce: boolean,
 		fries: Variant | undefined
 	) => {
 		let temp_total = 0;
 		if (meat) temp_total += meat.price;
-		if (meat && extra_meat) temp_total += EXTRA_MEAT[meat.name];
+		if (add_extra_meat && extra_meat) temp_total += extra_meat.price;
 		if (extra_garlic_sauce) temp_total += EXTRAS['garlic sauce'];
 		if (fries) temp_total += fries.price;
 		return temp_total;
 	};
 
-	$: subtotal = calculate_subtotal(meat, extra_meat, extra_garlic_sauce, fries);
+	$: subtotal = calculate_subtotal(meat, add_extra_meat, extra_meat, add_extra_garlic_sauce, fries);
 </script>
 
 <div>
@@ -70,8 +74,8 @@
 				class="flex flex-col flex-1 gap-4 px-4 sm:px-0"
 			>
 				<InputMeat {product} bind:meat />
-				<InputExtraMeat {meat} bind:extra_meat />
-				<InputGarlicSauce bind:extra_garlic_sauce />
+				<InputExtraMeat {extra_meat} bind:add_extra_meat />
+				<InputGarlicSauce bind:add_extra_garlic_sauce />
 				<InputFries bind:fries />
 
 				<h1 class="text-xl font-bold">Subtotal: ₱ {subtotal}</h1>
