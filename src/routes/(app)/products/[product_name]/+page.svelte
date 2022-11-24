@@ -26,7 +26,7 @@
 				name: product?.name + ' - ' + meat.name,
 				price: meat.price,
 				quantity: 1,
-				variant: extra_meat,
+				variant: add_extra_meat ? extra_meat : undefined,
 				image: product?.image ?? ''
 			});
 			cartStore.toggleShowSideCart();

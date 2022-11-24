@@ -32,7 +32,7 @@
 	<!-- svelte-ignore a11y-no-noninteractive-tabindex -->
 	<ul
 		tabindex="0"
-		class="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+		class="p-2 mt-3 shadow menu menu-compact dropdown-content bg-base-200 rounded-box w-52"
 	>
 		{#if $userStore}
 			<li>
