@@ -17,24 +17,19 @@
 	let add_extra_garlic_sauce: boolean;
 	let fries: Variant | undefined;
 	$: extra_meat = meat && EXTRA_MEAT.find((MEATS: Variant) => MEATS.name === meat.name);
+
 	const submitHandler = () => {
 		try {
 			if (!meat) throw 'Please select meat option';
-			// console.log({
-			// 	product,
-			// 	meat,
-			// 	extra_meat,
-			// 	extra_garlic_sauce,
-			// 	fries
-			// });
 
 			cartStore.addCartItem({
 				name: product?.name + ' - ' + meat.name,
 				price: meat.price,
 				quantity: 1,
-				// variant: EXTRA_MEAT[meat.name],
+				variant: extra_meat,
 				image: product?.image ?? ''
 			});
+			cartStore.toggleShowSideCart();
 		} catch (error) {
 			toast.error(error as string);
 		}
