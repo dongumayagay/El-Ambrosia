@@ -31,12 +31,18 @@ function createCartStore() {
 
     const cartItems = writable<CartItem[]>([])
     const { set: cartItemsSet, update: cartItemsUpdate } = cartItems
-    // const cartTotal = derived()
-    const addCartItem = (item: CartItem) =>
-        cartItemsUpdate((values) => ([...values, item]))
+    const addCartItem = (newItem: CartItem) =>
+        cartItemsUpdate((currentCartItems) => {
+            // check if newItem is already in cartItems
+            const resultCartItem = currentCartItems.find((cartItem) => JSON.stringify(cartItem) === JSON.stringify(newItem))
+            if (!resultCartItem) return [...currentCartItems, newItem]
+            resultCartItem.quantity += newItem.quantity
+            return currentCartItems
+        })
     const clearCart = () => cartItemsSet([])
     const removeCartItem = (item: CartItem) => cartItemsUpdate((values) => values.filter((value => value.name !== item.name)))
 
+    // const cartTotal = derived()
 
 
     return {
