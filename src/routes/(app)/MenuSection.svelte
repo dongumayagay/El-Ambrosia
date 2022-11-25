@@ -7,7 +7,7 @@
 		<h1 class="text-xl tracking-widest text-center uppercase font-anton">Menu</h1>
 		<section class="grid grid-cols-1 lg:grid-cols-3 place-items-center gap-y-6">
 			{#each SHAWARMAS as item}
-				<div class="max-w-sm shadow-xl card bg-base-200">
+				<div class="max-w-sm shadow-xl card bg-base-200 h-full">
 					<figure class=" bg-base-content aspect-square">
 						<img class="object-cover w-full h-full " src={item.image} alt={item.name} />
 					</figure>
