@@ -4,6 +4,12 @@ import { auth } from "./firebase/client";
 import { browser } from "$app/environment";
 import type { CartItem } from "./types";
 
+
+const getItemFromLocalStorage = (key: string) => {
+    const item = localStorage.getItem(key)
+    return item ? JSON.parse(item) : null
+}
+
 export const userStore = readable<User | null | undefined>(undefined, set => {
     const unsubscribe = onAuthStateChanged(
         auth,
@@ -27,9 +33,7 @@ function createCartStore() {
         else setShowSideCart(toggle)
     }
 
-
-
-    const cartItems = writable<CartItem[]>([])
+    const cartItems = writable<CartItem[]>(browser && (getItemFromLocalStorage('cartItems') ?? []))
     const { set: cartItemsSet, update: cartItemsUpdate } = cartItems
     const addCartItem = (newItem: CartItem) =>
         cartItemsUpdate((currentCartItems) => {
@@ -41,7 +45,8 @@ function createCartStore() {
         })
     const clearCart = () => cartItemsSet([])
     const removeCartItem = (item: CartItem) => cartItemsUpdate((values) => values.filter((value => JSON.stringify(value) !== JSON.stringify(item))))
-
+    cartItems.subscribe(currentCartItems => browser && localStorage.setItem('cartItems', JSON.stringify(currentCartItems))
+    )
     // const cartTotal = derived()
 
 
