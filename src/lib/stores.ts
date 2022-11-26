@@ -40,7 +40,7 @@ function createCartStore() {
             return currentCartItems
         })
     const clearCart = () => cartItemsSet([])
-    const removeCartItem = (item: CartItem) => cartItemsUpdate((values) => values.filter((value => value.name !== item.name)))
+    const removeCartItem = (item: CartItem) => cartItemsUpdate((values) => values.filter((value => JSON.stringify(value) !== JSON.stringify(item))))
 
     // const cartTotal = derived()
 
