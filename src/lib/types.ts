@@ -32,7 +32,7 @@ export type Product = {
   image: string,
   variants: Variant[]
 }
-export type KeyStringValNum = { [key: string]: number }
+// export type KeyStringValNum = { [key: string]: number }
 
 type CartItemVariant = Variant & {
   subTotal: number

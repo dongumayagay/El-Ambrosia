@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { EXTRAS, EXTRA_MEAT } from '$lib/constants';
+	import { EXTRA_MEAT, GARLIC_SAUCE } from '$lib/constants';
 	import { cartStore } from '$lib/stores';
 	import type { Variant } from '$lib/types';
 	import toast from 'svelte-french-toast';
@@ -38,6 +38,17 @@
 					: undefined,
 				image: product?.image ?? ''
 			});
+
+			if (add_extra_garlic_sauce) {
+				cartStore.addCartItem({
+					image: '/images/garlic-sauce.png',
+					name: GARLIC_SAUCE.name,
+					price: GARLIC_SAUCE.price,
+					quantity: 1,
+					subTotal: GARLIC_SAUCE.price * 1
+				});
+			}
+
 			cartStore.toggleShowSideCart();
 		} catch (error) {
 			toast.error(error as string);
@@ -54,7 +65,7 @@
 		let temp_total = 0;
 		if (meat) temp_total += meat.price;
 		if (add_extra_meat && extra_meat) temp_total += extra_meat.price;
-		if (extra_garlic_sauce) temp_total += EXTRAS['garlic sauce'];
+		if (extra_garlic_sauce) temp_total += GARLIC_SAUCE.price;
 		if (fries) temp_total += fries.price;
 		return temp_total;
 	};

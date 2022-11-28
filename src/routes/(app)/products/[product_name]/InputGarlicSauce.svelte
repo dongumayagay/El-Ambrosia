@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { EXTRAS } from '$lib/constants';
+	import { GARLIC_SAUCE } from '$lib/constants';
 
 	export let add_extra_garlic_sauce: boolean;
 </script>
@@ -17,7 +17,7 @@
 	<label class="btn btn-outline justify-between" class:btn-active={add_extra_garlic_sauce === true}>
 		<h1>Yes!</h1>
 		<h1>
-			₱ {EXTRAS['garlic sauce'] ?? '0'}
+			₱ {GARLIC_SAUCE.price}
 		</h1>
 		<input required class="hidden" type="radio" bind:group={add_extra_garlic_sauce} value={true} />
 	</label>
