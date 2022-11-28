@@ -22,11 +22,20 @@
 		try {
 			if (!meat) throw 'Please select meat option';
 
+			const DEFAULT_MEAT_QUANTITY = 1;
+
 			cartStore.addCartItem({
 				name: product?.name + ' - ' + meat.name,
 				price: meat.price,
-				quantity: 1,
-				variant: add_extra_meat ? extra_meat : undefined,
+				quantity: DEFAULT_MEAT_QUANTITY,
+				subTotal: DEFAULT_MEAT_QUANTITY * meat.price,
+				variant: add_extra_meat
+					? {
+							name: extra_meat?.name ?? '',
+							price: extra_meat?.price ?? 0,
+							subTotal: DEFAULT_MEAT_QUANTITY * (extra_meat?.price ?? 0)
+					  }
+					: undefined,
 				image: product?.image ?? ''
 			});
 			cartStore.toggleShowSideCart();

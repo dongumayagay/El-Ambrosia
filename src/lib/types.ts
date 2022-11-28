@@ -34,10 +34,15 @@ export type Product = {
 }
 export type KeyStringValNum = { [key: string]: number }
 
+type CartItemVariant = Variant & {
+  subTotal: number
+}
+
 export type CartItem = {
   name: string
   quantity: number
   price: number
-  variant?: Variant,
+  subTotal: number
+  variant?: CartItemVariant
   image: string
 }

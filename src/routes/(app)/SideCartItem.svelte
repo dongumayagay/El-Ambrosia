@@ -4,8 +4,11 @@
 
 	export let cartItem: CartItem;
 
-	const checkQty = () => {
-		if (cartItem.quantity < 1) cartItem.quantity = 1;
+	const changeHandler = () => {
+		if (cartItem.quantity < 1) {
+			cartItem.quantity = 1;
+		}
+		cartStore.refreshCartItems();
 	};
 </script>
 
@@ -14,12 +17,12 @@
 	<main class="flex flex-col  h-full flex-1 ">
 		<section class="flex justify-between font-bold capitalize">
 			<h1>{cartItem.name}</h1>
-			<h1>₱{cartItem.price}</h1>
+			<h1>₱{cartItem.subTotal}</h1>
 		</section>
 		{#if cartItem.variant}
 			<section class="flex justify-between capitalize">
 				<h1>Extra {cartItem.variant.name}</h1>
-				<h1>₱{cartItem.variant.price}</h1>
+				<h1>₱{cartItem.variant.subTotal}</h1>
 			</section>
 		{/if}
 		<section class="flex justify-between gap-2 mt-auto">
@@ -30,7 +33,7 @@
 					bind:value={cartItem.quantity}
 					min="1"
 					class=" input input-bordered w-full max-w-fit text-center invalid:border-red-500 invalid:text-red-500"
-					on:blur={checkQty}
+					on:change={changeHandler}
 				/>
 			</label>
 			<button

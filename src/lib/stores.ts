@@ -39,12 +39,23 @@ function createCartStore() {
         cartItemsUpdate((currentCartItems) => {
             // check if newItem is already in cartItems
             const resultCartItem = currentCartItems.find((cartItem) => JSON.stringify(cartItem) === JSON.stringify(newItem))
+
             if (!resultCartItem) return [...currentCartItems, newItem]
+
             resultCartItem.quantity += newItem.quantity
+            resultCartItem.subTotal = resultCartItem.quantity * resultCartItem.price
             return currentCartItems
         })
     const clearCart = () => cartItemsSet([])
     const removeCartItem = (item: CartItem) => cartItemsUpdate((values) => values.filter((value => JSON.stringify(value) !== JSON.stringify(item))))
+    const refreshCartItems = () => cartItemsUpdate(values => values)
+    cartItems.subscribe((currentCartItems) => {
+        if (!currentCartItems) return
+        currentCartItems.forEach(currentCartItem => {
+            currentCartItem.subTotal = currentCartItem.quantity * currentCartItem.price
+            if (currentCartItem.variant) currentCartItem.variant.subTotal = currentCartItem.variant.price * currentCartItem.quantity
+        })
+    })
     cartItems.subscribe(currentCartItems => browser && localStorage.setItem('cartItems', JSON.stringify(currentCartItems))
     )
     // const cartTotal = derived()
@@ -57,5 +68,6 @@ function createCartStore() {
         addCartItem,
         removeCartItem,
         clearCart,
+        refreshCartItems
     }
 }
