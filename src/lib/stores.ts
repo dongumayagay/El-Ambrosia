@@ -49,6 +49,7 @@ function createCartStore() {
     const clearCart = () => cartItemsSet([])
     const removeCartItem = (item: CartItem) => cartItemsUpdate((values) => values.filter((value => JSON.stringify(value) !== JSON.stringify(item))))
     const refreshCartItems = () => cartItemsUpdate(values => values)
+    // update subtotal when qty changes
     cartItems.subscribe((currentCartItems) => {
         if (!currentCartItems) return
         currentCartItems.forEach(currentCartItem => {
@@ -56,9 +57,19 @@ function createCartStore() {
             if (currentCartItem.variant) currentCartItem.variant.subTotal = currentCartItem.variant.price * currentCartItem.quantity
         })
     })
+    // save cartItems to localstorage
     cartItems.subscribe(currentCartItems => browser && localStorage.setItem('cartItems', JSON.stringify(currentCartItems))
     )
-    // const cartTotal = derived()
+    const cartTotal = derived(cartItems, (currentCartItems, set) => {
+        let total = 0
+        currentCartItems.forEach(currentCartItem => {
+            total += currentCartItem.subTotal
+            if (currentCartItem.variant) {
+                total += currentCartItem.variant.subTotal
+            }
+        })
+        set(total)
+    }, 0)
 
 
     return {
@@ -68,6 +79,7 @@ function createCartStore() {
         addCartItem,
         removeCartItem,
         clearCart,
-        refreshCartItems
+        refreshCartItems,
+        cartTotal
     }
 }
