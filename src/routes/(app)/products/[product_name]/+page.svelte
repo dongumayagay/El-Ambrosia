@@ -49,6 +49,15 @@
 				});
 			}
 
+			if (fries) {
+				cartStore.addCartItem({
+					image: '/images/fries.png',
+					name: 'Fries - ' + fries.name,
+					price: fries.price,
+					quantity: 1,
+					subTotal: fries.price * 1
+				});
+			}
 			cartStore.toggleShowSideCart();
 		} catch (error) {
 			toast.error(error as string);
