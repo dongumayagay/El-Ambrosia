@@ -13,14 +13,18 @@
 </script>
 
 <div class="flex gap-2 flex-row">
-	<img src={cartItem.image} class=" aspect-square object-cover w-32 cursor-default hover:" alt="" />
-	<main class="flex flex-col  h-full flex-1 ">
+	<img
+		src={cartItem.image}
+		class="rounded aspect-square object-cover w-28 cursor-default hover:"
+		alt=""
+	/>
+	<main class="flex flex-col flex-1 ">
 		<section class="flex justify-between font-bold capitalize">
 			<h1>{cartItem.name}</h1>
 			<h1>₱{cartItem.subTotal}</h1>
 		</section>
 		{#if cartItem.variant}
-			<section class="flex justify-between capitalize">
+			<section class="flex justify-between font-bold capitalize">
 				<h1>Extra {cartItem.variant.name}</h1>
 				<h1>₱{cartItem.variant.subTotal}</h1>
 			</section>
