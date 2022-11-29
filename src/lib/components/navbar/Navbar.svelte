@@ -1,6 +1,6 @@
 <script>
 	import AccountButton from '$lib/components/navbar/AccountButton.svelte';
-	import SideCartToggle from './SideCartToggle.svelte';
+	import SideCartToggle from '$lib/components/cart/SideCartToggle.svelte';
 </script>
 
 <div class="navbar bg-base-100 w-full max-w-7xl mx-auto">

@@ -1,7 +1,7 @@
 <script lang="ts">
-	import Navbar from './Navbar.svelte';
-	import Footer from './Footer.svelte';
-	import SideCart from './SideCart.svelte';
+	import Navbar from '$lib/components/navbar/Navbar.svelte';
+	import Footer from '$lib/components/navbar/Footer.svelte';
+	import SideCart from '$lib/components/cart/SideCart.svelte';
 	import { cartStore } from '$lib/stores';
 
 	const { isSideCartOpen } = cartStore;
