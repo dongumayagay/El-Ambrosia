@@ -38,7 +38,7 @@ function createCartStore() {
     const addCartItem = (newItem: CartItem) =>
         cartItemsUpdate((currentCartItems) => {
             // check if newItem is already in cartItems
-            const resultCartItem = currentCartItems.find((cartItem) => JSON.stringify(cartItem) === JSON.stringify(newItem))
+            const resultCartItem = currentCartItems.find((cartItem) => cartItem.name === newItem.name)
 
             if (!resultCartItem) return [...currentCartItems, newItem]
 

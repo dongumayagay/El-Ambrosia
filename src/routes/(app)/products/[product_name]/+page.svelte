@@ -25,17 +25,10 @@
 			const DEFAULT_MEAT_QUANTITY = 1;
 
 			cartStore.addCartItem({
-				name: product?.name + ' - ' + meat.name,
-				price: meat.price,
+				name: `${meat.name} ${product?.name}${add_extra_meat ? '- Extra ' + meat.name : ''}`,
+				price: add_extra_meat ? meat.price + (extra_meat?.price ?? 0) : meat.price,
 				quantity: DEFAULT_MEAT_QUANTITY,
 				subTotal: DEFAULT_MEAT_QUANTITY * meat.price,
-				variant: add_extra_meat
-					? {
-							name: extra_meat?.name ?? '',
-							price: extra_meat?.price ?? 0,
-							subTotal: DEFAULT_MEAT_QUANTITY * (extra_meat?.price ?? 0)
-					  }
-					: undefined,
 				image: product?.image ?? ''
 			});
 
@@ -102,7 +95,7 @@
 				<InputGarlicSauce bind:add_extra_garlic_sauce />
 				<InputFries bind:fries />
 
-				<h1 class="text-xl font-bold">Subtotal: ₱ {subtotal}</h1>
+				<h1 class="text-xl font-bold">₱ {subtotal}</h1>
 				<button type="submit" class=" btn btn-secondary gap-2">Add to Cart</button>
 			</form>
 		</section>
