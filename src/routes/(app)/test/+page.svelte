@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { sendEmail } from '$lib/utils';
+	import { sendEmail, payment } from '$lib/utils';
 
 	async function clickHandler() {
 		await sendEmail({
@@ -11,3 +11,4 @@
 </script>
 
 <button class="btn btn-info" on:click={clickHandler}> send email </button>
+<button class="btn btn-info" on:click={async () => console.log(await payment())}> payment </button>

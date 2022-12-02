@@ -61,14 +61,14 @@ function createCartStore() {
     cartItems.subscribe(currentCartItems => browser && localStorage.setItem('cartItems', JSON.stringify(currentCartItems))
     )
     const cartTotal = derived(cartItems, (currentCartItems, set) => {
-        let total = 0
-        currentCartItems.forEach(currentCartItem => {
-            total += currentCartItem.subTotal
-            if (currentCartItem.variant) {
-                total += currentCartItem.variant.subTotal
-            }
-        })
-        set(total)
+        if (!currentCartItems) return
+        const sum = currentCartItems.reduce((accumulator, object) => {
+            let temp = 0;
+            temp = accumulator + object.subTotal
+            if (object.variant) temp += object.variant.subTotal
+            return temp
+        }, 0);
+        set(sum)
     }, 0)
 
 

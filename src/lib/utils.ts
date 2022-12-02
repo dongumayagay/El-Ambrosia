@@ -28,3 +28,9 @@ export const sendEmail = async (
             body: JSON.stringify({ mailOptions })
         })
     ).json();
+
+
+export const payment = async () =>
+    await (await fetch('/api/xendit', {
+        method: 'POST'
+    })).json()
