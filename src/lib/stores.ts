@@ -54,7 +54,6 @@ function createCartStore() {
         if (!currentCartItems) return
         currentCartItems.forEach(currentCartItem => {
             currentCartItem.subTotal = currentCartItem.quantity * currentCartItem.price
-            if (currentCartItem.variant) currentCartItem.variant.subTotal = currentCartItem.variant.price * currentCartItem.quantity
         })
     })
     // save cartItems to localstorage
@@ -62,13 +61,7 @@ function createCartStore() {
     )
     const cartTotal = derived(cartItems, (currentCartItems, set) => {
         if (!currentCartItems) return
-        const sum = currentCartItems.reduce((accumulator, object) => {
-            let temp = 0;
-            temp = accumulator + object.subTotal
-            if (object.variant) temp += object.variant.subTotal
-            return temp
-        }, 0);
-        set(sum)
+        set(currentCartItems.reduce((accumulator, object) => accumulator + object.subTotal, 0))
     }, 0)
 
 

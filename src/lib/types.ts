@@ -43,6 +43,5 @@ export type CartItem = {
   quantity: number
   price: number
   subTotal: number
-  variant?: CartItemVariant
   image: string
 }
