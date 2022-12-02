@@ -44,7 +44,7 @@
 	>
 		{#if $userStore}
 			<li>
-				<a href="/" class="justify-between"> Profile </a>
+				<a href="/profile" class="justify-between"> Profile </a>
 			</li>
 			{#if isAdmin($userStore)}
 				<li><a href="/admin">Admin</a></li>
