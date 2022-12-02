@@ -14,14 +14,12 @@ const i = new Invoice(invoiceSpecificOptions);
 
 export const POST: RequestHandler = async () => {
     const resp = await i.createInvoice({
-        externalID: 'example',
-        amount: 250,
-        payerEmail: "dngumayagay@gmail.com",
-        currency: 'PHP',
+        externalID: 'id',
+        payerEmail: "gumayagay.mcdonpup@gmail.com",
         customer: {
             given_names: "Mc Don",
             surname: "Gumayagay",
-            email: "dngumayagay@gmail.com",
+            email: "gumayagay.mcdonpup@gmail.com",
             mobile_number: '09559575117',
             address: [
                 {
@@ -40,14 +38,20 @@ export const POST: RequestHandler = async () => {
             invoice_paid: ['sms', 'email'],
             invoice_expired: [],
         },
-        description: 'testing',
+        description: 'El Ambrosia Order',
         locale: 'en',
+        currency: 'PHP',
         items: [
             {
                 name: 'test',
                 quantity: 2,
                 price: 100
-            }
+            },
+            {
+                name: 'test2',
+                quantity: 1,
+                price: 50
+            },
         ],
         fees: [
             {
@@ -55,9 +59,9 @@ export const POST: RequestHandler = async () => {
                 value: 50
             }
         ],
-        successRedirectURL: "http://localhost:5173/",
-        failureRedirectURL: "http://localhost:5173/",
-
+        amount: 300,
+        // successRedirectURL: "http://localhost:5173/",
+        // failureRedirectURL: "http://localhost:5173/",
     });
     console.log(resp);
     // console.log("test")

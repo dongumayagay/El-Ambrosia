@@ -4,8 +4,10 @@
 	import { signOut } from 'firebase/auth';
 	import { isAdmin } from '$lib/utils';
 	import toast from 'svelte-french-toast';
+	import { goto } from '$app/navigation';
 	const logout = async () => {
-		signOut(auth);
+		await signOut(auth);
+		await goto('/auth/login');
 		toast.success('logout successfully');
 	};
 </script>

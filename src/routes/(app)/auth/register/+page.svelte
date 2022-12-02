@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { auth } from '$lib/firebase/client';
 	import {
 		createUserWithEmailAndPassword,
@@ -27,8 +28,8 @@
 			if (!email) throw 'Enter Email address';
 			if (!password) throw 'Enter Password';
 			await createUserWithEmailAndPassword(auth, email, password);
-
 			form.reset();
+			await goto('/profile');
 		} catch (error: any) {
 			if (error?.code)
 				toast.error(error.code.split('/')[1].replaceAll('-', ' '), {
