@@ -45,3 +45,25 @@ export type CartItem = {
   subTotal: number
   image: string
 }
+
+export type ContactInfo = {
+  firstName: string;
+  lastName: string;
+  phoneNumber: string;
+};
+
+export type Address = {
+  street_line1: string;
+  street_line2: string;
+  city: string;
+  state: string;
+  postal_code: string;
+  country: string;
+};
+
+export type CityOption = {
+  name: string;
+  city: string;
+  state: string;
+  postal_code: string;
+};

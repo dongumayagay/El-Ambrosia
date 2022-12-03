@@ -3,12 +3,7 @@
 	import { userStore } from '$lib/stores';
 	import { doc, getDoc, setDoc } from 'firebase/firestore';
 	import toast from 'svelte-french-toast';
-
-	type ContactInfo = {
-		firstName: string;
-		lastName: string;
-		phoneNumber: string;
-	};
+	import type { ContactInfo } from '$lib/types';
 
 	let contactInfo: ContactInfo = {
 		firstName: '',
