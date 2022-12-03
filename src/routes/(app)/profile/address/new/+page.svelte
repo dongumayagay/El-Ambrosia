@@ -24,7 +24,7 @@
 				country: 'Philippines'
 			};
 			await addDoc(collection(db, `userProfiles/${$userStore.uid}/address/`), address);
-			goto('/profile/address');
+			goto('/profile/address', { replaceState: true });
 			toast.success('address added');
 		} catch (error: any) {
 			if (error?.code)
