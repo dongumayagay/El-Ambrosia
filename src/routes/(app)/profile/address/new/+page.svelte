@@ -27,6 +27,7 @@
 			goto('/profile/address', { replaceState: true });
 			toast.success('address added');
 		} catch (error: any) {
+			console.log(error);
 			if (error?.code)
 				toast.error(error.code.split('/')[1].replaceAll('-', ' '), {
 					className: 'uppercase'
