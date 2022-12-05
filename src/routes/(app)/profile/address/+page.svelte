@@ -38,7 +38,7 @@
 						<li>{address.country}</li>
 					</ul>
 					<div class="flex items-center gap-4">
-						<a class="btn btn-info" href={`address/edit/${address.id}`}>Edit</a>
+						<a class="btn btn-info" href={`/profile/address/edit/${address.id}`}>Edit</a>
 						<DeleteAddress id={address?.id ?? ''} />
 					</div>
 				</div>
