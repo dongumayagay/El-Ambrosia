@@ -20,6 +20,7 @@
 					src={$userStore.photoURL ?? `https://ui-avatars.com/api/?name=${$userStore.displayName}`}
 					alt="profile"
 					class=" w-6 rounded-full"
+					referrerpolicy="no-referrer"
 				/>
 			{:else}
 				<svg
