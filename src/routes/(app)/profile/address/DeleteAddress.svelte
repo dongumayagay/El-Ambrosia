@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { db } from '$lib/firebase/client';
-	import { userStore } from '$lib/stores';
 	import { doc, deleteDoc } from 'firebase/firestore';
 	import toast from 'svelte-french-toast';
 
@@ -8,8 +7,7 @@
 
 	const FOR = 'Address';
 	const MODAL_ID = `delete-${FOR}-modal-${id}`.replaceAll(' ', '-');
-	const docRef = doc(db, `userProfiles/${$userStore?.uid ?? ''}/address/${id}`);
-	// const docRef = doc(db, 'supplies', supply.id ?? '');
+	const docRef = doc(db, 'addresses', id);
 
 	let checked: boolean;
 	let loading = false;
