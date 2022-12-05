@@ -7,6 +7,8 @@
 	import { CITY_OPTIONS } from '$lib/constants';
 	import { goto } from '$app/navigation';
 
+	const addressCollection = collection(db, 'addresses');
+
 	let street_line1 = '';
 	let street_line2 = '';
 	let seletedCityOption: CityOption;
@@ -15,7 +17,9 @@
 	const submitHandler = async () => {
 		try {
 			if (!$userStore) return;
+
 			const address: Address = {
+				owner: $userStore.uid,
 				street_line1: street_line1,
 				street_line2: street_line2,
 				city: seletedCityOption.city,
@@ -23,7 +27,9 @@
 				postal_code: seletedCityOption.postal_code,
 				country: 'Philippines'
 			};
-			await addDoc(collection(db, `userProfiles/${$userStore.uid}/address/`), address);
+
+			await addDoc(addressCollection, address);
+
 			goto('/profile/address', { replaceState: true });
 			toast.success('address added');
 		} catch (error: any) {
