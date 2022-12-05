@@ -58,12 +58,6 @@ export const FRIES: Variant[] = [
 
 export const CITY_OPTIONS: CityOption[] = [
     {
-        name: 'San Pedro, Laguna',
-        city: 'San Pedro',
-        state: 'Laguna',
-        postal_code: '4023'
-    },
-    {
         name: 'GMA, Cavite',
         city: 'GMA',
         state: 'Cavite',
@@ -74,5 +68,23 @@ export const CITY_OPTIONS: CityOption[] = [
         city: 'General Trias',
         state: 'Cavite',
         postal_code: '4107'
+    },
+    {
+        name: 'Trece Martires, Cavite',
+        city: 'Trece Matires',
+        state: 'Cavite',
+        postal_code: '4109'
+    },
+    {
+        name: 'Dasmariñas, Cavite',
+        city: "Dasmariñas",
+        state: 'Cavite',
+        postal_code: '4114'
+    },
+    {
+        name: 'Imus, Cavite',
+        city: "Imus",
+        state: 'Cavite',
+        postal_code: "4104"
     }
 ]
