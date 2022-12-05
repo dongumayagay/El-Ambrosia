@@ -1,4 +1,4 @@
-import type { Product, Variant } from "$lib/types"
+import type { Product, Variant, CityOption } from "$lib/types"
 
 export const SHAWARMAS: Product[] = [
     {
@@ -55,3 +55,36 @@ export const FRIES: Variant[] = [
 
 ]
 
+
+export const CITY_OPTIONS: CityOption[] = [
+    {
+        name: 'GMA, Cavite',
+        city: 'GMA',
+        state: 'Cavite',
+        postal_code: '4117'
+    },
+    {
+        name: 'General Trias, Cavite',
+        city: 'General Trias',
+        state: 'Cavite',
+        postal_code: '4107'
+    },
+    {
+        name: 'Trece Martires, Cavite',
+        city: 'Trece Matires',
+        state: 'Cavite',
+        postal_code: '4109'
+    },
+    {
+        name: 'Dasmariñas, Cavite',
+        city: "Dasmariñas",
+        state: 'Cavite',
+        postal_code: '4114'
+    },
+    {
+        name: 'Imus, Cavite',
+        city: "Imus",
+        state: 'Cavite',
+        postal_code: "4104"
+    }
+]

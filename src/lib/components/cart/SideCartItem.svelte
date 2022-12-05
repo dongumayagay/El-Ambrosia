@@ -23,12 +23,6 @@
 			<h1>{cartItem.name}</h1>
 			<h1>₱{cartItem.subTotal}</h1>
 		</section>
-		{#if cartItem.variant}
-			<section class="flex justify-between font-bold capitalize">
-				<h1>Extra {cartItem.variant.name}</h1>
-				<h1>₱{cartItem.variant.subTotal}</h1>
-			</section>
-		{/if}
 		<section class="flex justify-between gap-2 mt-auto">
 			<label class="input-group">
 				<span>Qty</span>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { auth } from '$lib/firebase/client';
 	import {
 		createUserWithEmailAndPassword,
@@ -24,12 +25,17 @@
 			const data = new FormData(form);
 			const email = data.get('email')?.toString();
 			const password = data.get('password')?.toString();
-			if (!email || !password) throw 'invalid email or password';
+			if (!email) throw 'Enter Email address';
+			if (!password) throw 'Enter Password';
 			await createUserWithEmailAndPassword(auth, email, password);
-
 			form.reset();
-		} catch (error) {
-			toast.error(error as string);
+			await goto('/profile');
+		} catch (error: any) {
+			if (error?.code)
+				toast.error(error.code.split('/')[1].replaceAll('-', ' '), {
+					className: 'uppercase'
+				});
+			else toast.error(error as string);
 		}
 		loading = false;
 	};
@@ -61,7 +67,6 @@
 			<span class="label-text">Email Adress</span>
 		</h6>
 		<input
-			required
 			name="email"
 			type="email"
 			placeholder="Email Address"
@@ -76,7 +81,6 @@
 			<span class="label-text">Password</span>
 		</h6>
 		<input
-			required
 			name="password"
 			type="password"
 			placeholder="Password"

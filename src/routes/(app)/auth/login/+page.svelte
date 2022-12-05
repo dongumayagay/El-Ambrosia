@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { auth } from '$lib/firebase/client';
 	import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 	import toast from 'svelte-french-toast';
@@ -18,12 +19,17 @@
 			const data = new FormData(form);
 			const email = data.get('email')?.toString();
 			const password = data.get('password')?.toString();
-			if (!email || !password) throw 'invalid email or password';
+			if (!email) throw 'Enter Email address';
+			if (!password) throw 'Enter Password';
 			await signInWithEmailAndPassword(auth, email, password);
-
 			form.reset();
-		} catch (error) {
-			toast.error(error as string);
+			await goto('/profile');
+		} catch (error: any) {
+			if (error?.code)
+				toast.error(error.code.split('/')[1].replaceAll('-', ' '), {
+					className: 'uppercase'
+				});
+			else toast.error(error as string);
 		}
 		loading = false;
 	};
@@ -52,9 +58,14 @@
 	<div class="divider">OR</div>
 	<div class="form-control">
 		<h6 class="label">
-			<span class="label-text">Email Adress</span>
+			<span class="label-text">Email Address</span>
 		</h6>
-		<input type="email" name="email" class="peer input input-bordered" />
+		<input
+			type="email"
+			name="email"
+			placeholder="Email Address"
+			class="peer input input-bordered"
+		/>
 		<p class="hidden requied peer-invalid:block text-error">
 			Please provide a valid email address.
 		</p>

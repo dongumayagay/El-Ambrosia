@@ -38,7 +38,7 @@ function createCartStore() {
     const addCartItem = (newItem: CartItem) =>
         cartItemsUpdate((currentCartItems) => {
             // check if newItem is already in cartItems
-            const resultCartItem = currentCartItems.find((cartItem) => JSON.stringify(cartItem) === JSON.stringify(newItem))
+            const resultCartItem = currentCartItems.find((cartItem) => cartItem.name === newItem.name)
 
             if (!resultCartItem) return [...currentCartItems, newItem]
 
@@ -54,21 +54,14 @@ function createCartStore() {
         if (!currentCartItems) return
         currentCartItems.forEach(currentCartItem => {
             currentCartItem.subTotal = currentCartItem.quantity * currentCartItem.price
-            if (currentCartItem.variant) currentCartItem.variant.subTotal = currentCartItem.variant.price * currentCartItem.quantity
         })
     })
     // save cartItems to localstorage
     cartItems.subscribe(currentCartItems => browser && localStorage.setItem('cartItems', JSON.stringify(currentCartItems))
     )
     const cartTotal = derived(cartItems, (currentCartItems, set) => {
-        let total = 0
-        currentCartItems.forEach(currentCartItem => {
-            total += currentCartItem.subTotal
-            if (currentCartItem.variant) {
-                total += currentCartItem.variant.subTotal
-            }
-        })
-        set(total)
+        if (!currentCartItems) return
+        set(currentCartItems.reduce((accumulator, object) => accumulator + object.subTotal, 0))
     }, 0)
 
 

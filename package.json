@@ -36,6 +36,7 @@
 		"firebase": "^9.14.0",
 		"firebase-admin": "^11.3.0",
 		"nodemailer": "^6.8.0",
-		"svelte-french-toast": "^1.0.3"
+		"svelte-french-toast": "^1.0.3",
+		"xendit-node": "^1.21.10"
 	}
 }

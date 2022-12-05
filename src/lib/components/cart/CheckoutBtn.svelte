@@ -12,7 +12,7 @@
 			{#if !$userStore}
 				<span> LOGIN TO CHECKOUT </span>
 			{/if}
-			<span> ₱{$cartTotal} </span>
+			<span>Proceed ₱{$cartTotal} </span>
 		</a>
 	</footer>
 {/if}
