@@ -53,7 +53,8 @@ export type ContactInfo = {
 };
 
 export type Address = {
-  id?: string
+  id?: string;
+  owner: string;
   street_line1: string;
   street_line2: string;
   city: string;

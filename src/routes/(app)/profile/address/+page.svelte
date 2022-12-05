@@ -2,41 +2,23 @@
 	import { db } from '$lib/firebase/client';
 	import { userStore } from '$lib/stores';
 	import type { Address } from '$lib/types';
-	import { collection, deleteDoc, doc, onSnapshot } from 'firebase/firestore';
+	import { collection, onSnapshot, query, where } from 'firebase/firestore';
 	import { onDestroy } from 'svelte';
-	import toast from 'svelte-french-toast';
 	import DeleteAddress from './DeleteAddress.svelte';
 
 	let addresses: Address[] = [];
 
 	const getAddress = async () => {
 		if (!$userStore) return;
-		const unsubscribe = onSnapshot(
-			collection(db, `userProfiles/${$userStore.uid}/address`),
-			(snapshot) => {
-				addresses = snapshot.docs.map((doc) => ({
-					id: doc.id,
-					...doc.data()
-				})) as Address[];
-			}
-		);
+		const userAddresses = query(collection(db, 'addresses'), where('owner', '==', $userStore.uid));
+		const unsubscribe = onSnapshot(userAddresses, (snapshot) => {
+			addresses = snapshot.docs.map((doc) => ({
+				id: doc.id,
+				...doc.data()
+			})) as Address[];
+		});
 		onDestroy(() => unsubscribe());
 	};
-
-	// const deleteAddress = async (id: string) => {
-	// 	if (!$userStore) return;
-	// 	try {
-	// 		await deleteDoc());
-	// 		toast.success('address deleted');
-	// 	} catch (error: any) {
-	// 		console.log(error);
-	// 		if (error?.code)
-	// 			toast.error(error.code.split('/')[1].replaceAll('-', ' '), {
-	// 				className: 'uppercase'
-	// 			});
-	// 		else toast.error(error as string);
-	// 	}
-	// };
 
 	$: $userStore && getAddress();
 </script>
