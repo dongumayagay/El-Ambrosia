@@ -28,6 +28,7 @@
 			const docRef = doc(db, 'userConfig', $userStore.uid);
 			const snapshot = await getDoc(docRef);
 			const selected_address = snapshot.get('selected_address') as Address;
+			if (!selected_address) throw 'Please select preferred address';
 			selected_address_id = selected_address.id ?? '';
 		} catch (error) {
 			console.log(error);
