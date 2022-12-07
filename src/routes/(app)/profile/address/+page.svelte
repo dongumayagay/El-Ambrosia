@@ -7,7 +7,7 @@
 	import toast from 'svelte-french-toast';
 	import DeleteAddress from './DeleteAddress.svelte';
 
-	let selected_address: string;
+	let selected_address_id: string;
 	let addresses: Address[] = [];
 
 	const getAddresses = async () => {
@@ -27,22 +27,23 @@
 		try {
 			const docRef = doc(db, 'userConfig', $userStore.uid);
 			const snapshot = await getDoc(docRef);
-			selected_address = snapshot.get('selected_address') as string;
+			const selected_address = snapshot.get('selected_address') as Address;
+			selected_address_id = selected_address.id ?? '';
 		} catch (error) {
 			console.log(error);
 			toast.error(error as string);
 		}
 	};
 
-	const setSelectAddress = async (id: string | undefined) => {
-		if (id === undefined || !$userStore) return;
+	const setSelectAddress = async (new_address: Address | undefined) => {
+		if (new_address === undefined || !$userStore) return;
 		try {
+			selected_address_id = new_address.id ?? '';
 			await setDoc(
 				doc(db, 'userConfig', $userStore.uid),
-				{ selected_address: id },
+				{ selected_address: new_address },
 				{ merge: true }
 			);
-			selected_address = id;
 			toast.success('selected address');
 		} catch (error) {
 			console.log(error);
@@ -74,9 +75,9 @@
 		{#each addresses as address}
 			<main
 				class="border rounded-lg p-3 flex flex-col gap-2 relative overflow-hidden"
-				class:border-neutral-content={address.id === selected_address}
+				class:border-neutral-content={address.id === selected_address_id}
 			>
-				<button on:click={() => setSelectAddress(address.id)} class="flex flex-col items-start">
+				<button on:click={() => setSelectAddress(address)} class="flex flex-col items-start">
 					<li>{address.street_line1}</li>
 					<li>{address.street_line2}</li>
 					<li>{address.city}</li>
@@ -102,9 +103,12 @@
 						</svg>
 						<span> Edit </span>
 					</a>
-					<DeleteAddress id={address?.id ?? ''} />
+					<DeleteAddress
+						is_selected_address={address.id === selected_address_id}
+						id={address?.id ?? ''}
+					/>
 				</div>
-				{#if address.id === selected_address}
+				{#if address.id === selected_address_id}
 					<span
 						class=" absolute right-0 top-0 bg-neutral-content flex gap-1 p-1 rounded-bl-xl items-center text-primary text-xs font-medium"
 					>
