@@ -14,7 +14,7 @@
 
 	const getUserProfile = async () => {
 		if (!$userStore) return;
-		const docSnapshot = await getDoc(doc(db, 'userProfiles', $userStore.uid));
+		const docSnapshot = await getDoc(doc(db, 'userContactInfo', $userStore.uid));
 		if (!docSnapshot.exists()) return;
 		contactInfo = docSnapshot.data() as ContactInfo;
 	};
@@ -22,7 +22,7 @@
 		if (!$userStore) return;
 		loading = true;
 		try {
-			await setDoc(doc(db, 'userProfiles', $userStore.uid), contactInfo);
+			await setDoc(doc(db, 'userContactInfo', $userStore.uid), contactInfo);
 			getUserProfile();
 			toast.success('saved');
 		} catch (error: any) {
