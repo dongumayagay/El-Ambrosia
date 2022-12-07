@@ -1,22 +1,30 @@
 <script lang="ts">
 	import { db } from '$lib/firebase/client';
-	import { doc, deleteDoc } from 'firebase/firestore';
+	import { userStore } from '$lib/stores';
+	import { doc, deleteDoc, updateDoc, deleteField } from 'firebase/firestore';
 	import toast from 'svelte-french-toast';
 
-	export let id;
+	export let is_selected_address = false;
+	export let id: string;
 
 	const FOR = 'Address';
 	const MODAL_ID = `delete-${FOR}-modal-${id}`.replaceAll(' ', '-');
-	const docRef = doc(db, 'addresses', id);
 
 	let checked: boolean;
 	let loading = false;
 	const submit = async (event: SubmitEvent) => {
+		if (!userStore) return;
 		try {
 			loading = true;
 
+			const docRef = doc(db, 'addresses', id);
 			await deleteDoc(docRef);
-			
+			if (is_selected_address) {
+				await updateDoc(doc(db, 'userConfig', $userStore?.uid ?? ''), {
+					selected_address: deleteField()
+				});
+			}
+
 			loading = false;
 			checked = false;
 			toast.success('address deleted');
