@@ -50,22 +50,7 @@
 			</svg>
 		</button>
 	</div>
-	<!-- <nav class="absolute inset-x-0 bottom-[3rem] flex justify-center w-full">
-		{#each [...Array(carouselItems.length).keys()] as index}
-			<a
-				href={`#${itemName + index}`}
-				on:click={() => (currentIndex = index)}
-				class="text-4xl transition-colors hover:text-white"
-				class:text-white={currentIndex === index}
-			>
-				●
-			</a>
-		{/each}
-	</nav> -->
+
 </div>
 
-<!-- <style>
-	a {
-		height: 4px;
-	}
-</style> -->
+

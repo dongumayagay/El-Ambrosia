@@ -15,6 +15,7 @@
 	let loading = false;
 
 	const submitHandler = async () => {
+		loading = true;
 		try {
 			if (!$userStore) return;
 
@@ -30,7 +31,7 @@
 
 			await addDoc(addressCollection, address);
 
-			goto('/profile/address', { replaceState: true });
+			await goto('/profile/address', { replaceState: true });
 			toast.success('address added');
 		} catch (error: any) {
 			console.log(error);
