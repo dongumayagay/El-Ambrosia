@@ -1,9 +1,10 @@
 import { json } from "@sveltejs/kit";
 import type { RequestHandler } from "./$types";
 import Xendit from 'xendit-node';
+import { env } from "$env/dynamic/private";
 
 const x = new Xendit({
-    secretKey: 'xnd_development_9ik4N66LENd36lIiTaVFqHYYwFEuW8Cqp0V7x9BE9wXQdB2spk5TmkjjknEiJ',
+    secretKey: env.XENDIT_SECRET_KEY,
 });
 
 const { Invoice } = x
