@@ -27,6 +27,9 @@
 					>Contact Information</a
 				>
 				<a on:click={() => (checked = false)} class="btn gap-2" href="/profile/address">Address</a>
+				<a on:click={() => (checked = false)} class="btn gap-2" href="/profile/order-history"
+					>Order History</a
+				>
 			</nav>
 		</div>
 	</div>

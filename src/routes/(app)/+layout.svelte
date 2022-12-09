@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Navbar from '$lib/components/navbar/Navbar.svelte';
-	import Footer from '$lib/components/navbar/Footer.svelte';
 	import SideCart from '$lib/components/cart/SideCart.svelte';
 	import { cartStore } from '$lib/stores';
 
@@ -12,7 +11,6 @@
 	<div class=" drawer-content h-full">
 		<Navbar />
 		<slot />
-		<Footer />
 	</div>
 	<SideCart />
 </div>

@@ -75,6 +75,7 @@
 			toast.error(error as string);
 		}
 		loading = false;
+		toggleShowSideCart(false);
 	};
 </script>
 
