@@ -12,7 +12,7 @@ export const POST: RequestHandler = async ({ request }) => {
     if (!invoice_request.status) return new Response()
 
     await adminDB.collection('invoices').add({
-        owner: invoice_request.external_id.split('-')[0],
+        owner: invoice_request.external_id.split('@')[0],
         ...invoice_request
     })
     return new Response();

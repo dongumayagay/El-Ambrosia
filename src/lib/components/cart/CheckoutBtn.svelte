@@ -32,7 +32,7 @@
 			const result = await fetch('/api/xendit', {
 				method: 'POST',
 				body: JSON.stringify({
-					externalID: `${$userStore.uid}-${Date.now()}`,
+					externalID: `${$userStore.uid}@${Date.now()}`,
 					payerEmail: $userStore.email,
 					customer: {
 						given_names: userContactInfo.firstName,
