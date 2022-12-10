@@ -28,7 +28,7 @@
 				>
 				<a on:click={() => (checked = false)} class="btn gap-2" href="/profile/address">Address</a>
 				<a on:click={() => (checked = false)} class="btn gap-2" href="/profile/orders"
-					>Order History</a
+					>Orders</a
 				>
 			</nav>
 		</div>

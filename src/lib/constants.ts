@@ -2,30 +2,30 @@ import type { Product, Variant, CityOption } from "$lib/types"
 
 export const SHAWARMAS: Product[] = [
     {
-        name: 'underdog 6"',
+        name: 'Underdog 6"',
         description: '6" inch Kuboos bread, wrap with Classic fries, pickles & El Ambrosia Signature Garlic Sauce.',
         image: "/images/underdog.jpg",
         variants: [
-            { name: 'chicken', price: 69, },
-            { name: 'steak', price: 85 }
+            { name: 'Chicken', price: 69, },
+            { name: 'Steak', price: 85 }
         ],
     },
     {
-        name: 'big honcho 8"',
+        name: 'Big Honcho 8"',
         description: '8" inch Kuboos bread, wrap with Classic fries, pickles & El Ambrosia Signature Garlic Sauce.',
         image: "/images/big honcho.jpg",
         variants: [
-            { name: 'chicken', price: 95 },
-            { name: 'steak', price: 109 }
+            { name: 'Chicken', price: 95 },
+            { name: 'Steak', price: 109 }
         ],
     },
     {
-        name: 'bossman 12"',
+        name: 'Bossman 12"',
         description: '12" inch Kuboos bread, wrap with Classic fries, pickles & El Ambrosia Signature Garlic Sauce.',
         image: "/images/bossman.jpg",
         variants: [
-            { name: 'chicken', price: 175 },
-            { name: 'steak', price: 189 }
+            { name: 'Chicken', price: 175 },
+            { name: 'Steak', price: 189 }
         ]
     },
 ]
@@ -35,11 +35,11 @@ export const EXTRA_MEAT: Variant[] =
     [
         {
 
-            name: "chicken",
+            name: "Chicken",
             price: 25,
         },
         {
-            name: 'steak',
+            name: 'Steak',
             price: 35
         }
     ]
@@ -50,8 +50,8 @@ export const GARLIC_SAUCE: Variant = {
 }
 
 export const FRIES: Variant[] = [
-    { name: 'medium', price: 29 },
-    { name: 'xtra large', price: 55 }
+    { name: 'Medium', price: 29 },
+    { name: 'Xtra large', price: 55 }
 
 ]
 
