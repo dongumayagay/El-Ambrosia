@@ -29,13 +29,16 @@
 			alt="Avatar Tailwind CSS Component"
 		/>
 		<h1>{isAdmin ? 'admin' : 'not an admin'}</h1>
-		<DeleteUser {user} />
-		{#if isAdmin}
-			<UnmakeAnAdmin {user} on:refresh={loadUser} />
-		{:else}
-			<MakeAnAdmin {user} on:refresh={loadUser} />
-		{/if}
-		<!-- <button>View {user.displayName}' Order history</button> -->
+		<div class="flex gap-2">
+			<DeleteUser {user} />
+			{#if isAdmin}
+				<UnmakeAnAdmin {user} on:refresh={loadUser} />
+			{:else}
+				<MakeAnAdmin {user} on:refresh={loadUser} />
+			{/if}
+			<!-- <button>View {user.displayName}' Order history</button> -->
+			<a class="btn btn-info" href={'/admin/orders/' + user.uid}>View OrderHistory</a>
+		</div>
 	</main>
 {:else}
 	<main class="grid h-full place-items-center">
