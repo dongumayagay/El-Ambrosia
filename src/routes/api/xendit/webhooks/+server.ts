@@ -13,6 +13,7 @@ export const POST: RequestHandler = async ({ request }) => {
 
     await adminDB.collection('invoices').add({
         owner: invoice_request.external_id.split('@')[0],
+        order_status: 'ORDER RECEIVED',
         ...invoice_request
     })
     return new Response();
