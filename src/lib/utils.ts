@@ -2,7 +2,13 @@ import type { User } from 'firebase/auth';
 // const FORMATTER = new Intl.RelativeTimeFormat('en')
 
 // export const relativeTimeFormatter = (value: number, unit: Intl.RelativeTimeFormatUnit) => FORMATTER.format(value, unit)
-export const test = {}
+
+export const DATE_FORMATTER = new Intl.DateTimeFormat('en-PH', {
+    dateStyle: 'full',
+    timeStyle: 'medium'
+});
+
+export const PHP_FORMATTER = new Intl.NumberFormat('en-PH', { style: 'currency', currency: 'PHP' });
 
 export const isAdmin = (user: User | null | undefined) => {
     if (user === null || user === undefined) return false
