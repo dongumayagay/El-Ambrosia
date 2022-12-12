@@ -4,6 +4,7 @@
 	import { onSnapshot, query, where, collection } from 'firebase/firestore';
 	import { onDestroy } from 'svelte';
 	import { DATE_FORMATTER, PHP_FORMATTER } from '$lib/utils';
+	import ConfirmOrderDelivered from './ConfirmOrderDelivered.svelte';
 
 	let listOfOrders: any = [];
 	const orderHistoryQuery = query(
@@ -11,7 +12,7 @@
 		where('owner', '==', $userStore?.uid)
 	);
 	const unsubscribe = onSnapshot(orderHistoryQuery, (querySnapshot) => {
-		listOfOrders = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+		listOfOrders = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
 	});
 	onDestroy(() => unsubscribe());
 </script>
@@ -32,6 +33,9 @@
 					</li>
 				{/each}
 			</ul>
+			{#if order.order_status === 'Shipped out'}
+				<ConfirmOrderDelivered id={order.id} />
+			{/if}
 		</div>
 		<!-- <pre>
 			{JSON.stringify(order, null, 2)}

@@ -4,7 +4,7 @@
 
 	export let id: string;
 	const MODAL_ID = `order-status-update-${id}`;
-	const BUTTON_TEXT = 'Update Order Status';
+	const BUTTON_TEXT = 'Confirm Order Received';
 	let checked: boolean;
 	let loading = false;
 
@@ -13,6 +13,7 @@
 		const form = event.target as HTMLFormElement;
 		const formData = new FormData(form);
 		const order_status = formData.get('order_status')?.toString();
+		console.log(order_status);
 		if (!order_status) return;
 		try {
 			await updateDoc(doc(db, 'invoices', id), {
@@ -47,29 +48,18 @@
 
 <input type="checkbox" bind:checked id={MODAL_ID} class="modal-toggle" />
 
-<label for={MODAL_ID} class="cursor-pointer z-auto modal modal-bottom sm:modal-middle ">
-	<label class="relative modal-box" for="">
-		<label for={MODAL_ID} class="absolute btn btn-sm btn-error btn-outline btn-circle right-2 top-2"
-			>✕</label
-		>
-		<form on:submit|preventDefault={submit} class="w-full form-control">
-			<h1 class="label">
-				<span class="label-text">Update order status</span>
-			</h1>
-
-			<select required name="order_status">
-				<option value="" selected disabled>Select status</option>
-				<!-- <option>Order Received</option> -->
-				<option>Preparing</option>
-				<option>Shipped out</option>
-				<!-- <option>Order Delivered</option> -->
-			</select>
-
-			<div class="modal-action">
-				<button type="submit" for={MODAL_ID} class="btn btn-block" disabled={loading}>
+<label for={MODAL_ID} class="cursor-pointer modal modal-bottom sm:modal-middle">
+	<label class="relative modal-box" for={MODAL_ID}>
+		<h3 class="text-lg font-bold">Confirm Order Receive?</h3>
+		<p class="py-4">Are you really sure about this??</p>
+		<div class="modal-action">
+			<label for={MODAL_ID} class="btn btn-primary">Nope</label>
+			<form on:submit|preventDefault={submit}>
+				<input type="hidden" name="order_status" value="Order Delivered" />
+				<button type="submit" class="btn btn-success" disabled={loading}>
 					{#if loading}
 						<svg
-							class="w-5 h-5 mr-3 -ml-1 text-white animate-spin"
+							class="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
 							xmlns="http://www.w3.org/2000/svg"
 							fill="none"
 							viewBox="0 0 24 24"
@@ -89,9 +79,9 @@
 							/>
 						</svg>
 					{/if}
-					{BUTTON_TEXT}
-				</button>
-			</div>
-		</form>
+					Yes</button
+				>
+			</form>
+		</div>
 	</label>
 </label>
