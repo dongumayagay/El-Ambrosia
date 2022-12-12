@@ -26,49 +26,44 @@
 			if (!userContactInfo) throw 'please setup your contact information first';
 			if (!userSelectedAddress) throw 'please setup your select preferred address first';
 
-			// console.log(userContactInfo);
-			// console.log(userSelectedAddress);
+			const invoice_request = {
+				externalID: `${$userStore.uid}@${Date.now()}`,
+				payerEmail: $userStore.email,
+				customer: {
+					given_names: userContactInfo.firstName,
+					surname: userContactInfo.lastName,
+					email: $userStore.email,
+					mobile_number: userContactInfo.phoneNumber,
+					address: [userSelectedAddress]
+				},
+				items: $cartItems.map((item) => ({
+					name: item.name,
+					quantity: item.quantity,
+					price: item.price
+				})),
+				fees: [
+					{
+						type: 'shipping',
+						value: SHIPPING_FEE
+					}
+				],
+				amount: $cartTotal + SHIPPING_FEE,
+				customerNotificationPreference: {
+					invoice_created: ['sms', 'email'],
+					invoice_reminder: [],
+					invoice_paid: ['sms', 'email'],
+					invoice_expired: []
+				},
+				description: 'El Ambrosia Order',
+				locale: 'en',
+				currency: 'PHP'
+			};
 
 			const result = await fetch('/api/xendit', {
 				method: 'POST',
-				body: JSON.stringify({
-					externalID: `${$userStore.uid}@${Date.now()}`,
-					payerEmail: $userStore.email,
-					customer: {
-						given_names: userContactInfo.firstName,
-						surname: userContactInfo.lastName,
-						email: $userStore.email,
-						mobile_number: userContactInfo.phoneNumber,
-						address: [userSelectedAddress]
-					},
-					items: $cartItems.map((item) => ({
-						name: item.name,
-						quantity: item.quantity,
-						price: item.price
-					})),
-					fees: [
-						{
-							type: 'shipping',
-							value: SHIPPING_FEE
-						}
-					],
-					amount: $cartTotal + SHIPPING_FEE,
-					customerNotificationPreference: {
-						invoice_created: ['sms', 'email'],
-						invoice_reminder: [],
-						invoice_paid: ['sms', 'email'],
-						invoice_expired: []
-					},
-					description: 'El Ambrosia Order',
-					locale: 'en',
-					currency: 'PHP'
-				})
+				body: JSON.stringify(invoice_request)
 			});
 			const invoice_response = await result.json();
-			// const userSelectedAddress = getDoc();
-
-			// if (!userContactInfo.exists()) throw 'Please setup your contact information';
-
 			open(invoice_response.invoice_url);
 		} catch (error) {
 			console.log(error);
