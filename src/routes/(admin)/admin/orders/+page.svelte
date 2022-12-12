@@ -3,11 +3,12 @@
 	import { DATE_FORMATTER, PHP_FORMATTER } from '$lib/utils';
 	import { collection, onSnapshot, query } from 'firebase/firestore';
 	import { onDestroy } from 'svelte';
+	import ChangeOrderStatus from './ChangeOrderStatus.svelte';
 	let orders: any[];
 	async function getOrders() {
 		const ordersQuery = query(collection(db, 'invoices'));
 		const unsubscribe = onSnapshot(ordersQuery, (querySnapshot) => {
-			orders = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+			orders = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
 		});
 		onDestroy(() => unsubscribe());
 	}
@@ -32,6 +33,7 @@
 					</li>
 				{/each}
 			</ul>
+			<ChangeOrderStatus id={order.id} />
 		</div>
 	{:else}
 		<h1 class="text-xl font-medium">No Orders yet ☹</h1>

@@ -12,16 +12,16 @@ export const POST: RequestHandler = async ({ request }) => {
     const invoice_request = await request.json()
     if (!invoice_request.status) return new Response()
 
-    // await adminDB.collection('invoices').add({
-    //     owner: invoice_request.external_id.split('@')[0],
-    //     order_status: 'ORDER RECEIVED',
-    //     ...invoice_request
-    // })
-    await adminDB.collection('invoices').doc(invoice_request.id).set({
+    await adminDB.collection('invoices').add({
         owner: invoice_request.external_id.split('@')[0],
         order_status: 'ORDER RECEIVED',
         ...invoice_request
     })
+    // await adminDB.collection('invoices').doc(invoice_request.id).set({
+    //     owner: invoice_request.external_id.split('@')[0],
+    //     order_status: 'ORDER RECEIVED',
+    //     ...invoice_request
+    // })
 
     return new Response();
 };

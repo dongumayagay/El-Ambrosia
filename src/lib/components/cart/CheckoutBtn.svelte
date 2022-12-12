@@ -66,7 +66,7 @@
 			});
 			const invoice_response = await result.json();
 			open(invoice_response.invoice_url);
-			await goto('profile/orders');
+			await goto('/profile/orders');
 		} catch (error) {
 			console.log(error);
 			toast.error(error as string);
