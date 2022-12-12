@@ -7,7 +7,7 @@
 </script>
 
 <div class="drawer-side ">
-	<label for="sideDrawerCart" class="drawer-overlay" />
+	<label for="sideDrawerCart" class="drawer-overlay fixed inset-0" />
 	<aside
 		class="p-4 menu w-full max-w-lg bg-base-200 text-base-content gap-2	 border-red-500  fixed right-0 inset-y-0"
 	>

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { db } from '$lib/firebase/client';
 	import { cartStore, userStore } from '$lib/stores';
 	import type { Address, ContactInfo } from '$lib/types';
@@ -65,6 +66,7 @@
 			});
 			const invoice_response = await result.json();
 			open(invoice_response.invoice_url);
+			await goto('profile/orders');
 		} catch (error) {
 			console.log(error);
 			toast.error(error as string);
