@@ -1,7 +1,6 @@
 import { env } from '$env/dynamic/private';
 import { adminDB } from '$lib/firebase/admin.server';
 import { error } from '@sveltejs/kit';
-import { setDoc } from 'firebase/firestore';
 import type { RequestHandler } from './$types';
 
 export const POST: RequestHandler = async ({ request }) => {
@@ -12,12 +11,18 @@ export const POST: RequestHandler = async ({ request }) => {
     const invoice_request = await request.json()
     if (!invoice_request.status) return new Response()
 
-    await adminDB.collection('invoices').add({
-        owner: invoice_request.external_id.split('@')[0],
+    const owner = invoice_request.external_id.split('@')[0]
+    const contactInfo = await (await adminDB.collection('userContactInfo').doc(owner).get()).data()
+    const delivery_address = await (await adminDB.collection('userConfig').doc(owner).get()).get('selected_address')
+
+    await adminDB.collection('orders').add({
+        owner,
         order_status: 'ORDER RECEIVED',
+        contactInfo,
+        delivery_address,
         ...invoice_request
     })
-    // await adminDB.collection('invoices').doc(invoice_request.id).set({
+    // await adminDB.collection('orders').doc(invoice_request.id).set({
     //     owner: invoice_request.external_id.split('@')[0],
     //     order_status: 'ORDER RECEIVED',
     //     ...invoice_request

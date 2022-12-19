@@ -16,7 +16,7 @@
 		console.log(order_status);
 		if (!order_status) return;
 		try {
-			await updateDoc(doc(db, 'invoices', id), {
+			await updateDoc(doc(db, 'orders', id), {
 				order_status
 			});
 		} catch (error) {

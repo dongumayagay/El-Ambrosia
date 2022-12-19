@@ -15,7 +15,7 @@
 		const order_status = formData.get('order_status')?.toString();
 		if (!order_status) return;
 		try {
-			await updateDoc(doc(db, 'invoices', id), {
+			await updateDoc(doc(db, 'orders', id), {
 				order_status
 			});
 		} catch (error) {

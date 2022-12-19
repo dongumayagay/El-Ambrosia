@@ -7,10 +7,7 @@
 	import ConfirmOrderDelivered from './ConfirmOrderDelivered.svelte';
 
 	let listOfOrders: any = [];
-	const orderHistoryQuery = query(
-		collection(db, 'invoices'),
-		where('owner', '==', $userStore?.uid)
-	);
+	const orderHistoryQuery = query(collection(db, 'orders'), where('owner', '==', $userStore?.uid));
 	const unsubscribe = onSnapshot(orderHistoryQuery, (querySnapshot) => {
 		listOfOrders = querySnapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
 	});
