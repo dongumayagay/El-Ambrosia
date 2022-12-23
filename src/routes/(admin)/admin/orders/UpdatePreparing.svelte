@@ -1,23 +1,26 @@
 <script lang="ts">
+	export let order: any;
 	import { db } from '$lib/firebase/client';
 	import { doc, updateDoc } from 'firebase/firestore';
 
-	export let id: string;
-	const MODAL_ID = `order-status-update-${id}`;
-	const BUTTON_TEXT = 'Update Order Status';
+	const MODAL_ID = `order-status-update-preparing${order.id}`;
+	const BUTTON_TEXT = 'Update to Preparing';
 	let checked: boolean;
 	let loading = false;
-
 	async function submit(event: SubmitEvent) {
-		loading = true;
 		const form = event.target as HTMLFormElement;
 		const formData = new FormData(form);
 		const order_status = formData.get('order_status')?.toString();
-		if (!order_status) return;
+		if (!order_status) {
+			checked = false;
+			return;
+		}
+		loading = true;
 		try {
-			await updateDoc(doc(db, 'orders', id), {
-				order_status
-			});
+			// await updateDoc(doc(db, 'orders', id), {
+			// 	order_status
+			// });
+			console.log(order);
 		} catch (error) {
 			console.log(error);
 			alert(error);
@@ -39,9 +42,10 @@
 		<path
 			stroke-linecap="round"
 			stroke-linejoin="round"
-			d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"
+			d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75"
 		/>
 	</svg>
+
 	<span class="hidden sm:inline"> {BUTTON_TEXT}</span>
 </label>
 
@@ -49,24 +53,12 @@
 
 <label for={MODAL_ID} class="cursor-pointer z-auto modal modal-bottom sm:modal-middle ">
 	<label class="relative modal-box" for="">
-		<label for={MODAL_ID} class="absolute btn btn-sm btn-error btn-outline btn-circle right-2 top-2"
-			>✕</label
-		>
-		<form on:submit|preventDefault={submit} class="w-full form-control">
-			<h1 class="label">
-				<span class="label-text">Update order status</span>
-			</h1>
-
-			<select required name="order_status">
-				<option value="" selected disabled>Select status</option>
-				<option>Order Received</option>
-				<option>Preparing</option>
-				<option>Shipped out</option>
-				<option>Order Delivered</option>
-			</select>
-
-			<div class="modal-action">
-				<button type="submit" for={MODAL_ID} class="btn btn-block" disabled={loading}>
+		<h3 class="text-lg font-bold">Update Order {order.id}?</h3>
+		<p class="py-4 whitespace-pre-wrap">Are you sure about this?</p>
+		<div class="modal-action">
+			<label for={MODAL_ID} class="btn btn-primary">I change my mind</label>
+			<form on:submit|preventDefault={submit}>
+				<button type="submit" class="btn btn-info" disabled={loading}>
 					{#if loading}
 						<svg
 							class="w-5 h-5 mr-3 -ml-1 text-white animate-spin"
@@ -89,9 +81,9 @@
 							/>
 						</svg>
 					{/if}
-					{BUTTON_TEXT}
-				</button>
-			</div>
-		</form>
-	</label>
+					Yes, I'm sure</button
+				>
+			</form>
+		</div></label
+	>
 </label>

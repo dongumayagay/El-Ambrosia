@@ -3,7 +3,8 @@
 	import { DATE_FORMATTER, PHP_FORMATTER } from '$lib/utils';
 	import { collection, onSnapshot, query } from 'firebase/firestore';
 	import { onDestroy } from 'svelte';
-	import ChangeOrderStatus from './ChangeOrderStatus.svelte';
+	import UpdatePreparing from './UpdatePreparing.svelte';
+	// import ChangeOrderStatus from './ChangeOrderStatus.svelte';
 	let orders: any[];
 	async function getOrders() {
 		const ordersQuery = query(collection(db, 'orders'));
@@ -20,7 +21,7 @@
 {:else}
 	<main class="flex flex-col gap-4 px-4">
 		{#each orders as order}
-			<div class="bg-base-100 p-4 rounded-lg">
+			<div class="bg-base-100 p-4 rounded">
 				<h1>Customer Email: {order.payer_email}</h1>
 				<h1>Order ID: {order.id}</h1>
 				<h1>Order Date: {DATE_FORMATTER.format(new Date(order.created))}</h1>
@@ -35,7 +36,8 @@
 						</li>
 					{/each}
 				</ul>
-				<ChangeOrderStatus id={order.id} />
+				<!-- <ChangeOrderStatus id={order.id} /> -->
+				<UpdatePreparing {order} />
 			</div>
 		{:else}
 			<h1 class="text-xl font-medium">No Orders yet ☹</h1>
